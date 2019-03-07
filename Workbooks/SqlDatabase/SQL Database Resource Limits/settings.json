@@ -1,0 +1,12 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Limites de recursos de Banco de Dados SQL",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "failure-sqlserverdatabases",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 200
+        }
+    ]
+}

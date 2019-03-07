@@ -1,0 +1,9 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Operações com solicitações com falha",
+    "description": "a descrição é inserida aqui",
+    "icon": "",
+    "tags": [],
+    "author": "Microsoft",
+    "order": 200
+}

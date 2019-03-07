@@ -1,0 +1,12 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Falhas de transação",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "failure-storage",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 100
+        }
+    ]
+}
