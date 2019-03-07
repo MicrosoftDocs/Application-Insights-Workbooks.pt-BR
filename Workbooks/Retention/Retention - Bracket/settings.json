@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"63c72-101\">Retenção no intervalo</span><span class=\"sxs-lookup\"><span data-stu-id=\"63c72-101\">Bracket Retention</span></span>",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.insights/components",
+            "order": 400
+        },
+        {
+            "type": "usage",
+            "resourceType": "microsoft.insights/components",
+            "order": 400
+        }
+    ]
+}

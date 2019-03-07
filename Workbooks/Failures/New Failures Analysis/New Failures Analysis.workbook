@@ -1,0 +1,469 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"new-failures-analysis\"></a><span data-ttu-id=\"0db08-101\">Novas análises de falha</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-101\">New Failures Analysis</span></span>\n<span data-ttu-id=\"0db08-102\">Esta pasta de trabalho ajudará você a identificar quaisquer novas falhas que possam ter começado em seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-102\">This workbook will help you identify any new failures that may have begun in your app.</span></span> <span data-ttu-id=\"0db08-103\">Ela analisa as falhas do seu aplicativo de três fontes de telemetria:</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-103\">It looks at your app's failures from three telemetry sources:</span></span>\n* <span data-ttu-id=\"0db08-104\">Solicitações atendidas pelo aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-104\">Requests served by app</span></span>\n* <span data-ttu-id=\"0db08-105\">Exceções no aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-105\">Exceptions in your app</span></span>\n* <span data-ttu-id=\"0db08-106\">Chamadas de dependência feitas pelo aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-106\">Dependency calls made by you app</span></span>\n\n<span data-ttu-id=\"0db08-107\">O relatório fornece a você com um monte de informações para ajudá-lo a realizar triagem desses novos problemas e diagnosticá-los.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-107\">The report provides you with a bunch of information to help you triage and diagnose these new issues.</span></span> <span data-ttu-id=\"0db08-108\">Use-o em conjunto com o Relatório de falhas no Application Insights para entender as falhas em seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-108\">Use it in conjunction with the Failure report in App Insights to understand the failures in your app.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "84caf619-7585-48e0-a9c3-85c364aaa13b",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Show",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(x:string, y:string)[\r\n\"['New Failure Rate (%)'], ['Existing Failure Rate (%)']\", 'New and Existing Failures',\r\n\"['New Failure Rate (%)']\", 'Only New Failures',\r\n\"['Existing Failure Rate (%)']\", 'Only Existing Failures',\r\n]",
+                        "value": "['New Failure Rate (%)'], ['Existing Failure Rate (%)']"
+                    },
+                    {
+                        "id": "6ab5c1cb-bad0-4d96-8e63-d439d0681c6e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "In",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "requests\n| where timestamp >= ago(1d)\n| summarize Count = count() by operation_Name\n| order by Count desc\n| project v = operation_Name, t = operation_Name, s = false\n| union (datatable(v:string, t:string, s:boolean)[\n'*', 'All Operations', true\n])"
+                    },
+                    {
+                        "id": "eac9cbf1-6364-4f28-9c61-a9b038c035d7",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "OverTimeRange",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(value:string, text:string)[\r\n'30m', 'Last 30 minutes', \r\n'1h', 'Last hour', \r\n'2h', 'Last 2 hours', \r\n'4h', 'Last 4 hours', \r\n'24h', 'Last 24 hours', \r\n'2d', 'Last 2 days',\r\n'3d', 'Last 3 days',\r\n'7d', 'Last 7 days',\r\n'14d', 'Last 14 days',\r\n'28d', 'Last 28 days',\r\n]",
+                        "value": "24h"
+                    },
+                    {
+                        "id": "03c0d4b0-299d-4bea-b9ca-b96bb3237f0d",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "WithGrain",
+                        "type": 1,
+                        "description": null,
+                        "isRequired": true,
+                        "query": "let t = totimespan({OverTimeRange});\r\nlet w = case(t == 30m, '30s', t == 1h, '1m', t == 2h, '1m', t == 4h, '5m', t == 24h, '30m', t == 2d, '1h', t == 3d, '2h', t >= 7d, '1d', '1h');\r\nrange i from 1 to 1 step 1\r\n| project x = w"
+                    },
+                    {
+                        "id": "6f0de137-0136-48f0-b463-640de7109c05",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "UseComparisonTimeRangeOf",
+                        "type": 1,
+                        "description": null,
+                        "isRequired": true,
+                        "query": "let t = totimespan({OverTimeRange});\r\nlet w = case(t <= 1d, '7d', t <= 3d, '14d', t <= 14d, '28d', '60d');\r\nrange i from 1 to 1 step 1\r\n| project x = w"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"request-failures-analysis\"></a><span data-ttu-id=\"0db08-109\">Análise de falhas de solicitação</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-109\">Request Failures Analysis</span></span>\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "7a6716e6-3b5d-426b-a091-76e25325563a",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RequestFilters",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let timeRange = {OverTimeRange};\r\nrequests\r\n| where timestamp >= ago(timeRange)\r\n| where operation_Name in ({In}) or '*' in ({In})\r\n| summarize Count = count(), Users = dcount(user_Id) by name\r\n| project v = name, t = name, s=false\r\n| union (datatable(v:string, t:string, s:boolean)[\r\n'*', 'All Requests', true\r\n])"
+                    },
+                    {
+                        "id": "fa3ae272-8e65-4b87-a5a6-ef256a8a1956",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "IncludeResultCodes",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "datatable(x:string, y:string, z:boolean)[\r\n'*', 'All', true,\r\n'@', 'All 500s', false,\r\n'#', 'All 400s', false\r\n]\r\n| union (requests\r\n| where timestamp >= ago({OverTimeRange})\r\n| where success == false\r\n| summarize by resultCode\r\n| order by resultCode asc\r\n| project x = resultCode, y = resultCode, z = false)",
+                        "isHiddenWhenLocked": false
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"failures-rates\"></a><span data-ttu-id=\"0db08-110\">Taxas de falhas</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-110\">Failures Rates</span></span>\n<span data-ttu-id=\"0db08-111\">Esta seção ajudará você a ver como suas taxas de falha de solicitação são alteradas ao longo do tempo – segmentadas por falhas novas versus existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-111\">This section will help you see how your request failure rates change over time -- segmented by new vs. existing failures.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet existingFailures = requests\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| where resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| extend Key = strcat(name, '-', resultCode)\n| summarize makeset(Key, 10000);\nrequests\n| where timestamp >= bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend IncludeInFailures = resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| extend Key = strcat(name, '-', resultCode)\n| summarize NewFailures = countif(success == false and Key !in (existingFailures) and IncludeInFailures), ExistingFailures = countif(success == false and Key in (existingFailures) and IncludeInFailures), All = count() by bin(timestamp, grain)\n| project timestamp, ['New Failure Rate (%)'] = 100.0 * NewFailures / All, ['Existing Failure Rate (%)'] = 100.0 * ExistingFailures / All\n| project timestamp, {Show}",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 2,
+                "showAnnotations": true,
+                "visualization": "barchart"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"requests-volume\"></a><span data-ttu-id=\"0db08-112\">Volume de solicitações</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-112\">Requests Volume</span></span>\n<span data-ttu-id=\"0db08-113\">Este gráfico mostra volumes de solicitação ou carga ao longo do tempo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-113\">This chart shows you request volumes or load over time.</span></span> <span data-ttu-id=\"0db08-114\">Alterações no volume podem afetar o desempenho e as falhas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-114\">Changes in volume can impact failures and performance.</span></span> <span data-ttu-id=\"0db08-115\">Esses dados definirão o contexto no qual as falhas ocorreram.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-115\">This data will set the context in which any failures have occured.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet existingFailures = requests\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend Key = strcat(name, '-', resultCode)\n| summarize makeset(Key, 10000);\nrequests\n| where timestamp >= bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend IncludeAsFailure = resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| extend Key = strcat(name, '-', resultCode)\n| summarize NewFailures = countif(success == false and Key !in (existingFailures) and IncludeAsFailure == true), ExistingFailures = countif(success == false and Key in (existingFailures) and IncludeAsFailure), All = count() by bin(timestamp, grain)\n| project timestamp, ['Passing'] = All - NewFailures - ExistingFailures, ['Existing Failures'] = ExistingFailures, ['New Failures'] = NewFailures",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 2,
+                "showAnnotations": true,
+                "visualization": "barchart"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"request-details\"></a><span data-ttu-id=\"0db08-116\">Detalhes da solicitação</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-116\">Request Details</span></span>\n<span data-ttu-id=\"0db08-117\">Esta tabela mostra todas as solicitações com falha em seu aplicativo, bem como os respectivos códigos de resultado classificados por usuários afetados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-117\">This table shows all failing requests in your app and their result codes - sorted by users impacted.</span></span> <span data-ttu-id=\"0db08-118\">Essas informações o ajudarão a conhecer as diversas falhas em seu aplicativo e a gravidade delas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-118\">This information will help you know the various failures in your app and their severity.</span></span> <span data-ttu-id=\"0db08-119\">O relatório também indica se uma falha é nova ou existente, de modo que você vê falhas que começaram a ocorrer muito recentemente (e que normalmente são as mais interessantes).</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-119\">The report also indicates if a failure is new or existing - so you see failures just started happening -- usually the most interesting ones.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "\n<span data-ttu-id=\"0db08-120\">🔸 falha nova 🔹 falha existente</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-120\">🔸 New Failure 🔹 Existing Failure</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet bigWindow = requests\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where success == false\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| where resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| summarize by name, resultCode\n| summarize makelist(strcat(name, '-', resultCode), 10000);\nrequests\n| where timestamp >= ago(timeRange)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| where resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| where success == false\n| summarize Count = count(), Users = dcount(user_Id) by name, resultCode\n| extend IsNew = strcat(name, '-', resultCode) !in (bigWindow)\n| where \"{Show}\" == \"['New Failure Rate (%)'], ['Existing Failure Rate (%)']\" or IsNew == true\n| order by Users desc, Count desc, name asc\n| project ['Request Name'] = iff(IsNew, strcat('🔸 ', name), strcat('🔹 ', name)), ['Failed with Result Code'] = resultCode, ['Request Failures'] = Count, ['Users Affected'] = Users",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 2,
+                "showAnnotations": false,
+                "visualization": "table",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Request Failures",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        },
+                        {
+                            "columnMatch": "Users Affected",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"exceptions-analysis\"></a><span data-ttu-id=\"0db08-121\">Análise de exceções</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-121\">Exceptions Analysis</span></span>\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "481f99f9-eec9-453b-a342-064a91cc4ed6",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "ProblemFilter",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let timeRange = {OverTimeRange};\r\nexceptions\r\n| where timestamp >= ago(timeRange)\r\n| where operation_Name in ({In}) or '*' in ({In})\r\n| summarize Count = count() by problemId\r\n| order by Count desc\r\n| project v = problemId, t = problemId, s=false\r\n| union (datatable(v:string, t:string, s:boolean)[\r\n'*', 'All Exceptions', true\r\n])"
+                    },
+                    {
+                        "id": "8b14a6a5-f37a-46f9-8438-cef1349478b2",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Source",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(x:string, y:string)[\r\n'1 == 1', 'Server and Client Exceptions',\r\n'client_Type <> \"Browser\"', 'Only Server Exceptions',\r\n'client_Type == \"Browser\"', 'Only Client Exceptions',\r\n]",
+                        "isHiddenWhenLocked": false,
+                        "value": "1 == 1"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"exception-trends\"></a><span data-ttu-id=\"0db08-122\">Tendências de exceção</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-122\">Exception Trends</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet bigWindow = exceptions\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where {Source}\n| where problemId in ({ProblemFilter}) or '*' in ({ProblemFilter})\n| summarize makeset(problemId, 10000);\nexceptions\n| where timestamp >= ago(timeRange)\n| where operation_Name in ({In}) or '*' in ({In})\n| where {Source}\n| summarize Count = count() by bin(timestamp, grain), problemId\n| where problemId in ({ProblemFilter}) or '*' in ({ProblemFilter})\n| extend IsNew = problemId !in (bigWindow)\n| where \"{Show}\" == \"['New Failure Rate (%)'], ['Existing Failure Rate (%)']\" or IsNew\n| project timestamp, problemId, Count\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 2,
+                "showAnnotations": true,
+                "visualization": "barchart"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"exception-details\"></a><span data-ttu-id=\"0db08-123\">Detalhes da exceção</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-123\">Exception Details</span></span>\n<span data-ttu-id=\"0db08-124\">Esta tabela mostra todas as exceções em seu aplicativo e a operação relacionada, classificadas por usuários afetados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-124\">This table shows all exceptions in your app and related operation - sorted by users impacted.</span></span> <span data-ttu-id=\"0db08-125\">Essas informações o ajudarão a conhecer os diversos erros em seu aplicativo e a gravidade deles.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-125\">This information will help you know the various errors in your app and their severity.</span></span> <span data-ttu-id=\"0db08-126\">O relatório também indica se uma exceção é nova ou existente, de modo que você vê exceções que começaram a ocorrer muito recentemente (e que normalmente são as mais interessantes).</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-126\">The report also indicates if an exception is new or existing - so you see exceptions that just started happening -- usually the most interesting ones.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "\n<span data-ttu-id=\"0db08-127\">🔸 Nova exceção 🔹 Exceção existente</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-127\">🔸 New Exception 🔹 Existing Exception</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet grain = {WithGrain};\nlet bigWindow = exceptions\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where {Source}\n| where problemId in ({ProblemFilter}) or '*' in ({ProblemFilter})\n| summarize makeset(problemId, 10000);\nexceptions\n| where timestamp >= ago(timeRange)\n| where operation_Name in ({In}) or '*' in ({In})\n| where {Source}\n| summarize Count = count(), Users = dcount(user_Id) by problemId\n| where problemId in ({ProblemFilter}) or '*' in ({ProblemFilter})\n| extend IsNew = iff(problemId !in (bigWindow), true, false)\n| where \"{Show}\" == \"['New Failure Rate (%)'], ['Existing Failure Rate (%)']\" or IsNew\n| order by Users desc, Count desc, problemId asc\n| project Problem = iff(IsNew, strcat('🔸 ', problemId), strcat('🔹 ', problemId)), ['Exception Count'] = Count, ['Users Affected'] = Users",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Exception Count",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        },
+                        {
+                            "columnMatch": "Users Affected",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"dependency-failure-analysis\"></a><span data-ttu-id=\"0db08-128\">Análise de falha de dependência</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-128\">Dependency Failure Analysis</span></span>\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "42490f33-2004-4535-8e9f-69ede57f2542",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "DependencyFilters",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let timeRange = {OverTimeRange};\r\ndependencies\r\n| where timestamp >= ago(timeRange)\r\n| where operation_Name in ({In}) or '*' in ({In})\r\n| summarize Count = count() by name\r\n| order by Count desc\r\n| project v = name, t = name, s=false\r\n| union (datatable(v:string, t:string, s:boolean)[\r\n'*', 'All Dependencies', true\r\n])"
+                    },
+                    {
+                        "id": "ac2d6138-9403-41fc-a29c-99857071abc9",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "IncludeResultCodes",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "datatable(x:string, y:string, z:boolean)[\r\n'*', 'All', true,\r\n'@', 'All 500s', false,\r\n'#', 'All 400s', false\r\n]\r\n| union (dependencies\r\n| where timestamp >= ago({OverTimeRange})\r\n| where success == false\r\n| summarize by resultCode\r\n| order by resultCode asc\r\n| project x = resultCode, y = resultCode, z = false)",
+                        "isHiddenWhenLocked": false
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"failure-rates\"></a><span data-ttu-id=\"0db08-129\">Taxas de falha</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-129\">Failure Rates</span></span>\n<span data-ttu-id=\"0db08-130\">Esta seção ajudará você a ver como suas taxas de falha de dependência são alteradas ao longo do tempo – segmentadas por falhas novas versus existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-130\">This section will help you see how your dependency failure rates change over time -- segmented by new vs. existing failures.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet existingFailures = dependencies\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend Key = strcat(name, '-', resultCode)\n| summarize makeset(Key, 10000);\ndependencies\n| where timestamp >= bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend IncludeAsFailure = resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| extend Key = strcat(name, '-', resultCode)\n| summarize NewFailures = countif(success == false and Key !in (existingFailures) and IncludeAsFailure), ExistingFailures = countif(success == false and Key in (existingFailures) and IncludeAsFailure), All = count() by bin(timestamp, grain)\n| project timestamp, ['New Failure Rate (%)'] = 100.0 * NewFailures / All, ['Existing Failure Rate (%)'] = 100.0 * ExistingFailures / All\n| project timestamp, {Show}",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 2,
+                "showAnnotations": true,
+                "visualization": "barchart"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"dependency-volume\"></a><span data-ttu-id=\"0db08-131\">Volume de dependência</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-131\">Dependency Volume</span></span>\n<span data-ttu-id=\"0db08-132\">Este gráfico mostra volumes de solicitação ou carga ao longo do tempo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-132\">This chart shows you request volumes or load over time.</span></span> <span data-ttu-id=\"0db08-133\">Alterações no volume podem afetar o desempenho e as falhas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-133\">Changes in volume can impact failures and performance.</span></span> <span data-ttu-id=\"0db08-134\">Esses dados definirão o contexto no qual as falhas ocorreram.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-134\">This data will set the context in which any failures have occured.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\nlet grain = {WithGrain};\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\nlet existingFailures = dependencies\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend Key = strcat(name, '-', resultCode)\n| summarize makeset(Key, 10000);\ndependencies\n| where timestamp >= bin(ago(timeRange), grain)\n| where operation_Name in ({In}) or '*' in ({In})\n| where name in ({RequestFilters}) or '*' in ({RequestFilters})\n| extend IncludeAsFailure = resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\n| summarize NewFailures = countif(success == false and strcat(name, '-', resultCode) !in (existingFailures) and IncludeAsFailure == true), ExistingFailures = countif(success == false and strcat(name, '-', resultCode) in (existingFailures) and IncludeAsFailure == true), All = count() by bin(timestamp, grain)\n| project timestamp, ['Passing'] = All - NewFailures - ExistingFailures, ['Existing Failures'] = ExistingFailures, ['New Failures'] = NewFailures",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 2,
+                "showAnnotations": true,
+                "visualization": "barchart"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"dependency-details\"></a><span data-ttu-id=\"0db08-135\">Detalhes da dependência</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-135\">Dependency Details</span></span>\n<span data-ttu-id=\"0db08-136\">Esta tabela mostra todas as dependências com falha em seu aplicativo, bem como os respectivos códigos de resultado classificados por usuários afetados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-136\">This table shows all failing dependencies in your app and their result codes - sorted by users impacted.</span></span> <span data-ttu-id=\"0db08-137\">Essas informações o ajudarão a conhecer as diversas falhas em seu aplicativo e a gravidade delas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-137\">This information will help you know the various failures in your app and their severity.</span></span> <span data-ttu-id=\"0db08-138\">O relatório também indica se uma falha é nova ou existente, de modo que você vê falhas que começaram a ocorrer muito recentemente (e que normalmente são as mais interessantes).</span><span class=\"sxs-lookup\"><span data-stu-id=\"0db08-138\">The report also indicates if a failure is new or existing - so you see failures just started happening -- usually the most interesting ones.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {OverTimeRange};\r\nlet bigWindowTimeRange = {UseComparisonTimeRangeOf};\r\nlet grain = {WithGrain};\r\nlet bigWindow = dependencies\r\n| where timestamp >= ago(bigWindowTimeRange) and timestamp < bin(ago(timeRange), grain)\r\n| where operation_Name in ({In}) or '*' in ({In})\r\n| where name in ({DependencyFilters}) or '*' in ({DependencyFilters})\r\n| where resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\r\n| where success == false\r\n| summarize by name, resultCode\r\n| summarize makelist(strcat(name, '-', resultCode));\r\ndependencies\r\n| where timestamp >= ago(timeRange)\r\n| where operation_Name in ({In}) or '*' in ({In})\r\n| where name in ({DependencyFilters}) or '*' in ({DependencyFilters})\r\n| where resultCode in ({IncludeResultCodes}) or '*' in ({IncludeResultCodes}) or iff('@' in ({IncludeResultCodes}), resultCode startswith '5', false) or iff('#' in ({IncludeResultCodes}), resultCode startswith '4', false)\r\n| where success == false\r\n| summarize Count = count(), Users = dcount(user_Id) by name, resultCode, operation_Name\r\n| extend IsNew = iff(strcat(name, '-', resultCode) !in (bigWindow), true, false)\r\n| where \"{Show}\" == \"['New Failure Rate (%)'], ['Existing Failure Rate (%)']\" or IsNew == true\r\n| order by Users desc, Count desc, name asc\r\n| project ['Dependency Name'] = iff(IsNew == true, strcat('🔸 ', name), strcat('🔹 ', name)), ['Failed with Result Code'] = resultCode, Operation = operation_Name, ['Dependency Failures'] = Count, ['Users Affected'] = Users",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Dependency Failures",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        },
+                        {
+                            "columnMatch": "Users Affected",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        }
+    ]
+}

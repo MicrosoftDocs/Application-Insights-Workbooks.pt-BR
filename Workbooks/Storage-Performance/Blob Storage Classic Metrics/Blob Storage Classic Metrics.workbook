@@ -1,0 +1,528 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"blob-storage-classic-metrics\"></a><span data-ttu-id=\"e3a45-101\">Métricas de Armazenamento de Blobs (clássico)</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-101\">Blob Storage (Classic) Metrics</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "99846120-1f35-44fc-ad8a-6f69f7261a62",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageResources",
+                        "type": 5,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.classicstorage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::all",
+                                "value::3"
+                            ]
+                        },
+                        "value": [
+                            "value::3"
+                        ]
+                    },
+                    {
+                        "id": "1ef46e50-5030-43fe-8c94-7e0564f4ae5f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 14400000,
+                            "createdTime": "2018-08-22T17:44:54.405Z",
+                            "isInitialTime": false,
+                            "grain": 1,
+                            "useDashboardTimeRange": false
+                        },
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 900000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 1800000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 3600000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 14400000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 43200000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 86400000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 172800000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 259200000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 604800000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "resourceType": "microsoft.resources/resourcegroups"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"object-count\"></a><span data-ttu-id=\"e3a45-102\">Contagem de objetos</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-102\">Object Count</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"capacity\"></a><span data-ttu-id=\"e3a45-103\">Capacity</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-103\">Capacity</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:23.963Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--ObjectCount",
+                        "aggregation": 8,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:23.973Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--Capacity",
+                        "aggregation": 8,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-104\">*Contagem de objetos* é o número de blobs confirmados e não confirmados no serviço Blob da conta de armazenamento.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-104\">*Object count* is the number of committed and uncommitted blobs in the storage account’s Blob service.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-105\">*Capacidade* é a quantidade de armazenamento usado pelo serviço Blob da conta de armazenamento, em bytes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-105\">*Capacity* is the amount of storage used by the storage account’s Blob service, in bytes.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": ""
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-requests\"></a><span data-ttu-id=\"e3a45-106\">Total de Solicitações</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-106\">Total Requests</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"availability\"></a><span data-ttu-id=\"e3a45-107\">Disponibilidade</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-107\">Availability</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:23.990Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--TotalRequests",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:24.001Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--Availability",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-108\">*Solicitações Totais* é o número de solicitações feitas a um serviço de armazenamento ou à operação de API especificada.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-108\">*Total Requests* is the number of requests made to a storage service or the specified API operation.</span></span> <span data-ttu-id=\"e3a45-109\">Esse número inclui solicitações bem-sucedidas e com falha, bem como solicitações que produziram erros.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-109\">This number includes successful and failed requests, as well as requests which produced errors.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-110\">*Disponibilidade* é o percentual de disponibilidade para o serviço de armazenamento ou a operação de API especificada.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-110\">*Availability* is the percentage of availability for the storage service or the specified API operation.</span></span> <span data-ttu-id=\"e3a45-111\">A disponibilidade é calculada considerando o valor de TotalBillableRequests e dividindo-o pelo número de solicitações aplicáveis, incluindo as que produziram erros inesperados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-111\">Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors.</span></span> <span data-ttu-id=\"e3a45-112\">Todos os erros inesperados resultam na redução da disponibilidade para o serviço de armazenamento ou a operação de API especificada.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-112\">All unexpected errors result in reduced availability for the storage service or the specified API operation.</span></span> "
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": ""
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-ingress\"></a><span data-ttu-id=\"e3a45-113\">Total de entrada</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-113\">Total Ingress</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-egress\"></a><span data-ttu-id=\"e3a45-114\">Total de saída</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-114\">Total Egress</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:24.054Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--TotalIngress",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:24.062Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--TotalEgress",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-115\">*Total de entrada* é a quantidade de dados de entrada, em bytes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-115\">*Total ingress* is the amount of ingress data, in bytes.</span></span> <span data-ttu-id=\"e3a45-116\">Esse número inclui a entrada de um cliente externo no Armazenamento do Azure, bem como a entrada no Azure.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-116\">This number includes ingress from an external client into Azure Storage as well as ingress within Azure.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-117\">*Total de saída* é a quantidade de dados de saída, em bytes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-117\">*Total egress* is the amount of egress data, in bytes.</span></span> <span data-ttu-id=\"e3a45-118\">Esse número inclui a saída de um cliente externo no Armazenamento do Azure, bem como a saída no Azure.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-118\">This number includes egress from an external client into Azure Storage as well as egress within Azure.</span></span> <span data-ttu-id=\"e3a45-119\">Como resultado, esse número não reflete a saída faturável.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-119\">As a result, this number does not reflect billable egress.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": ""
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"average-e2e-latency\"></a><span data-ttu-id=\"e3a45-120\">Latência E2E Média</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-120\">Average E2E Latency</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"average-server-latency\"></a><span data-ttu-id=\"e3a45-121\">Latência de Servidor Média</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-121\">Average Server Latency</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:24.020Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--AverageE2ELatency",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T18:37:24.028Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/blob",
+                        "metric": "microsoft.classicstorage/services/blob--AverageServerLatency",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-122\">*Latência E2E Média* é a latência média de ponta a ponta das solicitações bem-sucedidas feitas a um serviço de armazenamento ou à operação de API especificada, em milissegundos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-122\">*Average E2E latency* is the average end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds.</span></span> <span data-ttu-id=\"e3a45-123\">Esse valor inclui o tempo de processamento necessário no Armazenamento do Azure para ler a solicitação, enviar a resposta e receber a confirmação da resposta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-123\">This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"e3a45-124\">*Latência de Servidor Média* é a latência média usada pelo Armazenamento do Azure para processar uma solicitação bem-sucedida, em milissegundos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-124\">*Average server latency* is the average latency used by Azure Storage to process a successful request, in milliseconds.</span></span> <span data-ttu-id=\"e3a45-125\">Esse valor não inclui a latência de rede especificada em AverageE2ELatency.</span><span class=\"sxs-lookup\"><span data-stu-id=\"e3a45-125\">This value does not include the network latency specified in AverageE2ELatency.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        }
+    ]
+}

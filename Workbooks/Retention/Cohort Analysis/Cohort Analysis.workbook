@@ -1,0 +1,245 @@
+{
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"cohort-analysis\"></a><span data-ttu-id=\"9c35d-101\">Análise de Coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-101\">Cohort Analysis</span></span>\n\n<span data-ttu-id=\"9c35d-102\">A análise de coorte mede a quantos de seus usuários retornam para executar um de `RetainingActivities` em um período específico depois de eles executarem um de `CohortingActivities` em seu aplicativo – dividido por uma dimensão escolhida por você.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-102\">Cohort Analysis measures how many of your users come back to perform one of the `RetainingActivities` in a particular period after they perform one of the `CohortingActivities` in your app - split by a dimension you choose.</span></span> <span data-ttu-id=\"9c35d-103\">Por exemplo, você pode estar medindo o número de usuários que retornaram para usar seu aplicativo dez dias após o terem baixado pela primeira vez, divididos pelos seus países de origem.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-103\">For instance, you could be measuring the number of users who returned to use your app on the 10th day from the day they first downloaded it, split by the country they are from.</span></span> <span data-ttu-id=\"9c35d-104\">Ver a tendência de retenção para os dias 1-10 lhe dará uma indicação da capacidade do aplicativo de gerar adesão.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-104\">Seeing the retention trend for days 1-10 will give you an indication of the stickiness of your app.</span></span> \n\n<span data-ttu-id=\"9c35d-105\">A análise de coorte é semelhante à retenção em N dias ou no intervalo e só é diferente em como as coortes são definidas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-105\">Cohort Analysis is similar to N-day or Bracket retention and is only different in how the cohorts are defined.</span></span> \n\n<span data-ttu-id=\"9c35d-106\">Este tipo de análise é bem adequado para aplicativos de jogos ou outros tipos de aplicativo nos quais você está tentando fazer com que os usuários desenvolvam um hábito diário.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-106\">This type of analysis is well-suited for gaming apps, or other kinds of app where you are trying to get users to develop a daily habit.</span></span> <span data-ttu-id=\"9c35d-107\">A análise de coorte ajudará você a ver as diferenças na retenção de usuários em dimensões padrão, tais como país, versão do aplicativo, etc., ou dimensões personalizadas, tais como 'É Cliente Premium' ou 'Nome da versão piloto em um grupo de teste'.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-107\">Cohort Analysis will help you see differences in user retention across standard dimensions like country, app version, etc. or custom dimensions like 'Is Premium Customer' or 'Flight name in an experiment group'.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"activity-selection\"></a><span data-ttu-id=\"9c35d-108\">Seleção de atividade</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-108\">Activity Selection</span></span>\n<span data-ttu-id=\"9c35d-109\">Use esses campos para definir eventos que correspondem a atividades de usuário interessantes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-109\">Use these fields to set events that that correspond to interesting user activities.</span></span> <span data-ttu-id=\"9c35d-110\">A seção `Understanding Cohort Analysis Parameters` na parte inferior descreve esses parâmetros em detalhes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-110\">The `Understanding Cohort Analysis Parameters` section at the bottom describes these parameters in detail.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "97ae2ae5-ec95-455b-bac2-36caf2db61db",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let events = union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize Count = count() by name;\nlet top3 = events\n| top 3 by Count desc\n| summarize makelist(name);\nevents\n| order by Count desc\n| project Id=name, Title=name, Selected=iff(name in (top3), true, false)\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'*', 'All Events and Page Views', false\n]\n)"
+                    },
+                    {
+                        "name": "CohortingFilters",
+                        "id": "94bacf68-78db-4755-8a40-c2702dea4018",
+                        "type": 1,
+                        "value": ""
+                    },
+                    {
+                        "id": "6cb4afed-7dac-4608-892b-154f4943ddb6",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize count() by name\n| order by count_ desc\n| project Id=name, Title=name, Selected=false\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'#', 'Same as cohorting activities', true,\n'*', 'All Events and Page Views', false\n]\n)"
+                    },
+                    {
+                        "id": "0cc5211a-557e-4648-9569-1236bf16559f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingFilters",
+                        "type": 1,
+                        "isRequired": false,
+                        "query": "datatable(x:int)[ 1 ]\r\n| extend retainingFilter = iff('#' in ({RetainingActivities}), '{CohortingFilters}', '')\r\n| project retainingFilter",
+                        "isHiddenWhenLocked": false
+                    }
+                ],
+                "style": "pills",
+                "resourceType": "microsoft.insights/components"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"cohort-analysis-parameters\"></a><span data-ttu-id=\"9c35d-111\">Parâmetros de análise de coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-111\">Cohort Analysis Parameters</span></span>\n<span data-ttu-id=\"9c35d-112\">Use esses campos para personalizar suas configurações de retenção.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-112\">Use these fields to customize your retention settings.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "1c53914e-0c06-4944-b2b8-fd4abaeb2f9f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortType",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(value:string, text:string)[\n'itemType', '❌ None',\n'name', '📛 Activity',\n'cloud_RoleInstance', '🖥️ Machine',\n'client_CountryOrRegion', '📍 Country or Region',\n'client_StateOrProvince', '📍 State or Province',\n'client_City', '📍 City',\n'client_Browser', '🌐 Client Browser',\n'client_OS', '️️🖥️ Client Operating System',\n'client_Model', '📱 Client Model',\n'application_Version', '⚪ Application Version',\n'operation_Name', '⚪ Operation',\n]\n| union (union pageViews, customEvents\n| where timestamp >= ago(1d)\n| where name in ({CohortingActivities}) or '*' in ({CohortingActivities})\n| project customDimensions \n| summarize schema = buildschema(customDimensions) \n| mvexpand schema\n| extend e = extract(@'{\"(.+)\":.+}', 1, tostring(schema))\n| project text = strcat('❄️ ', e), value = strcat('customDimensions[\"', e, '\"]'))",
+                        "value": "name"
+                    },
+                    {
+                        "id": "e62098ae-ac3f-4800-8e62-3e7d9a052e56",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetentionPeriod",
+                        "type": 2,
+                        "description": "<span data-ttu-id=\"9c35d-113\">1d: Diariamente, 7 dias: Semanalmente, 30/28 dias: Mensal</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-113\">1d: Daily, 7d: Weekly, 30/28d: Monthly</span></span>",
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(id:string, text:string)[\n'1d', 'Daily',\n'7d', 'Weekly',\n'28d', 'Monthly (28 days)', \n'30d', 'Monthly (30 days)'\n]",
+                        "value": "7d"
+                    },
+                    {
+                        "id": "fa4b29d9-bfc1-46e3-98f1-3cba05afbea3",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "PeriodsToAnalyze",
+                        "type": 1,
+                        "description": "<span data-ttu-id=\"9c35d-114\">Número de períodos de coorte para analisar</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-114\">Number of cohort periods to analyze</span></span>",
+                        "isRequired": true,
+                        "value": "4"
+                    },
+                    {
+                        "id": "7912aca9-1688-4886-aec1-838c68131e25",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "BasedOn",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(v:string, t:string)[\r\n'user_Id', 'Anonymous Users',\r\n'user_AuthenticatedId', 'Authenticated Users'\r\n]",
+                        "isHiddenWhenLocked": false,
+                        "value": "user_Id"
+                    },
+                    {
+                        "id": "f6511ffa-e2ea-4a34-ad2e-454856288bd5",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Show",
+                        "type": 2,
+                        "isRequired": true,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "additionalResourceOptions": []
+                        },
+                        "jsonData": "[\r\n    { \"value\": \"RetentionRate\", \"label\": \"Retention Rate\", \"selected\": true},\r\n    { \"value\": \"RetainedCount\", \"label\": \"Retained Users\", \"selected\": false},\r\n    { \"value\": \"UserCount\", \"label\": \"Potentially Retainable Users\", \"selected\": false}\r\n]",
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "resourceType": "microsoft.insights/components"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"cohort-analysis-table\"></a><span data-ttu-id=\"9c35d-115\">Tabela de análise de coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-115\">Cohort Analysis Table</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let periodsToAnalyze = {PeriodsToAnalyze};\nlet cohortSize = {RetentionPeriod};\nlet retainingActivities = iff(({RetainingActivities}) in ('#'), dynamic([{CohortingActivities}]), dynamic([{RetainingActivities}]));\nlet cohortUnit = case(cohortSize == 30d or cohortSize == 28d, \"month\", cohortSize == 7d, \"week\", \"day\");\nlet timeRange = startofday(now()) - case(cohortSize == 30d or cohortSize == 28d, startofmonth(now() - periodsToAnalyze * cohortSize), cohortSize == 7d, startofweek(now() - periodsToAnalyze * cohortSize), startofday(now() - periodsToAnalyze * cohortSize));\nlet data = union customEvents, pageViews\n| where user_Id != \"undefined\"\n| where timestamp > startofday(now() - timeRange);\nlet cohorts = data\n| where name in ({CohortingActivities}) or '*' in ({CohortingActivities})\n| extend Cohort = iff('{CohortType}' == 'itemType', 'Overall', iff({CohortType} == '', 'Unknown', {CohortType})) // reusing itemType to indicate no segmentation\n| summarize EarliestInCohort = min(startofday(timestamp)) by user_Id, Cohort\n| summarize NewUsers = hll(user_Id) by EarliestInCohort, Cohort;\nlet usage = data\n| where name in (retainingActivities) or '*' in (retainingActivities)\n| extend Cohort = iff('{CohortType}' == 'itemType', 'Overall', iff({CohortType} == '', 'Unknown', {CohortType})) // reusing itemType to indicate no segmentation\n| summarize UsersInCohort = hll(user_Id) by Day = startofday(timestamp), Cohort;\ncohorts\n| extend RetentionEvaluationDay = range(EarliestInCohort + 1d, now(), 1d)\n| mvexpand RetentionEvaluationDay to typeof(datetime) limit 1000\n| extend RetentionWeek = bin((RetentionEvaluationDay - EarliestInCohort) / cohortSize, 1)\n| join kind=inner\n(\n    usage\n)\non $left.RetentionEvaluationDay == $right.Day, Cohort\n| project EarliestInCohort, Cohort, RetentionWeek, EvaluationDayUsers = UsersInCohort, NewUsers\n| summarize Users = hll_merge(EvaluationDayUsers), NewUsers = hll_merge(NewUsers) by EarliestInCohort, Cohort, RetentionWeek\n| evaluate dcount_intersect(NewUsers, Users)\n| project EarliestInCohort, Cohort, RetentionWeek, CohortUserCount = s0, CohortRetainedCount = s1\n| summarize UserCount = sum(CohortUserCount), RetainedCount = sum(CohortRetainedCount) by Cohort, RetentionWeek\n| extend RetentionRate = round(100.0 * RetainedCount / UserCount, 2)\n| order by RetentionWeek asc, UserCount desc\n| project Cohort, RetentionWeek, Metric = {Show}\n| extend RetentionWeek = case(RetentionWeek == 0, strcat(\"<1 \", cohortUnit), strcat(\"+\", toint(RetentionWeek), \" \", cohortUnit))\n| serialize\n| evaluate pivot(RetentionWeek, sum(Metric))\n\n\n\n\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "showAnalytics": false,
+                "timeContextFromParameter": null,
+                "resourceType": "microsoft.insights/components",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week|month|day",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"interpreting-the-table\"></a><span data-ttu-id=\"9c35d-116\">Interpretando a tabela</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-116\">Interpreting the table</span></span>\n<span data-ttu-id=\"9c35d-117\">Esta seção mostra como ler e interpretar uma tabela de retenção.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-117\">This section shows how to read and interpret a retention table.</span></span> <span data-ttu-id=\"9c35d-118\">A seção a seguir mostra uma linha de um relatório de retenção semanal que tentaremos ler.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-118\">The section below shows a row from a weekly retention report that we will try to read.</span></span>\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "datatable(Cohort:string, Users:int, ['<1 week']:int, ['+1 week']:int, ['+2 week']:int, ['+3 week']:int, ['+4 week']:int)[ \r\n'Add to Cart', 1000, 50, 30, 20, 15, 10\r\n]\r\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "showAnalytics": false,
+                "timeContextFromParameter": null,
+                "resourceType": "microsoft.insights/components",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "| <span data-ttu-id=\"9c35d-119\">Coluna</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-119\">Column</span></span> | <span data-ttu-id=\"9c35d-120\">Explicação</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-120\">Explanation</span></span> | <span data-ttu-id=\"9c35d-121\">Interpretação no exemplo</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-121\">Interpretation in the example</span></span> |\n| ----- | :----- | :----- |\n| <span data-ttu-id=\"9c35d-122\">Coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-122\">Cohort</span></span> | <span data-ttu-id=\"9c35d-123\">Identifica os critérios de divisão em coortes especificados pelo parâmetro CohortType.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-123\">Identifies the cohorting criteria specified by the CohortType parameter.</span></span> | <span data-ttu-id=\"9c35d-124\">Essa linha explica o comportamento de retenção de usuários que usaram o evento 'Adicionar ao Carrinho'.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-124\">This row explains the retention behavior of users who used the 'Add to Cart' event.</span></span> |\n| <span data-ttu-id=\"9c35d-125\">Total de Usuários</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-125\">Total Users</span></span> | <span data-ttu-id=\"9c35d-126\">Número de usuários exclusivos que usaram o recurso Adicionar ao Carrinho</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-126\">Number of unique users who used the Add to Cart feature</span></span>  | <span data-ttu-id=\"9c35d-127\">1.000 usuários exclusivos adicionaram um item ao carrinho em seu aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-127\">1000 unique users added an item to their cart in your app</span></span> |\n| <span data-ttu-id=\"9c35d-128\">< 1 semana</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-128\"><1 week</span></span> | <span data-ttu-id=\"9c35d-129\">Percentual de usuários de coorte que retornaram entre 1 e 6 dias depois de usar 'Adicionar ao Carrinho' (usá-lo novamente no mesmo dia não conta para a retenção)</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-129\">Percentage of cohort users who returned between 1 and 6 days after using 'Add to Cart' (using it again the same day does not count towards retention)</span></span>  | <span data-ttu-id=\"9c35d-130\">50% ou 500 usuários retornaram para usar seu aplicativo durante a primeira semana depois de terem adicionado um item ao carrinho deles</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-130\">50% or 500 users returned to use your app within the first week after they added an item to their cart</span></span> |\n| <span data-ttu-id=\"9c35d-131\">+ 1 semana</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-131\">+1 week</span></span> | <span data-ttu-id=\"9c35d-132\">Percentual de usuários de coorte que retornaram entre 7 e 13 dias depois de usar 'Adicionar ao Carrinho'</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-132\">Percentage of cohort users who returned between 7 and 13 days after using 'Add to Cart'</span></span>  | <span data-ttu-id=\"9c35d-133\">30% ou 300 usuários retornaram para usar seu aplicativo uma semana mais tarde</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-133\">30% or 300 users returned to use your app a week later</span></span> |\n| <span data-ttu-id=\"9c35d-134\">+N semana</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-134\">+N week</span></span> | <span data-ttu-id=\"9c35d-135\">Percentual de usuários de coorte que retornaram na Nª semana depois de usar 'Adicionar ao Carrinho'</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-135\">Percentage of cohort users who returned in the Nth week after 'Add to Cart'</span></span>  | <span data-ttu-id=\"9c35d-136\">15% ou 150 usuários, quando N = 3</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-136\">15% or 150 users, when N = 3</span></span>  |\n\n\n\n\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"understanding-cohort-analysis-parameters\"></a><span data-ttu-id=\"9c35d-137\">Compreendendo os parâmetros de análise de coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-137\">Understanding Cohort Analysis Parameters</span></span>\n| <span data-ttu-id=\"9c35d-138\">Parâmetro</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-138\">Parameter</span></span> | <span data-ttu-id=\"9c35d-139\">Usado para</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-139\">Used for</span></span> |\n| ----- | ----- |\n| <span data-ttu-id=\"9c35d-140\">Tipo de coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-140\">Cohort Type</span></span> | <span data-ttu-id=\"9c35d-141\">A dimensão pela qual dividir os números de retenção</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-141\">The dimension by which to split the retention numbers</span></span> |\n| <span data-ttu-id=\"9c35d-142\">Período de retenção</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-142\">Retention Period</span></span> | <span data-ttu-id=\"9c35d-143\">O período a ser usado no cálculo da retenção.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-143\">The period to use in retention calculation.</span></span> <span data-ttu-id=\"9c35d-144\">Pode ser diário, semanal ou mensal</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-144\">Can be Daily, Weekly or Monthly</span></span> |\n| <span data-ttu-id=\"9c35d-145\">Períodos a analisar</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-145\">Periods To Analyze</span></span>  | <span data-ttu-id=\"9c35d-146\">O número de períodos de retenção a analisar.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-146\">The number of retention periods to analyze.</span></span>  |\n| <span data-ttu-id=\"9c35d-147\">Atividades de coorte</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-147\">Cohorting Activities</span></span>  | <span data-ttu-id=\"9c35d-148\">As atividades que selecionam um coorte de usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-148\">The activities that selects a cohort of users.</span></span> <span data-ttu-id=\"9c35d-149\">Exemplo: Os usuários que usaram o evento *Ler a Análise do Produto* (atividade de coorte).</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-149\">Example: Users who used event *Read Product Review* (cohorting activity).</span></span> |\n| <span data-ttu-id=\"9c35d-150\">Atividades de retenção</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-150\">Retaining Activities</span></span>  | <span data-ttu-id=\"9c35d-151\">As atividades que indicam a retenção de um usuário com coorte selecionado acima.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-151\">The activities that indicates retention of a cohorted user selected above.</span></span> <span data-ttu-id=\"9c35d-152\">Exemplo: Os usuários que usaram o evento *Ler a Análise do Produto* (atividade de coorte) e retornaram para usar *Comprar Produto* (atividade de retenção).</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-152\">Example: Users who used event *Read Product Review* (cohorting activity) and returned to use *Purchase Product* (retaining activity).</span></span> |\n| <span data-ttu-id=\"9c35d-153\">Filtros de coorte/retenção</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-153\">Cohorting/Retaining Filters</span></span>  | <span data-ttu-id=\"9c35d-154\">Um snippet de consulta analítica para filtrar ainda mais a atividade de coorte.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-154\">An analytics query snippet to further filter the cohorting activity.</span></span> <span data-ttu-id=\"9c35d-155\">Exemplo: *&#124; em que application_Version = '1.0'*</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-155\">Example: *&#124; where application_Version = '1.0'*</span></span> |\n| <span data-ttu-id=\"9c35d-156\">Mostrar</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-156\">Show</span></span>  | <span data-ttu-id=\"9c35d-157\">A métrica a visualizar na tabela.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-157\">The metric to visualize in the table.</span></span> <span data-ttu-id=\"9c35d-158\">*Taxa de Retenção* mostra a taxa em que usuários retornaram no período de tempo indicado na coluna.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-158\">*Retention Rate* shows the rate at which users returned for the time period in the column.</span></span> <span data-ttu-id=\"9c35d-159\">*Usuários Retidos* é número bruto de usuários retidos no período de tempo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-159\">*Retained Users* is raw number of retained users for the time period.</span></span> <span data-ttu-id=\"9c35d-160\">*Usuários Com Potencial de Retenção* é o número de usuários que poderiam ter sido retidos naquele período.'</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-160\">*Potentially Retainable Users* is the number of users who could potentially have been retained for that period.'</span></span> |\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"what-is-a-week-for-a-user\"></a><span data-ttu-id=\"9c35d-161\">O que é uma semana para um usuário?</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-161\">What is a week for a user?</span></span>\n<span data-ttu-id=\"9c35d-162\">A resposta curta é que isso é exclusivo para cada usuário.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-162\">The short answer is that it is unique for each user.</span></span> <span data-ttu-id=\"9c35d-163\">Nossa análise trata separadamente de janela de retenção de cada usuário – fornecendo uma exibição precisa do real comportamento desses usuários com seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-163\">Our analysis treats each user's retention window seperately - giving an accurate view of their actual behavior with your app.</span></span> \n\n<span data-ttu-id=\"9c35d-164\">Considere o exemplo abaixo de dois usuários X e Y:</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-164\">Consider the example below of two users X and Y:</span></span> \n\n| <span data-ttu-id=\"9c35d-165\">Usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-165\">User</span></span> | <span data-ttu-id=\"9c35d-166\">Primeiro uso do aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-166\">First use of app</span></span> | <span data-ttu-id=\"9c35d-167\">Semanas para o usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-167\">Weeks for user</span></span> |\n| ----- | :----- | :----- |\n| <span data-ttu-id=\"9c35d-168\">X</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-168\">X</span></span> | <span data-ttu-id=\"9c35d-169\">3 de abril</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-169\">April 3</span></span> | <span data-ttu-id=\"9c35d-170\">w1 = 10 de abril, w2 = 17 de abril, w3 = 24 de abril</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-170\">w1 = April 10, w2 = April 17, w3 = April 24</span></span>  |\n| <span data-ttu-id=\"9c35d-171\">S</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-171\">Y</span></span> | <span data-ttu-id=\"9c35d-172\">5 de abril</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-172\">April 5</span></span> | <span data-ttu-id=\"9c35d-173\">w1 = 12 de abril, w2 = 19 de abril, w3 = 26 de abril</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-173\">w1 = April 12, w2 = April 19, w3 = April 26</span></span>  |\n\n<span data-ttu-id=\"9c35d-174\">Cada usuário obtém uma janela de retenção separada.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-174\">Each user gets a seperate retention window.</span></span> <span data-ttu-id=\"9c35d-175\">Dessa forma, se ambos os usuários retornaram em 18 de abril, isso é considerado como uso da Semana 2 para o Usuário X, mas uso da Semana 1 para Usuário Y.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-175\">So, if both users came back on April 18, then it considered as Week 2 usage for User X but Week 1 usage for User Y.</span></span> \n\n<span data-ttu-id=\"9c35d-176\">Isso permite a normalização do aplicativo desses usuários durante a janela de retenção, fazendo parecer que todos os usuários em um coorte usaram o aplicativo no mesmo dia.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-176\">This allows the normalization their app use over the retention window - making it seem as if all users in a cohort used the app on the same day.</span></span> <span data-ttu-id=\"9c35d-177\">Isso permite uma melhor análise e comparação do comportamento do usuário.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-177\">This allow for better analysis and comparision of user behavior.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"related-workbook-templates\"></a><span data-ttu-id=\"9c35d-178\">Modelos de pasta de trabalho relacionados</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-178\">Related Workbook Templates</span></span>\n* <span data-ttu-id=\"9c35d-179\">Retenção – N Períodos</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-179\">Retention - N-Period</span></span>\n* <span data-ttu-id=\"9c35d-180\">Retenção – não associada</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-180\">Retention - Unbounded</span></span>\n* <span data-ttu-id=\"9c35d-181\">Retenção – Intervalo</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c35d-181\">Retention - Bracket</span></span>"
+            },
+            "conditionalVisibility": null
+        }
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
