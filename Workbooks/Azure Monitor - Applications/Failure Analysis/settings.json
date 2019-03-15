@@ -1,11 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"48a6b-101\">Entradas</span><span class=\"sxs-lookup\"><span data-stu-id=\"48a6b-101\">Sign-ins</span></span>",
+    "name": "<span data-ttu-id=\"ee681-101\">Análise de Falha</span><span class=\"sxs-lookup\"><span data-stu-id=\"ee681-101\">Failure Analysis</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.aadiam/tenant",
+            "resourceType": "Azure Monitor",
             "order": 100
         }
     ]

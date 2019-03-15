@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
     "version": "Notebook/1.0",
-    "isLocked": false,
+    "isLocked": true,
     "items": [
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"troubleshooting-sign-ins\"></a><span data-ttu-id=\"4686f-101\">Solucionando problemas em entradas</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-101\">Troubleshooting Sign-ins</span></span>"
+                "json": "# <a name=\"troubleshooting-sign-ins\"></a><span data-ttu-id=\"d64cc-101\">Solucionando problemas em entradas</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-101\">Troubleshooting Sign-ins</span></span>"
             },
             "conditionalVisibility": null
         },
@@ -144,7 +144,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Users",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"4686f-102\">Filtrar por nome de usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-102\">Filter by User Name</span></span>",
+                        "description": "<span data-ttu-id=\"d64cc-102\">Filtrar por nome de usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-102\">Filter by User Name</span></span>",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "'",
@@ -166,7 +166,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"sign-ins-trend-by-status\"></a><span data-ttu-id=\"4686f-103\">Tendência de entradas por status</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-103\">Sign-ins Trend by Status</span></span>"
+                "json": "## <a name=\"sign-ins-trend-by-status\"></a><span data-ttu-id=\"d64cc-103\">Tendência de entradas por status</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-103\">Sign-ins Trend by Status</span></span>"
             },
             "conditionalVisibility": null
         },
@@ -197,7 +197,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"top-errors\"></a><span data-ttu-id=\"4686f-104\">Principais erros</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-104\">Top Errors</span></span>"
+                "json": "## <a name=\"top-errors\"></a><span data-ttu-id=\"d64cc-104\">Principais erros</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-104\">Top Errors</span></span>"
             },
             "conditionalVisibility": null
         },
@@ -240,7 +240,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"-of-sign-ins-waiting-for-user-action\"></a><span data-ttu-id=\"4686f-105\">No. de entradas aguardando ação do usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-105\"># of Sign-ins waiting for user action</span></span> "
+                "json": "### <a name=\"-of-sign-ins-waiting-for-user-action\"></a><span data-ttu-id=\"d64cc-105\">No. de entradas aguardando ação do usuário</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-105\"># of Sign-ins waiting for user action</span></span> "
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -283,7 +283,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"sign-ins-failure-due-to-ca-policies\"></a><span data-ttu-id=\"4686f-106\">Falha em entradas devido a políticas de AC</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-106\">Sign-ins failure due to CA Policies</span></span>"
+                "json": "### <a name=\"sign-ins-failure-due-to-ca-policies\"></a><span data-ttu-id=\"d64cc-106\">Falha em entradas devido a políticas de AC</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-106\">Sign-ins failure due to CA Policies</span></span>"
             },
             "conditionalVisibility": null
         },
@@ -350,7 +350,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"legacy-authentications-sign-in-errors\"></a><span data-ttu-id=\"4686f-107\">Erros de entrada com autenticações herdadas</span><span class=\"sxs-lookup\"><span data-stu-id=\"4686f-107\">Legacy Authentications Sign-in Errors</span></span>"
+                "json": "### <a name=\"legacy-authentications-sign-in-errors\"></a><span data-ttu-id=\"d64cc-107\">Erros de entrada com autenticações herdadas</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64cc-107\">Legacy Authentications Sign-in Errors</span></span>"
             },
             "conditionalVisibility": null
         },
