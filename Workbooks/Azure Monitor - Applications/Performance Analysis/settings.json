@@ -1,11 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Contadores de desempenho",
+    "name": "Análise de desempenho",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.operationalinsights/workspaces",
+            "resourceType": "Azure Monitor",
             "order": 200
         }
     ]
