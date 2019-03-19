@@ -1,11 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Análise de falha de entradas",
+    "name": "Atividade de registro do Intune",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.aadiam/tenant",
+            "resourceType": "microsoft.intune/tenant",
             "order": 100
         }
     ]

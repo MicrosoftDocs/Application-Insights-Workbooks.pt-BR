@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Entradas usando autenticação herdada",
+    "name": "Entradas usando a autenticação herdada",
     "author": "Microsoft",
     "galleries": [
         {
