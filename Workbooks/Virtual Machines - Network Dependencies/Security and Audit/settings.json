@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"b103f-101\">Segurança e Auditoria</span><span class=\"sxs-lookup\"><span data-stu-id=\"b103f-101\">Security and Audit</span></span>",
+    "name": "<span data-ttu-id=\"bee86-101\">Segurança e Auditoria</span><span class=\"sxs-lookup\"><span data-stu-id=\"bee86-101\">Security and Audit</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
             "resourceType": "microsoft.operationalinsights/workspaces",
-            "order": 200
+            "order": 300
         }
     ]
 }
