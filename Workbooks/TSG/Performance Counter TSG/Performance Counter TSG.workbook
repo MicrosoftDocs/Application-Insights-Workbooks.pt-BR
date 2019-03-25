@@ -1,15 +1,12 @@
 {
-    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
     "version": "Notebook/1.0",
-    "isLocked": true,
     "items": [
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"troubleshooting-issues-using-performance-counters\"></a><span data-ttu-id=\"fb45d-101\">Solução de problemas usando contadores de desempenho</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-101\">Troubleshooting Issues Using Performance Counters</span></span>"
+                "json": "# <a name=\"troubleshooting-issues-using-performance-counters\"></a><span data-ttu-id=\"afcab-101\">Solução de problemas usando contadores de desempenho</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-101\">Troubleshooting Issues Using Performance Counters</span></span>"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 9,
@@ -95,26 +92,22 @@
                             "allowCustom": null
                         },
                         "value": {
-                            "durationMs": 14400000,
-                            "createdTime": "2018-05-16T21:34:47.842Z",
-                            "isInitialTime": false,
-                            "grain": 1,
-                            "useDashboardTimeRange": false
+                            "durationMs": 14400000
                         }
                     }
                 ],
+                "style": "pills",
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"problem---high-cpu-utilization\"></a><span data-ttu-id=\"fb45d-102\">Problema: alta utilização da CPU</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-102\">Problem - High CPU Utilization</span></span>\n<span data-ttu-id=\"fb45d-103\">Utilização da CPU consistentemente alta pode gerar problemas de desempenho e disponibilidade em seu aplicativo implantado.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-103\">Consistently high CPU utilization can performance and availability problems in your deployed application.</span></span> <span data-ttu-id=\"fb45d-104\">Esta seção ajudará você a entender quais dos seus servidores estão executando com uso suficientemente alto para potencialmente afetar a confiabilidade do seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-104\">This section will help you understand which of your servers are running hot enough to potentially affect the reliability of your application.</span></span> "
+                "json": "## <a name=\"problem---high-cpu-utilization\"></a><span data-ttu-id=\"afcab-102\">Problema: alta utilização da CPU</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-102\">Problem - High CPU Utilization</span></span>\n<span data-ttu-id=\"afcab-103\">Utilização da CPU consistentemente alta pode gerar problemas de desempenho e disponibilidade em seu aplicativo implantado.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-103\">Consistently high CPU utilization can performance and availability problems in your deployed application.</span></span> <span data-ttu-id=\"afcab-104\">Esta seção ajudará você a entender quais dos seus servidores estão executando com uso suficientemente alto para potencialmente afetar a confiabilidade do seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-104\">This section will help you understand which of your servers are running hot enough to potentially affect the reliability of your application.</span></span> "
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 9,
@@ -168,10 +161,11 @@
                         "value": ">"
                     }
                 ],
+                "style": "pills",
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 3,
@@ -183,6 +177,9 @@
                 "aggregation": 0,
                 "showAnnotations": false,
                 "showAnalytics": false,
+                "noDataMessage": "Looks like this app is not collecting the specified performance counter. More info on collecting counters can be found at: https://docs.microsoft.com/en-us/azure/azure-monitor/app/performance-counters",
+                "timeContextFromParameter": null,
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components",
                 "visualization": "table",
                 "gridSettings": {
@@ -208,24 +205,22 @@
                     ]
                 }
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"causes\"></a><span data-ttu-id=\"fb45d-105\">Causas</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-105\">Causes</span></span>\n<span data-ttu-id=\"fb45d-106\">Alta utilização da CPU geralmente indica que a carga em seu sistema é maior do que os recursos de computação provisionada podem manipular.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-106\">High CPU utilization usually indicates that the load on your system is higher than the provisioned compute resources can handle.</span></span> <span data-ttu-id=\"fb45d-107\">Isso pode ocorrer se o uso do seu aplicativo aumentou ou devido a uma regressão no desempenho do aplicativo em uma implantação.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-107\">This may happen if the usage of your application has increased or due to a regression in the performance of the app in a deployment.</span></span>\n\n<span data-ttu-id=\"fb45d-108\">Outros motivos possíveis incluem: tarefas agendadas ou trabalhos frequentes no computador, número excessivo de módulos/plug-ins/extensões, muitos aplicativos Web sendo atendidos diretamente, bots e rastreadores de mecanismo de pesquisa, etc.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-108\">Other possible reasons include: frequent jobs or scheduled tasks on the machine, essessive modules/plugins/extensions, too many web apps being serviced from the box, search engine spiders and bots, etc.</span></span> "
+                "json": "## <a name=\"causes\"></a><span data-ttu-id=\"afcab-105\">Causas</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-105\">Causes</span></span>\n<span data-ttu-id=\"afcab-106\">Alta utilização da CPU geralmente indica que a carga em seu sistema é maior do que os recursos de computação provisionada podem manipular.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-106\">High CPU utilization usually indicates that the load on your system is higher than the provisioned compute resources can handle.</span></span> <span data-ttu-id=\"afcab-107\">Isso pode ocorrer se o uso do seu aplicativo aumentou ou devido a uma regressão no desempenho do aplicativo em uma implantação.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-107\">This may happen if the usage of your application has increased or due to a regression in the performance of the app in a deployment.</span></span>\n\n<span data-ttu-id=\"afcab-108\">Outros motivos possíveis incluem:</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-108\">Other possible reasons include:</span></span> \n1. <span data-ttu-id=\"afcab-109\">Trabalhos frequentes ou tarefas agendadas no computador,</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-109\">Frequent jobs or scheduled tasks on the machine,</span></span> \n2. <span data-ttu-id=\"afcab-110\">Módulos/plugins/extensões excessivos,</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-110\">Excessive modules/plugins/extensions,</span></span> \n3. <span data-ttu-id=\"afcab-111\">Muitos aplicativos Web em execução nos recursos de computação subjacentes,</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-111\">Too many web apps running on the underlying compute resources,</span></span> \n4. <span data-ttu-id=\"afcab-112\">Bots e spiders de mecanismo de pesquisa.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-112\">Search engine spiders and bots.</span></span> "
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"solutions\"></a><span data-ttu-id=\"fb45d-109\">Soluções</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-109\">Solutions</span></span>\n<span data-ttu-id=\"fb45d-110\">Se a utilização da CPU é realmente resultado de aumento de carga, então o dimensionamento é a resposta mais apropriada:</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-110\">If the CPU utilization is truly a result of increased load, then scaling the most appropriate response:</span></span>\n* <span data-ttu-id=\"fb45d-111\">Expandir – adicionar mais recursos de computação.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-111\">Scale out - to add more compute resources.</span></span> <span data-ttu-id=\"fb45d-112\">Se 10 VMs são usadas para atender ao aplicativo, dimensione-o para 15 para aliviar a carga das VMs existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-112\">If 10 VMs used to serve the application, scale it to 15 to relieve the load off the existing VMs.</span></span>\n* <span data-ttu-id=\"fb45d-113\">Escalar verticalmente – use recursos com uma qualidade mais alta (atualização de CPU de 2 núcleos para CPU de 8 núcleos)</span><span class=\"sxs-lookup\"><span data-stu-id=\"fb45d-113\">Scale up - use higher quality of resources (upgrade from 2 core CPU to and 8-core CPU)</span></span>"
+                "json": "## <a name=\"solutions\"></a><span data-ttu-id=\"afcab-113\">Soluções</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-113\">Solutions</span></span>\n<span data-ttu-id=\"afcab-114\">Se a utilização da CPU é realmente resultado de aumento de carga, então o dimensionamento é a resposta mais apropriada:</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-114\">If the CPU utilization is truly a result of increased load, then scaling the most appropriate response:</span></span>\n* <span data-ttu-id=\"afcab-115\">Expandir – adicionar mais recursos de computação.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-115\">Scale out - to add more compute resources.</span></span> <span data-ttu-id=\"afcab-116\">Se 10 VMs são usadas para atender ao aplicativo, dimensione-o para 15 para aliviar a carga das VMs existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-116\">If 10 VMs used to serve the application, scale it to 15 to relieve the load off the existing VMs.</span></span>\n* <span data-ttu-id=\"afcab-117\">Escalar verticalmente – use recursos com uma qualidade mais alta (atualização de CPU de 2 núcleos para CPU de 8 núcleos)</span><span class=\"sxs-lookup\"><span data-stu-id=\"afcab-117\">Scale up - use higher quality of resources (upgrade from 2 core CPU to and 8-core CPU)</span></span>"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         }
-    ]
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
 }
