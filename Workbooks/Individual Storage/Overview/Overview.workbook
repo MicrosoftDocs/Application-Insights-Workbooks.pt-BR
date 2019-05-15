@@ -1,0 +1,402 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "487a9f92-5350-4eec-8d68-15bdf2470550",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageAccount",
+                        "type": 5,
+                        "isRequired": true,
+                        "value": "value::1",
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.storage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::1"
+                            ]
+                        },
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.storage/storageaccounts"
+            },
+            "conditionalVisibility": {
+                "parameterName": "1",
+                "comparison": "isEqualTo",
+                "value": "2"
+            },
+            "name": "parameters - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"storageaccountname\"></a>{StorageAccount:name} "
+            },
+            "conditionalVisibility": null,
+            "name": "text - 6"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "d04c2e2c-b67c-4ae1-9b80-a36e27310200",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 86400000
+                        },
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000
+                                },
+                                {
+                                    "durationMs": 900000
+                                },
+                                {
+                                    "durationMs": 1800000
+                                },
+                                {
+                                    "durationMs": 3600000
+                                },
+                                {
+                                    "durationMs": 14400000
+                                },
+                                {
+                                    "durationMs": 43200000
+                                },
+                                {
+                                    "durationMs": 86400000
+                                },
+                                {
+                                    "durationMs": 172800000
+                                },
+                                {
+                                    "durationMs": 259200000
+                                },
+                                {
+                                    "durationMs": 604800000
+                                },
+                                {
+                                    "durationMs": 1209600000
+                                }
+                            ]
+                        },
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.storage/storageaccounts"
+            },
+            "conditionalVisibility": null,
+            "name": "parameters - 1"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Transactions",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "blue"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Transactions",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "name": "metric - 0"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Transações* – o número de solicitações feitas ao serviço de armazenamento. Esse número inclui solicitações bem-sucedidas e com falha, bem como solicitações que produziram erros. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "name": "text - 10"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Availability",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "green"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Availability",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 1"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Capacity-UsedCapacity",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "lightBlue"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Used capacity",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 2"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Disponibilidade* – o percentual de disponibilidade para o serviço de armazenamento. A disponibilidade é calculada considerando o valor total de solicitações faturáveis e dividindo-o pelo número de solicitações aplicáveis, incluindo as que produziram erros inesperados. Todos os erros inesperados resultam na redução da disponibilidade para o serviço de armazenamento ou a operação de API especificada. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 11"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Capacidade utilizada* – a quantidade de armazenamento utilizada pela conta de armazenamento. Para contas de armazenamento Standard, é a soma da capacidade usada por blob, tabela, arquivo e fila. Para contas de armazenamento Premium e contas de armazenamento de Blob, é o mesmo que Capacidade de Blob.\n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 3"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-SuccessE2ELatency",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "yellow"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Success end-to-end latency",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 4"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-SuccessServerLatency",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "orange"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Success server latency",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Latência de E2E com Sucesso* – a latência média de ponta a ponta das solicitações bem-sucedidas feitas a um serviço de armazenamento ou à operação de API especificada. Esse valor inclui o tempo de processamento necessário no Armazenamento do Azure para ler a solicitação, enviar a resposta e receber a confirmação da resposta. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 13"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Latência do Servidor com Sucesso* – o tempo médio usado para processar uma solicitação bem-sucedida pelo Armazenamento do Azure. Esse valor não inclui a latência de rede especificada em SuccessE2ELatency. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 6"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Ingress",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "magenta"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Ingress",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 7"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Egress",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "purple"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Egress",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 8"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Entrada* – a quantidade de dados de entrada. Esse número inclui a entrada de um cliente externo no Armazenamento do Azure, bem como a entrada no Azure. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 15"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "*Saída* – a quantidade de dados de saída. Esse número inclui a saída de um cliente externo no Armazenamento do Azure, bem como a saída no Azure. Como resultado, esse número não reflete a saída faturável. \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 9"
+        }
+    ],
+    "defaultResourceIds": [],
+    "fallbackResourceIds": [],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
