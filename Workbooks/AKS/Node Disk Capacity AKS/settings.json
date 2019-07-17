@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "E/S do disco do nó",
+    "name": "Capacidade do disco do nó",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.operationalinsights/workspaces",
-            "order": 200
+            "resourceType": "Microsoft.ContainerService/managedClusters",
+            "order": 100
         }
     ]
 }
