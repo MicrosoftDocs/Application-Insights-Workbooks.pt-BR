@@ -270,7 +270,7 @@
         {
             "type": 1,
             "content": {
-                "json": "⚠ Nenhum contador de desempenho foi detectado no espaço de trabalho selecionado pelo período de tempo especificado (`{TimeRange:label}`). Tente um intervalo de tempo maior, selecione outro espaço de trabalho ou integre máquinas virtuais ao espaço de trabalho selecionado `{Workspaces:label}`.\n\nSe você optar por integrar máquinas virtuais ao espaço de trabalho `{Workspaces:label}`, siga as instruções no link a seguir: [Azure Monitor para VMs (versão prévia)](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/vminsights-overview)."
+                "json": "⚠ Nenhum contador de desempenho foi detectado no workspace selecionado pelo período de tempo especificado (`{TimeRange:label}`). Tente um intervalo de tempo maior, selecione outro workspace ou integre máquinas virtuais ao workspace selecionado `{Workspaces:label}`.\n\nSe você optar por integrar máquinas virtuais ao workspace `{Workspaces:label}`, siga as instruções no link a seguir: [Azure Monitor para VMs (versão prévia)](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/vminsights-overview)."
             },
             "conditionalVisibility": {
                 "parameterName": "Test",
