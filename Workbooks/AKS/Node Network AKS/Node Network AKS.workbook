@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<div style=\"font-style: italic\"><span data-ttu-id=\"6e254-101\">Mais informações sobre as métricas desta pasta de trabalho estão disponíveis <a href='https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md'>aqui</a></span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-101\">More information about the metrics in this workbook is available <a href='https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md'>here</a></span></span></div>"
+                "json": "<div style=\"font-style: italic\"><span data-ttu-id=\"e6d84-101\">Mais informações sobre as métricas desta pasta de trabalho estão disponíveis <a href='https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md'>aqui</a></span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-101\">More information about the metrics in this workbook is available <a href='https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md'>here</a></span></span></div>"
             },
             "name": "text - 18"
         },
@@ -21,7 +21,7 @@
                         "name": "timeRange",
                         "label": "Time Range",
                         "type": 4,
-                        "description": "<span data-ttu-id=\"6e254-102\">Filtrar dados por intervalo de tempo</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-102\">Filter data by time range</span></span>",
+                        "description": "<span data-ttu-id=\"e6d84-102\">Filtrar dados por intervalo de tempo</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-102\">Filter data by time range</span></span>",
                         "isRequired": true,
                         "value": {
                             "durationMs": 21600000
@@ -83,11 +83,11 @@
                         "name": "unit",
                         "label": "Unit",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"6e254-103\">As unidades a usar nos dados</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-103\">The units to use for the data</span></span>",
+                        "description": "<span data-ttu-id=\"e6d84-103\">As unidades a usar nos dados</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-103\">The units to use for the data</span></span>",
                         "typeSettings": {
                             "additionalResourceOptions": []
                         },
-                        "jsonData": "[\r\n    { \"label\": \"Bytes\", \"value\": \"1\", \"selected\": \"true\" },\r\n    { \"label\": \"Kilobytes\", \"value\": \"1024\", \"selected\": \"false\" },\r\n    { \"label\": \"Megabytes\", \"value\": \"1048576\", \"selected\": \"false\" },\r\n    { \"label\": \"Gigabytes\", \"value\": \"1073741824\", \"selected\": \"false\" }\r\n]"
+                        "jsonData": "[\r\n    { \"label\": \"Bytes\", \"value\": \"1\", \"selected\": \"true\" },\r\n    { \"label\": \"Kilobytes\", \"value\": \"1000\", \"selected\": \"false\" },\r\n    { \"label\": \"Megabytes\", \"value\": \"1000000\", \"selected\": \"false\" },\r\n    { \"label\": \"Gigabytes\", \"value\": \"1000000000\", \"selected\": \"false\" }\r\n]"
                     },
                     {
                         "id": "5a7770ff-fdc2-4590-85e2-5ee1c5653805",
@@ -95,7 +95,7 @@
                         "name": "aggregation1",
                         "label": "Aggregation",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"6e254-104\">Escolha qual agregação de dados deseja visualizar no gráfico de tempo</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-104\">Choose which data aggregation you want to visualize on the time chart</span></span>",
+                        "description": "<span data-ttu-id=\"e6d84-104\">Escolha qual agregação de dados deseja visualizar no gráfico de tempo</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-104\">Choose which data aggregation you want to visualize on the time chart</span></span>",
                         "value": "Average",
                         "typeSettings": {
                             "additionalResourceOptions": []
@@ -112,7 +112,7 @@
                         "name": "selectedNodes1",
                         "label": "Node",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"6e254-105\">Filtrar por nó</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-105\">Filter by node</span></span>",
+                        "description": "<span data-ttu-id=\"e6d84-105\">Filtrar por nó</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-105\">Filter by node</span></span>",
                         "multiSelect": true,
                         "quote": "'",
                         "delimiter": ",",
@@ -139,7 +139,7 @@
                         "name": "selectedInterfaces1",
                         "label": "Interface",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"6e254-106\">Filtrar por interface</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-106\">Filter by interface</span></span>",
+                        "description": "<span data-ttu-id=\"e6d84-106\">Filtrar por interface</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-106\">Filter by interface</span></span>",
                         "multiSelect": true,
                         "quote": "'",
                         "delimiter": ",",
@@ -177,7 +177,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-107\">Visão geral da rede</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-107\">Network Overview</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-107\">Visão geral da rede</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-107\">Network Overview</span></span></h3>"
             },
             "name": "text - 21"
         },
@@ -354,7 +354,8 @@
                         ],
                         "expandTopLevel": true,
                         "finalBy": "GridId"
-                    }
+                    },
+                    "labelSettings": []
                 }
             },
             "showPin": true,
@@ -370,7 +371,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-108\">Enviado a {unit:label}/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-108\">Sent {unit:label}/sec</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-108\">Enviado a {unit:label}/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-108\">Sent {unit:label}/sec</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5"
@@ -378,7 +379,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-109\">Recebido a {unit:label}/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-109\">Received {unit:label}/sec</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-109\">Recebido a {unit:label}/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-109\">Received {unit:label}/sec</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -436,7 +437,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-110\">Total de {unit: label} enviados (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-110\">Total {unit:label} Sent (by {timeRange:grain} intervals)</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-110\">Total de {unit: label} enviados (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-110\">Total {unit:label} Sent (by {timeRange:grain} intervals)</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy"
@@ -444,7 +445,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-111\">Total de {unit: label} recebidos (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-111\">Total {unit:label} Received (by {timeRange:grain} intervals)</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-111\">Total de {unit: label} recebidos (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-111\">Total {unit:label} Received (by {timeRange:grain} intervals)</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -499,7 +500,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-112\">Erros de saída/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-112\">Errors Out/sec</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-112\">Erros de saída/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-112\">Errors Out/sec</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy"
@@ -507,7 +508,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-113\">Erros de entrada/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-113\">Errors In/sec</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-113\">Erros de entrada/s</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-113\">Errors In/sec</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"
@@ -562,7 +563,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-114\">Total de erros de saída (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-114\">Total Errors Out (by {timeRange:grain} intervals)</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-114\">Total de erros de saída (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-114\">Total Errors Out (by {timeRange:grain} intervals)</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"
@@ -570,7 +571,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"6e254-115\">Total de erros de entrada (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"6e254-115\">Total Errors In (by {timeRange:grain} intervals)</span></span></h3>"
+                "json": "<h3><span data-ttu-id=\"e6d84-115\">Total de erros de entrada (por intervalos de {timeRange:grain})</span><span class=\"sxs-lookup\"><span data-stu-id=\"e6d84-115\">Total Errors In (by {timeRange:grain} intervals)</span></span></h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy - Copy"
@@ -617,5 +618,6 @@
         }
     ],
     "fallbackResourceIds": [],
+    "styleSettings": {},
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
 }
