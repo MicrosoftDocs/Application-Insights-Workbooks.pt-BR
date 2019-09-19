@@ -1,0 +1,14 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "<br /><br /><br />\n##      <a name=\"insights-are-not-supported-for-classic-storage-account-go-to-monitoring-classic\"></a><span data-ttu-id=\"9a482-101\">A conta de armazenamento clássica não é compatível com o Insights.</span><span class=\"sxs-lookup\"><span data-stu-id=\"9a482-101\">Insights are not supported for Classic Storage Account.</span></span> <span data-ttu-id=\"9a482-102\">Ir para Monitoramento (clássico).</span><span class=\"sxs-lookup\"><span data-stu-id=\"9a482-102\">Go to Monitoring (classic).</span></span>"
+            },
+            "name": "text - 0"
+        }
+    ],
+    "styleSettings": {},
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
