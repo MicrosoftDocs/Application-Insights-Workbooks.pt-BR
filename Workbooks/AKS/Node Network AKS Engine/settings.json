@@ -1,15 +1,10 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"f9b0d-101\">Rede do nó</span><span class=\"sxs-lookup\"><span data-stu-id=\"f9b0d-101\">Node Network</span></span>",
+    "name": "<span data-ttu-id=\"e76dd-101\">Rede do nó</span><span class=\"sxs-lookup\"><span data-stu-id=\"e76dd-101\">Node Network</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "container-insights",
-            "resourceType": "microsoft.operationalinsights/workspaces",
-            "order": 400
-        },
-        {
-            "type": "workbook",
             "resourceType": "microsoft.operationalinsights/workspaces",
             "order": 400
         }
