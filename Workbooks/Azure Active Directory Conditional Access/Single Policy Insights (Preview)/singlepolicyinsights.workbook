@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"conditional-access-insights\"></a><span data-ttu-id=\"122f9-101\">Insights de Acesso Condicional</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-101\">Conditional Access Insights</span></span>\n"
+                "json": "# <a name=\"conditional-access-insights\"></a>Insights de Acesso Condicional\n"
             },
             "name": "text - 5"
         },
@@ -38,8 +38,6 @@
             "type": 9,
             "content": {
                 "version": "KqlParameterItem/1.0",
-                "query": "",
-                "crossComponentResources": [],
                 "parameters": [
                     {
                         "id": "9b8cc3f0-ebab-482e-be6d-903f3e066c99",
@@ -48,7 +46,7 @@
                         "label": "Conditional Access Policy",
                         "type": 2,
                         "isRequired": true,
-                        "query": "SigninLogs\r\n| project ConditionalAccessPolicies, CreatedDateTime\r\n| where ConditionalAccessPolicies != \"[]\"\r\n| top 1 by CreatedDateTime\r\n| project-away CreatedDateTime\r\n| mv-expand ConditionalAccessPolicies\r\n| where ConditionalAccessPolicies[\"result\"] !contains \"reportOnly\" and ConditionalAccessPolicies[\"result\"] !contains \"notEnabled\"\r\n| project name = ConditionalAccessPolicies[\"displayName\"]\r\n| project Value = name, Label = strcat(name, ' - (Enabled)'), selected = true, displayOrder = \"1\", group = \"Enabled policies\"\r\n| union (\r\nSigninLogs\r\n| project ConditionalAccessPolicies, CreatedDateTime\r\n| where ConditionalAccessPolicies != \"[]\"\r\n| top 1 by CreatedDateTime\r\n| project-away CreatedDateTime\r\n| mv-expand ConditionalAccessPolicies\r\n| where ConditionalAccessPolicies[\"result\"] contains \"reportOnly\"\r\n| project name = ConditionalAccessPolicies[\"displayName\"]\r\n| project Value = name, Label = strcat(name, ' - (Report-only)'), selected = false, displayOrder = \"2\", group = \"Report-only policies\"\r\n)\r\n| sort by displayOrder asc, Label asc\r\n\r\n",
+                        "query": "SigninLogs\r\n| project ConditionalAccessPolicies, CreatedDateTime, ClientAppUsed\r\n| where ConditionalAccessPolicies != \"[]\"\r\n| where ClientAppUsed == \"Browser\"\r\n| top 1 by CreatedDateTime\r\n| project-away CreatedDateTime\r\n| mv-expand ConditionalAccessPolicies\r\n| where ConditionalAccessPolicies[\"result\"] !contains \"reportOnly\" and ConditionalAccessPolicies[\"result\"] !contains \"notEnabled\"\r\n| project name = ConditionalAccessPolicies[\"displayName\"]\r\n| project Value = name, Label = strcat(name, ' - (Enabled)'), selected = true, displayOrder = \"1\", group = \"Enabled policies\"\r\n| union (\r\nSigninLogs\r\n| project ConditionalAccessPolicies, CreatedDateTime, ClientAppUsed\r\n| where ConditionalAccessPolicies != \"[]\"\r\n| where ClientAppUsed == \"Browser\"\r\n| top 1 by CreatedDateTime\r\n| project-away CreatedDateTime\r\n| mv-expand ConditionalAccessPolicies\r\n| where ConditionalAccessPolicies[\"result\"] contains \"reportOnly\"\r\n| project name = ConditionalAccessPolicies[\"displayName\"]\r\n| project Value = name, Label = strcat(name, ' - (Report-only)'), selected = false, displayOrder = \"2\", group = \"Report-only policies\"\r\n)\r\n| sort by displayOrder asc, Label asc\r\n\r\n",
                         "typeSettings": {
                             "additionalResourceOptions": [],
                             "showDefault": false
@@ -118,7 +116,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "User",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"122f9-102\">O valor padrão é Todos os usuários</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-102\">Default value is All users</span></span>",
+                        "description": "O valor padrão é Todos os usuários",
                         "isRequired": true,
                         "value": "All users",
                         "timeContext": {
@@ -131,7 +129,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "App",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"122f9-103\">O valor padrão é Todos os aplicativos</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-103\">Default value is All apps</span></span>",
+                        "description": "O valor padrão é Todos os aplicativos",
                         "isRequired": true,
                         "value": "All apps",
                         "timeContext": {
@@ -145,7 +143,7 @@
                         "name": "unit",
                         "label": "Data view",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"122f9-104\">Exibir resultados pelo número de usuários ou pelo número de entradas</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-104\">Display results by number of users or number of sign-ins</span></span>",
+                        "description": "Exibir resultados pelo número de usuários ou pelo número de entradas",
                         "isRequired": true,
                         "query": "let unit = datatable(label:string,units:string)\r\n[\"users\", \"|\",\r\n \"sign-ins\",\"//\"];\r\nunit \r\n| project Value = units, Label = label",
                         "value": "|",
@@ -165,7 +163,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"impact-summary\"></a><span data-ttu-id=\"122f9-105\">Resumo de impacto</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-105\">Impact Summary</span></span>\n<span data-ttu-id=\"122f9-106\">Aqui está o impacto da política selecionada no locatário ao longo de {TimeRange}.</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-106\">Here is the impact of the selected policy in your tenant over the {TimeRange}.</span></span> \n\n<span data-ttu-id=\"122f9-107\">💡 _Exibir resumo pelo número de usuários ou pelo número de entradas. Clique em um bloco para exibir os detalhes abaixo._</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-107\">💡 _View summary by number of users or number of sign-ins. Click on a tile to view details below._</span></span>"
+                "json": "## <a name=\"impact-summary\"></a>Resumo de impacto\nAqui está o impacto da política selecionada no locatário ao longo de {TimeRange}. \n\n💡 _Exibir resumo pelo número de usuários ou pelo número de entradas. Clique em um bloco para exibir os detalhes abaixo._"
             },
             "name": "text - 5"
         },
@@ -225,7 +223,7 @@
         {
             "type": 1,
             "content": {
-                "json": "__________________________________________\n## <a name=\"breakdown-per-condition-and-sign-in-status\"></a><span data-ttu-id=\"122f9-108\">Detalhamento por condição e status de entrada</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-108\">Breakdown per condition and sign-in status</span></span>\n<span data-ttu-id=\"122f9-109\">💡 _Clique no ícone do LogAnalytics no canto de cada consulta para executar em uma nova janela._</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-109\">💡 _Click the LogAnalytics icon in the corner of each query to run in a new window._</span></span>"
+                "json": "__________________________________________\n## <a name=\"breakdown-per-condition-and-sign-in-status\"></a>Detalhamento por condição e status de entrada\n💡 _Clique no ícone do LogAnalytics no canto de cada consulta para executar em uma nova janela._"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -237,7 +235,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"device-state\"></a><span data-ttu-id=\"122f9-110\">Estado do dispositivo</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-110\">Device State</span></span> \n<span data-ttu-id=\"122f9-111\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-111\">{resultName} ({unit:label})</span></span>"
+                "json": "### <a name=\"device-state\"></a>Estado do dispositivo \n{resultName} ({unit:label})"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -250,7 +248,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"device-platform\"></a><span data-ttu-id=\"122f9-112\">Plataforma do dispositivo</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-112\">Device Platform</span></span>\n<span data-ttu-id=\"122f9-113\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-113\">{resultName} ({unit:label})</span></span>"
+                "json": "### <a name=\"device-platform\"></a>Plataforma do dispositivo\n{resultName} ({unit:label})"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -263,7 +261,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"client-app\"></a><span data-ttu-id=\"122f9-114\">Aplicativo cliente</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-114\">Client App</span></span>\n<span data-ttu-id=\"122f9-115\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-115\">{resultName} ({unit:label})</span></span>"
+                "json": "### <a name=\"client-app\"></a>Aplicativo cliente\n{resultName} ({unit:label})"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -396,7 +394,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"sign-in-risk\"></a><span data-ttu-id=\"122f9-116\">Risco de entrada</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-116\">Sign-in Risk</span></span>\n<span data-ttu-id=\"122f9-117\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-117\">{resultName} ({unit:label})</span></span>"
+                "json": "### <a name=\"sign-in-risk\"></a>Risco de entrada\n{resultName} ({unit:label})"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -409,7 +407,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"location\"></a><span data-ttu-id=\"122f9-118\">Location</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-118\">Location</span></span>\n<span data-ttu-id=\"122f9-119\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-119\">{resultName} ({unit:label})</span></span>"
+                "json": "### <a name=\"location\"></a>Location\n{resultName} ({unit:label})"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -422,7 +420,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"applications\"></a><span data-ttu-id=\"122f9-120\">APLICATIVOS</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-120\">Applications</span></span>\n<span data-ttu-id=\"122f9-121\">{resultName} ({unit:label})</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-121\">{resultName} ({unit:label})</span></span>\n"
+                "json": "### <a name=\"applications\"></a>APLICATIVOS\n{resultName} ({unit:label})\n"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
@@ -691,7 +689,7 @@
         {
             "type": 1,
             "content": {
-                "json": "____________________________________________\n## <a name=\"sign-in-details\"></a><span data-ttu-id=\"122f9-122\">Detalhes de entrada</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-122\">Sign-in Details</span></span>\n<span data-ttu-id=\"122f9-123\">💡 _Para investigar os detalhes de entrada de um usuário específico, filtre por nome de usuário na parte superior da pasta de trabalho_</span><span class=\"sxs-lookup\"><span data-stu-id=\"122f9-123\">💡 _To investigate sign-in details of a specific user, filter by username at the top of the workbook_</span></span>"
+                "json": "____________________________________________\n## <a name=\"sign-in-details\"></a>Detalhes de entrada\n💡 _Para investigar os detalhes de entrada de um usuário específico, filtre por nome de usuário na parte superior da pasta de trabalho_"
             },
             "conditionalVisibility": {
                 "parameterName": "statusCode",
