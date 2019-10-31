@@ -21,7 +21,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Date",
                         "type": 4,
-                        "description": "Selecione o intervalo de datas",
+                        "description": "Selecionar o intervalo de data",
                         "isRequired": true,
                         "value": {
                             "durationMs": 2592000000

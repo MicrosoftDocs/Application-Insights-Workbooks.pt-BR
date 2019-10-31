@@ -1,0 +1,19 @@
+{
+    "name": "Relatório de Visão Geral de Segurança",
+    "description": "Um resumo de tentativas de entrada e uma lista de algumas contas nas quais você deve fazer check-in",
+    "icon": "aadds-logo",
+    "tags": [
+        "AADDS",
+        "Audit logs"
+    ],
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "Microsoft.AAD/domainServices",
+            "order": 100
+        }
+    ],
+    "order": 100,
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json"
+}
