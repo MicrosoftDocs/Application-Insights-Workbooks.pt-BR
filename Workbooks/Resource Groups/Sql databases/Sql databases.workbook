@@ -128,14 +128,6 @@
                 "metrics": [
                     {
                         "namespace": "microsoft.sql/servers/databases",
-                        "metric": "microsoft.sql/servers/databases-Basic-dtu_consumption_percent",
-                        "aggregation": 4,
-                        "splitBy": null,
-                        "splitBySortOrder": -1,
-                        "splitByLimit": 5
-                    },
-                    {
-                        "namespace": "microsoft.sql/servers/databases",
                         "metric": "microsoft.sql/servers/databases-Basic-cpu_percent",
                         "aggregation": 4,
                         "splitBy": null,
@@ -181,31 +173,6 @@
                             "formatter": 13,
                             "formatOptions": {
                                 "linkTarget": "Resource",
-                                "showIcon": true
-                            }
-                        },
-                        {
-                            "columnMatch": "microsoft.sql/servers/databases-Basic-dtu_consumption_percent",
-                            "formatter": 8,
-                            "formatOptions": {
-                                "min": 0,
-                                "palette": "blue",
-                                "showIcon": true
-                            },
-                            "numberFormat": {
-                                "unit": 1,
-                                "options": {
-                                    "style": "decimal",
-                                    "maximumFractionDigits": 1
-                                }
-                            }
-                        },
-                        {
-                            "columnMatch": "microsoft.sql/servers/databases-Basic-dtu_consumption_percent Timeline",
-                            "formatter": 9,
-                            "formatOptions": {
-                                "min": 0,
-                                "palette": "blue",
                                 "showIcon": true
                             }
                         },
@@ -304,7 +271,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"2d8ad-101\">⚠️ Parece que você não tem nenhum banco de dados SQL neste grupo de recursos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"2d8ad-101\">⚠️ Looks like you don't have any SQL databases in this resource group.</span></span>"
+                "json": "⚠️ Parece que você não tem nenhum banco de dados SQL neste grupo de recursos."
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",
