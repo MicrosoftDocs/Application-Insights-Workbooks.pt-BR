@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"eb643-101\">Segurança e Auditoria</span><span class=\"sxs-lookup\"><span data-stu-id=\"eb643-101\">Security and Audit</span></span>",
+    "name": "Segurança e Auditoria",
     "author": "Microsoft",
     "galleries": [
         {

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"9343e-101\">Tendências de conformidade de dispositivos</span><span class=\"sxs-lookup\"><span data-stu-id=\"9343e-101\">Device Compliance Trends</span></span>",
+    "name": "Tendências de conformidade de dispositivos",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"66053-101\">Métricas de falha</span><span class=\"sxs-lookup\"><span data-stu-id=\"66053-101\">Failure Metrics</span></span>",
+    "name": "Métricas de falha",
     "author": "Microsoft",
     "galleries": [
         {

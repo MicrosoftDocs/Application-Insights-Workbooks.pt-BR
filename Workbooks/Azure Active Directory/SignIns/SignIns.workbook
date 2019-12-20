@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"sign-in-analysis\"></a><span data-ttu-id=\"ceef7-101\">Análise de entrada</span><span class=\"sxs-lookup\"><span data-stu-id=\"ceef7-101\">Sign-in Analysis</span></span>"
+                "json": "## <a name=\"sign-in-analysis\"></a>Análise de entrada"
             },
             "conditionalVisibility": null,
             "name": "text - 0"
@@ -239,7 +239,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<br />\n<span data-ttu-id=\"ceef7-102\">💡 _Clique em um bloco ou uma linha na grade para aprofundar ainda mais_</span><span class=\"sxs-lookup\"><span data-stu-id=\"ceef7-102\">💡 _Click on a tile or a row in the grid to drill-in further_</span></span>"
+                "json": "<br />\n💡 _Clique em um bloco ou uma linha na grade para aprofundar ainda mais_"
             },
             "conditionalVisibility": null,
             "name": "text - 6 - Copy"

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"a94fb-101\">Painel de contexto de E/S do disco</span><span class=\"sxs-lookup\"><span data-stu-id=\"a94fb-101\">Disk IO Context Pane</span></span>",
+    "name": "Painel de contexto de E/S do disco",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [

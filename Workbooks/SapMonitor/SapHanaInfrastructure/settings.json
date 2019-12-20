@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"017cc-101\">Infraestrutura do SAP HANA</span><span class=\"sxs-lookup\"><span data-stu-id=\"017cc-101\">SAP HANA Infrastructure</span></span>",
+    "name": "Infraestrutura do SAP HANA",
     "author": "Microsoft",
     "galleries": [
         {

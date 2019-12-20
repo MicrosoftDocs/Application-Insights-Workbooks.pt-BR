@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"10e09-101\">Análise do contador de desempenho</span><span class=\"sxs-lookup\"><span data-stu-id=\"10e09-101\">Performance Counter Analysis</span></span>",
+    "name": "Análise do contador de desempenho",
     "author": "Microsoft",
     "galleries": [
         {
