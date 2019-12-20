@@ -316,7 +316,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"6140d-101\">💡 _Clique nos links na célula para ver mais detalhes sobre uma conta de armazenamento_</span><span class=\"sxs-lookup\"><span data-stu-id=\"6140d-101\">💡 _Click on the links in the cells to see more details about a storage account_</span></span>"
+                "json": "💡 _Clique nos links na célula para ver mais detalhes sobre uma conta de armazenamento_"
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",
@@ -328,7 +328,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"6140d-102\">⚠️ Parece que você não tem nenhuma conta de armazenamento neste grupo de recursos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"6140d-102\">⚠️ Looks like you don't have any storage accounts in this resource group.</span></span>"
+                "json": "⚠️ Parece que você não tem nenhuma conta de armazenamento neste grupo de recursos."
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",

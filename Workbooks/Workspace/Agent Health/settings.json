@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"78314-101\">Integridade do agente</span><span class=\"sxs-lookup\"><span data-stu-id=\"78314-101\">Agent Health</span></span>",
+    "name": "Integridade do agente",
     "author": "Microsoft",
     "galleries": [
         {

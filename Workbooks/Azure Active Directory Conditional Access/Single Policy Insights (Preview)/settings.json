@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"8ce12-101\">Insights de Política Única (versão prévia)</span><span class=\"sxs-lookup\"><span data-stu-id=\"8ce12-101\">Single Policy Insights (Preview)</span></span>",
+    "name": "Insights de Política Única (versão prévia)",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [

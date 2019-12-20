@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"troubleshooting-exceptions\"></a><span data-ttu-id=\"21930-101\">Solucionando problemas de exceções</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-101\">Troubleshooting Exceptions</span></span>\n<span data-ttu-id=\"21930-102\">Este guia de solução de problemas ajuda você a analisar exceções do aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-102\">This troubleshooting guide helps you analyze your application's exceptions.</span></span>"
+                "json": "# <a name=\"troubleshooting-exceptions\"></a>Solucionando problemas de exceções\nEste guia de solução de problemas ajuda você a analisar exceções do aplicativo."
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -169,7 +169,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"21930-103\">Defina os parâmetros acima para ajustar seu conjunto de análise.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-103\">Set the parameters above to tune your analysis set.</span></span> <span data-ttu-id=\"21930-104\">Use o parâmetro `Show` acima para ver somente falhas novas ou existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-104\">Use the `Show` parameter above to see only existing or new failures.</span></span> <span data-ttu-id=\"21930-105\">O parâmetro `UseComparisionTimeRange` de comparação define a janela de tempo para procurar falhas existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-105\">The comparision `UseComparisionTimeRange` parameter sets the window of time to look for existing failures.</span></span> <span data-ttu-id=\"21930-106\">Um `Problem` é apenas uma combinação do tipo de exceção e do método no qual ela é gerada.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-106\">A `Problem` just a combination of exception type and method at which it is thrown.</span></span> <span data-ttu-id=\"21930-107\">Alterar esse parâmetro permite que você filtre para um conjunto menor de problemas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-107\">Changing this parameter allows you filter down to a smaller set of issues.</span></span>"
+                "json": "Defina os parâmetros acima para ajustar seu conjunto de análise. Use o parâmetro `Show` acima para ver somente falhas novas ou existentes. O parâmetro `UseComparisionTimeRange` de comparação define a janela de tempo para procurar falhas existentes. Um `Problem` é apenas uma combinação do tipo de exceção e do método no qual ela é gerada. Alterar esse parâmetro permite que você filtre para um conjunto menor de problemas."
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -177,7 +177,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"exception-trend\"></a><span data-ttu-id=\"21930-108\">Tendência de exceção</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-108\">Exception Trend</span></span>\n<span data-ttu-id=\"21930-109\">O gráfico abaixo mostra a tendência de exceções durante o intervalo de tempo escolhido por você.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-109\">The chart below shows the trend of exceptions over your chosen time range.</span></span> <span data-ttu-id=\"21930-110\">Ele é dividido em exceções novas e existentes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-110\">It is split by new and existing exceptions.</span></span> "
+                "json": "## <a name=\"exception-trend\"></a>Tendência de exceção\nO gráfico abaixo mostra a tendência de exceções durante o intervalo de tempo escolhido por você. Ele é dividido em exceções novas e existentes. "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -201,7 +201,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"exception-details\"></a><span data-ttu-id=\"21930-111\">Detalhes da exceção</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-111\">Exception Details</span></span>"
+                "json": "## <a name=\"exception-details\"></a>Detalhes da exceção"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -209,7 +209,7 @@
         {
             "type": 1,
             "content": {
-                "json": "\n<span data-ttu-id=\"21930-112\">🔸 falha nova 🔹 falha existente</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-112\">🔸 New Failure 🔹 Existing Failure</span></span>"
+                "json": "\n🔸 falha nova 🔹 falha existente"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -264,7 +264,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"mitigation\"></a><span data-ttu-id=\"21930-113\">Redução</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-113\">Mitigation</span></span>\n<span data-ttu-id=\"21930-114\">Use esta seção lista as etapas de recuperação para os problemas conhecidos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-114\">Use this section to list out the recovery steps for known issues.</span></span> <span data-ttu-id=\"21930-115\">Isso permite o compartilhamento de informações com investigadores de problemas futuros.</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-115\">This allows sharing of information with future issue investigators.</span></span> "
+                "json": "## <a name=\"mitigation\"></a>Redução\nUse esta seção lista as etapas de recuperação para os problemas conhecidos. Isso permite o compartilhamento de informações com investigadores de problemas futuros. "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -272,7 +272,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"customizing-your-troubleshooting-guide\"></a><span data-ttu-id=\"21930-116\">Personalizando seu guia de solução de problemas</span><span class=\"sxs-lookup\"><span data-stu-id=\"21930-116\">Customizing your Troubleshooting Guide</span></span>\n```\n1. Start editing this TSG by clicking on the 'Edit' button on the toolbar on top. \n2. Use the edit buttons on bottom-right of markdown control to update it's contents. \n3. Update the parameters to tune your analysis set.\n4. You can also update the underlying query or grid properties to personalize the analysis/view.\n5. If you want to have two sections for different performance counters, use the clone button at the bottom toolbar of a control. Use the ↑ or ↓ buttons to move the controls up or down.\n```\n"
+                "json": "## <a name=\"customizing-your-troubleshooting-guide\"></a>Personalizando seu guia de solução de problemas\n```\n1. Start editing this TSG by clicking on the 'Edit' button on the toolbar on top. \n2. Use the edit buttons on bottom-right of markdown control to update it's contents. \n3. Update the parameters to tune your analysis set.\n4. You can also update the underlying query or grid properties to personalize the analysis/view.\n5. If you want to have two sections for different performance counters, use the clone button at the bottom toolbar of a control. Use the ↑ or ↓ buttons to move the controls up or down.\n```\n"
             },
             "conditionalVisibility": null,
             "halfWidth": false

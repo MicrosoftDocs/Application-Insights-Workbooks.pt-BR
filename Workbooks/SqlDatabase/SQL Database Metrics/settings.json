@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"b330b-101\">Métrica de Banco de Dados SQL</span><span class=\"sxs-lookup\"><span data-stu-id=\"b330b-101\">SQL Database Metrics</span></span>",
+    "name": "Métrica de Banco de Dados SQL",
     "author": "Microsoft",
     "galleries": [
         {

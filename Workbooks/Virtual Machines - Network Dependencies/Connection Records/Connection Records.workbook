@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"b52a5-101\">Cada <strong>registro</strong> do [VMConnections](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map) representa uma conexão de um computador com outro em um intervalo de 1 minuto.</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-101\">Each <strong>record</strong> from [VMConnections](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map) represents a connection from one machine to another over a 1-minute interval.</span></span>\n\n<span data-ttu-id=\"b52a5-102\">Cada <strong>registro</strong> agrega as propriedades a seguir em um intervalo de 1 minuto: o número total de bytes enviados e recebidos, o número de links (conexões de porta) estabelecidos, atualmente ativos e encerrados e o número de respostas recebidas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-102\">Each <strong>record</strong> aggregates the following properties over a 1-minute interval: the total number of bytes sent and received, the number of links (port connections) that are established, currently active, and terminated, and the number of responses received.</span></span>\n\n<hr style=\"height: 2px;\" />"
+                "json": "Cada <strong>registro</strong> do [VMConnections](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map) representa uma conexão de um computador com outro em um intervalo de 1 minuto.\n\nCada <strong>registro</strong> agrega as propriedades a seguir em um intervalo de 1 minuto: o número total de bytes enviados e recebidos, o número de links (conexões de porta) estabelecidos, atualmente ativos e encerrados e o número de respostas recebidas.\n\n<hr style=\"height: 2px;\" />"
             },
             "conditionalVisibility": null
         },
@@ -157,14 +157,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<p><span data-ttu-id=\"b52a5-103\"><strong>TimeRange</strong> especifica o período máximo retroativo tempo para coletar registros de conexão da <em>VMConnections</em>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-103\"><strong>TimeRange</strong> specifies how far back in time to gather connection records from <em>VMConnections</em>.</span></span> <span data-ttu-id=\"b52a5-104\">A seleção de um intervalo de tempo grande resultará em um tempo longo de processamento da consulta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-104\">Selecting a large time range will result in a long query processing time.</span></span></p>\n\n<hr style=\"height: 1px;\" />"
+                "json": "<p><strong>TimeRange</strong> especifica o período máximo retroativo tempo para coletar registros de conexão da <em>VMConnections</em>. A seleção de um intervalo de tempo grande resultará em um tempo longo de processamento da consulta.</p>\n\n<hr style=\"height: 1px;\" />"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"aggregate-connection-records\"></a><span data-ttu-id=\"b52a5-105\">Registros de conexão de agregação</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-105\">Aggregate Connection Records</span></span>\n\n"
+                "json": "### <a name=\"aggregate-connection-records\"></a>Registros de conexão de agregação\n\n"
             },
             "conditionalVisibility": null,
             "customWidth": "25"
@@ -172,7 +172,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"connection-records-by-country\"></a><span data-ttu-id=\"b52a5-106\">Registros de conexão por país</span><span class=\"sxs-lookup\"><span data-stu-id=\"b52a5-106\">Connection Records by Country</span></span>"
+                "json": "### <a name=\"connection-records-by-country\"></a>Registros de conexão por país"
             },
             "conditionalVisibility": null,
             "customWidth": "75"

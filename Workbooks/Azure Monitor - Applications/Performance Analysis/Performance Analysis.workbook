@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"application-performance-analysis\"></a><span data-ttu-id=\"29596-101\">Análise de desempenho do aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"29596-101\">Application Performance Analysis</span></span>"
+                "json": "## <a name=\"application-performance-analysis\"></a>Análise de desempenho do aplicativo"
             },
             "conditionalVisibility": null
         },
@@ -372,14 +372,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"29596-102\">💡 _Selecione uma linha na tabela acima para ver mais detalhes_</span><span class=\"sxs-lookup\"><span data-stu-id=\"29596-102\">💡 _Select a row in the table above to see more details_</span></span>\n<br />\n<br />\n"
+                "json": "💡 _Selecione uma linha na tabela acima para ver mais detalhes_\n<br />\n<br />\n"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"request-duration-milliseconds\"></a><span data-ttu-id=\"29596-103\">Duração da solicitação (milissegundos)</span><span class=\"sxs-lookup\"><span data-stu-id=\"29596-103\">Request Duration (milliseconds)</span></span>"
+                "json": "### <a name=\"request-duration-milliseconds\"></a>Duração da solicitação (milissegundos)"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -387,7 +387,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"request-count\"></a><span data-ttu-id=\"29596-104\">Contagem de solicitações</span><span class=\"sxs-lookup\"><span data-stu-id=\"29596-104\">Request Count</span></span>"
+                "json": "### <a name=\"request-count\"></a>Contagem de solicitações"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

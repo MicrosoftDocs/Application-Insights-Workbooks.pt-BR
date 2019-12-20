@@ -5,14 +5,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"azure-blockchain-workbench-logs--troubleshooting-guide\"></a><span data-ttu-id=\"c0454-101\">Guia de solução de problemas e logs do Azure Blockchain Workbench</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-101\">Azure Blockchain Workbench Logs & Troubleshooting Guide</span></span>\n---\n\n<span data-ttu-id=\"c0454-102\">Esta pasta de trabalho foi projetada para oferecer a você algumas maneiras de descobrir a causa raiz das falhas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-102\">This workbook is designed to give you some ways to root cause your failures.</span></span> <span data-ttu-id=\"c0454-103\">Conecte-se a requestId para seguir o fluxo da solicitação e exibir os respectivos logs.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-103\">Plug in the requestId to follow the request's flow and view its logs.</span></span><br/>\n<span data-ttu-id=\"c0454-104\">Para entender alguns dos erros comuns, consulte a seção \"Erros comuns vistos nos logs\" de nosso [Guia de solução de problemas do GitHub](https://aka.ms/workbenchtroubleshooting).</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-104\">To understand some of the common errors, please view the \"Common errors seen in logs\" section of our [Github troubleshooting guide](https://aka.ms/workbenchtroubleshooting).</span></span>"
+                "json": "## <a name=\"azure-blockchain-workbench-logs--troubleshooting-guide\"></a>Guia de solução de problemas e logs do Azure Blockchain Workbench\n---\n\nEsta pasta de trabalho foi projetada para oferecer a você algumas maneiras de descobrir a causa raiz das falhas. Conecte-se a requestId para seguir o fluxo da solicitação e exibir os respectivos logs.<br/>\nPara entender alguns dos erros comuns, consulte a seção \"Erros comuns vistos nos logs\" de nosso [Guia de solução de problemas do GitHub](https://aka.ms/workbenchtroubleshooting)."
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"logs-table\"></a><span data-ttu-id=\"c0454-105\">Tabela de logs</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-105\">Logs Table</span></span>\n---"
+                "json": "## <a name=\"logs-table\"></a>Tabela de logs\n---"
             },
             "conditionalVisibility": null
         },
@@ -115,14 +115,14 @@
         {
             "type": 1,
             "content": {
-                "json": "##### <a name=\"how-to-export\"></a><span data-ttu-id=\"c0454-106\">Como exportar:</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-106\">How to export:</span></span>\n<span data-ttu-id=\"c0454-107\">Clique no ícone na parte superior direita da tabela de logs do Workbench abaixo e clique em \"Exportar\" no painel superior à direita.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-107\">Click on the icon to the top right of the Workbench logs table below and click on 'Export' on the top right panel.</span></span>"
+                "json": "##### <a name=\"how-to-export\"></a>Como exportar:\nClique no ícone na parte superior direita da tabela de logs do Workbench abaixo e clique em \"Exportar\" no painel superior à direita."
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "<br/>\n<br/>\n<br/>\n<br/>\n\n## <a name=\"potential-liveness-issues\"></a><span data-ttu-id=\"c0454-108\">Possíveis problemas de atividade</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-108\">Potential Liveness Issues</span></span>\n---\n<span data-ttu-id=\"c0454-109\">Nas tabelas abaixo, você pode ver se qualquer uma das suas solicitações do Workbench entrou no sistema em um estado com um problema de atividade.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-109\">In the below tables you can see whether any of your requests from Workbench has gotten the system in a state with a liveness issue.</span></span> <span data-ttu-id=\"c0454-110\">Isso significa que as solicitações não estão sendo processadas como esperado e continuarão a tentar envio infinitamente.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-110\">This means that the requests are not being processed as expected and will continue to try submitting infinitely.</span></span>\n<span data-ttu-id=\"c0454-111\">Observe que esses problemas geralmente não são causados por bugs na base de código do Workbench, mas sim por problemas que surgem de serviços inoperantes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-111\">Note that these issues are generally not caused by bugs in the Workbench codebase, but rather issues that arise from services being down.</span></span>\n\n### <a name=\"trycommitcontractaction-counter\"></a><span data-ttu-id=\"c0454-112\">Contador TryCommitContractAction</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-112\">TryCommitContractAction counter</span></span>\n<span data-ttu-id=\"c0454-113\">Se houve mais de 10 tentativas de confirmar o contrato/ação de contrato ao blockchain e recibo da transação não chegou, uma destas situações pode estar ocorrendo:</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-113\">If there has been over 10 tries to commit the contract/contract action to the blockchain and the transaction receipt had not arrived, then one of two things could be happening:</span></span>\n1. <span data-ttu-id=\"c0454-114\">O eth-watcher está inativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-114\">The eth-watcher is down.</span></span>\n2. <span data-ttu-id=\"c0454-115\">O blockchain não está respondendo ou está levando muito tempo para processar.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-115\">The blockchain is unresponsive or taking a long time to process.</span></span>\n\n<span data-ttu-id=\"c0454-116\">Esta tabela mostra as solicitações que poderiam ter esses problemas, juntamente com o número de vezes que o sistema (eth-tx-submitter) tentou confirmar a ação de contrato para o blockchain.</span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-116\">This table shows the requests that could have such issues, along with the number of times the system (eth-tx-submitter) has tried to commit the contract action to the blockchain.</span></span> "
+                "json": "<br/>\n<br/>\n<br/>\n<br/>\n\n## <a name=\"potential-liveness-issues\"></a>Possíveis problemas de atividade\n---\nNas tabelas abaixo, você pode ver se qualquer uma das suas solicitações do Workbench entrou no sistema em um estado com um problema de atividade. Isso significa que as solicitações não estão sendo processadas como esperado e continuarão a tentar envio infinitamente.\nObserve que esses problemas geralmente não são causados por bugs na base de código do Workbench, mas sim por problemas que surgem de serviços inoperantes.\n\n### <a name=\"trycommitcontractaction-counter\"></a>Contador TryCommitContractAction\nSe houve mais de 10 tentativas de confirmar o contrato/ação de contrato ao blockchain e recibo da transação não chegou, uma destas situações pode estar ocorrendo:\n1. O eth-watcher está inativo.\n2. O blockchain não está respondendo ou está levando muito tempo para processar.\n\nEsta tabela mostra as solicitações que poderiam ter esses problemas, juntamente com o número de vezes que o sistema (eth-tx-submitter) tentou confirmar a ação de contrato para o blockchain. "
             },
             "conditionalVisibility": null
         },
@@ -152,7 +152,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"c0454-117\"><span style=\"color:SpringGreen; font-size:2em;\">Não há nenhum problema de atividade nas últimas 24 horas!</span></span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-117\"><span style=\"color:SpringGreen; font-size:2em;\">There are no liveness issues in the last 24 hours!</span></span></span>"
+                "json": "<span style=\"color:SpringGreen; font-size:2em;\">Não há nenhum problema de atividade nas últimas 24 horas!</span>"
             },
             "conditionalVisibility": {
                 "parameterName": "hasLivenessBugInLast24hrs",
@@ -163,7 +163,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"c0454-118\"><span style=\"color:red; font-size:2em;\">Há possíveis problemas de atividade :(</span></span><span class=\"sxs-lookup\"><span data-stu-id=\"c0454-118\"><span style=\"color:red; font-size:2em;\">There are potential liveness issues :(</span></span></span>"
+                "json": "<span style=\"color:red; font-size:2em;\">Há possíveis problemas de atividade :(</span>"
             },
             "conditionalVisibility": {
                 "parameterName": "hasLivenessBugInLast24hrs",

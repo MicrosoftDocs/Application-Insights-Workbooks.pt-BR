@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"sign-ins-using-conditional-access\"></a><span data-ttu-id=\"82873-101\">Entradas usando o acesso condicional</span><span class=\"sxs-lookup\"><span data-stu-id=\"82873-101\">Sign-ins using Conditional Access</span></span>"
+                "json": "## <a name=\"sign-ins-using-conditional-access\"></a>Entradas usando o acesso condicional"
             },
             "name": "text - 0"
         },

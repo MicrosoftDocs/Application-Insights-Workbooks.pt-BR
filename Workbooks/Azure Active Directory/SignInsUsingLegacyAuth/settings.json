@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"f70a6-101\">Entradas usando a autenticação herdada</span><span class=\"sxs-lookup\"><span data-stu-id=\"f70a6-101\">Sign-ins using Legacy Authentication</span></span>",
+    "name": "Entradas usando a autenticação herdada",
     "author": "Microsoft",
     "galleries": [
         {

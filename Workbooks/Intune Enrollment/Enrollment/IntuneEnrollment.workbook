@@ -5,14 +5,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"intune-enrollment-activity\"></a><span data-ttu-id=\"ab80f-101\">Atividade de registro do Intune</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-101\">Intune Enrollment Activity</span></span>"
+                "json": "# <a name=\"intune-enrollment-activity\"></a>Atividade de registro do Intune"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"parameters\"></a><span data-ttu-id=\"ab80f-102\">parâmetros</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-102\">Parameters</span></span>"
+                "json": "## <a name=\"parameters\"></a>parâmetros"
             },
             "conditionalVisibility": null
         },
@@ -137,7 +137,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-events-trend\"></a><span data-ttu-id=\"ab80f-103\">Tendência de eventos de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-103\">Enrollment Events Trend</span></span>"
+                "json": "## <a name=\"enrollment-events-trend\"></a>Tendência de eventos de registro"
             },
             "conditionalVisibility": null
         },
@@ -168,7 +168,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-statistics\"></a><span data-ttu-id=\"ab80f-104\">Estatísticas de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-104\">Enrollment Statistics</span></span>"
+                "json": "## <a name=\"enrollment-statistics\"></a>Estatísticas de registro"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -176,7 +176,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-success-by-enrollment-type\"></a><span data-ttu-id=\"ab80f-105\">Sucesso do registro por tipo de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-105\">Enrollment Success by Enrollment Type</span></span>"
+                "json": "## <a name=\"enrollment-success-by-enrollment-type\"></a>Sucesso do registro por tipo de registro"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -245,14 +245,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"enrollment-failures\"></a><span data-ttu-id=\"ab80f-106\">Falhas de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-106\">Enrollment Failures</span></span>"
+                "json": "# <a name=\"enrollment-failures\"></a>Falhas de registro"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failure-reasons\"></a><span data-ttu-id=\"ab80f-107\">Motivos de falha de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-107\">Enrollment Failure reasons</span></span>"
+                "json": "## <a name=\"enrollment-failure-reasons\"></a>Motivos de falha de registro"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -260,7 +260,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failures-by-platform\"></a><span data-ttu-id=\"ab80f-108\">Falhas de registro por plataforma</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-108\">Enrollment Failures by Platform</span></span>"
+                "json": "## <a name=\"enrollment-failures-by-platform\"></a>Falhas de registro por plataforma"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -340,7 +340,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failures-by-enrollment-type\"></a><span data-ttu-id=\"ab80f-109\">Falhas de registro por tipo de registro</span><span class=\"sxs-lookup\"><span data-stu-id=\"ab80f-109\">Enrollment Failures by Enrollment Type</span></span>"
+                "json": "## <a name=\"enrollment-failures-by-enrollment-type\"></a>Falhas de registro por tipo de registro"
             },
             "conditionalVisibility": null
         },

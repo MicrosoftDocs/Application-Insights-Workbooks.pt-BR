@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"6a442-101\">Visão geral da conta de armazenamento</span><span class=\"sxs-lookup\"><span data-stu-id=\"6a442-101\">Storage Account Overview</span></span>",
+    "name": "Visão geral da conta de armazenamento",
     "author": "Microsoft",
     "galleries": [
         {

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"7337a-101\">Funil segmentado</span><span class=\"sxs-lookup\"><span data-stu-id=\"7337a-101\">Segmented Funnel</span></span>",
+    "name": "Funil segmentado",
     "author": "Microsoft",
     "galleries": [
         {

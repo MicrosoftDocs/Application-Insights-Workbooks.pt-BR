@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"f3b73-101\">💡 Você precisará instalar o [Agente MMA](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows) em seu computador Windows para exibir _Reinicializações de VM Inesperadas_ ou _Falhas de VM_ da tabela `Events`</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-101\">💡 You will need to install [MMA Agent](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows) on your Windows machine in order to view _Unexpected VM Reboots_ or _VM Crashes_ from the `Events` table</span></span>"
+                "json": "💡 Você precisará instalar o [Agente MMA](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows) em seu computador Windows para exibir _Reinicializações de VM Inesperadas_ ou _Falhas de VM_ da tabela `Events`"
             },
             "conditionalVisibility": null
         },
@@ -162,7 +162,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"unexpected-vm-reboots\"></a><span data-ttu-id=\"f3b73-102\">Reinicializações de VM inesperadas</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-102\">Unexpected VM Reboots</span></span>"
+                "json": "## <a name=\"unexpected-vm-reboots\"></a>Reinicializações de VM inesperadas"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -170,7 +170,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"vm-crashes\"></a><span data-ttu-id=\"f3b73-103\">Falhas de VM</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-103\">VM Crashes</span></span>"
+                "json": "## <a name=\"vm-crashes\"></a>Falhas de VM"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -264,7 +264,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"outbound-connection-failures\"></a><span data-ttu-id=\"f3b73-104\">Falhas de conexão de saída</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-104\">Outbound Connection Failures</span></span> "
+                "json": "## <a name=\"outbound-connection-failures\"></a>Falhas de conexão de saída "
             },
             "conditionalVisibility": null
         },
@@ -340,7 +340,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"vpn-tunnel-stats\"></a><span data-ttu-id=\"f3b73-105\">Estatísticas de túnel VPN</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-105\">VPN Tunnel Stats</span></span>"
+                "json": "## <a name=\"vpn-tunnel-stats\"></a>Estatísticas de túnel VPN"
             },
             "conditionalVisibility": null
         },
@@ -389,7 +389,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"successful-activities\"></a><span data-ttu-id=\"f3b73-106\">Atividades bem-sucedidas</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-106\">Successful Activities</span></span>"
+                "json": "## <a name=\"successful-activities\"></a>Atividades bem-sucedidas"
             },
             "conditionalVisibility": null,
             "customWidth": "33"
@@ -397,7 +397,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"failed-activities\"></a><span data-ttu-id=\"f3b73-107\">Atividades com falha</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-107\">Failed Activities</span></span>"
+                "json": "## <a name=\"failed-activities\"></a>Atividades com falha"
             },
             "conditionalVisibility": null,
             "customWidth": "33"
@@ -405,7 +405,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"remaining-activities\"></a><span data-ttu-id=\"f3b73-108\">Atividades restantes</span><span class=\"sxs-lookup\"><span data-stu-id=\"f3b73-108\">Remaining Activities</span></span>"
+                "json": "## <a name=\"remaining-activities\"></a>Atividades restantes"
             },
             "conditionalVisibility": null,
             "customWidth": "33"

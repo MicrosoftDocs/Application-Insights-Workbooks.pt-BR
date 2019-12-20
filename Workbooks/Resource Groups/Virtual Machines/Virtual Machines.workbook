@@ -313,7 +313,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"462d5-101\">💡 _Clique na célula `Percentage CPU` para ver mais informações sobre a máquina virtual_</span><span class=\"sxs-lookup\"><span data-stu-id=\"462d5-101\">💡 _Click on `Percentage CPU` cell to see more information about the virtual machine_</span></span>"
+                "json": "💡 _Clique na célula `Percentage CPU` para ver mais informações sobre a máquina virtual_"
             },
             "conditionalVisibility": {
                 "parameterName": "VirtualMachines",
@@ -325,7 +325,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"462d5-102\">⚠️ Parece que você não tem nenhuma máquina virtual neste grupo de recursos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"462d5-102\">⚠️ Looks like you don't have any virtual machines in this resource group.</span></span>"
+                "json": "⚠️ Parece que você não tem nenhuma máquina virtual neste grupo de recursos."
             },
             "conditionalVisibility": {
                 "parameterName": "VirtualMachines",
