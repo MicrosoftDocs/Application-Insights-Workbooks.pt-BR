@@ -169,7 +169,7 @@
         {
             "type": 1,
             "content": {
-                "json": "{Message} _Contas de armazenamento_"
+                "json": "{Message}\n_Contas de armazenamento_"
             },
             "name": "text - 3",
             "styleSettings": {
