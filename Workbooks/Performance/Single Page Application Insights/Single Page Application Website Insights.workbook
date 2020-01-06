@@ -47,7 +47,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<Strong>O fluxo do modelo</Strong>:\n\n1. Veja o desempenho de suas rotas\n2. <strong>Selecione uma rota </strong> aprofundar-se no diagnóstico. \n3. Os gráficos fornecidos para a rota selecionada são:\n<br>    a. Componente de tempo de carregamento para cada um dos componentes incluídos no roteiro selecionado\n<br>   b. Detalhamento do tempo de carregamento do aplicativo\n\n<p>**Os parâmetros abaixo afetam todos os gráficos abaixo:**</p>\n"
+                "json": "<Strong>O fluxo do modelo</Strong>:\n\n1. Veja o desempenho de suas rotas\n2. <strong>Selecione uma rota </strong> aprofundar-se no diagnóstico. \n3. Os gráficos fornecidos para a rota selecionada são:\n<br>   a. Componente de tempo de carregamento para cada um dos componentes incluídos no roteiro selecionado\n<br>   b. Detalhamento do tempo de carregamento do aplicativo\n\n<p>**Os parâmetros abaixo afetam todos os gráficos abaixo:**</p>\n"
             },
             "conditionalVisibility": {
                 "parameterName": "has_Mezzurite_Data",
@@ -614,7 +614,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h2 style=\"text-decoration: underline; margin-bottom: 0;\">Desempenho dos subtempos de carregamento da rota \"{Route}\"</h2>\nEste gráfico é usado se seu <strong>ALT</strong> regrediu.  Os tempos aqui são do objeto de Tempos de desempenho do navegador.  Esses subtempos são provenientes do tempo de Navegação de Desempenho do navegador e se baseiam nos <a href=\"https://www.w3.org/TR/2012/REC-navigation-timing-20121217/\">padrões W3C</a>.  Veja o <a href=\"https://github.com/Microsoft/Mezzurite\">GitHub do Mezzurite</a> para obter mais informações."
+                "json": "<h2 style=\"text-decoration: underline; margin-bottom: 0;\">Desempenho dos subtempos de carregamento de aplicativos da rota \"{Route}\"</h2>\nEste gráfico é usado se seu <strong>ALT</strong> regrediu.  Os tempos aqui são do objeto de Tempos de desempenho do navegador.  Esses subtempos são provenientes do tempo de Navegação de Desempenho do navegador e se baseiam nos <a href=\"https://www.w3.org/TR/2012/REC-navigation-timing-20121217/\">padrões W3C</a>.  Veja o <a href=\"https://github.com/Microsoft/Mezzurite\">GitHub do Mezzurite</a> para obter mais informações."
             },
             "conditionalVisibility": {
                 "parameterName": "Route",

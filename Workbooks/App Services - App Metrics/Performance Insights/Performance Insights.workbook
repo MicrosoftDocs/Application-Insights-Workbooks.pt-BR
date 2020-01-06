@@ -251,7 +251,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"operation-details----selectedoperation\"></a>Detalhes da Operação – {SelectedOperation}\n"
+                "json": "## <a name=\"operation-details----no_loc_phselectedoperationno_loc_ph\"></a>Detalhes da operação – {SelectedOperation}\n"
             },
             "conditionalVisibility": null
         },

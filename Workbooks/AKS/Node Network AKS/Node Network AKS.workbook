@@ -371,7 +371,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Enviado a {unit:label}/s</h3>"
+                "json": "<h3>{unit:label}/s enviados</h3>"
             },
             "customWidth": "50",
             "name": "text - 5"
@@ -379,7 +379,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Recebido a {unit:label}/s</h3>"
+                "json": "<h3>{unit:label}/s recebidos</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -437,7 +437,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de {unit: label} enviados (por intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de {unit:label} enviados (por intervalos de {timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy"
@@ -445,7 +445,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de {unit: label} recebidos (por intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de {unit:label} recebidos (por intervalos de {timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -563,7 +563,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de erros de saída (por intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de saída de erros (por intervalos de {timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"
@@ -571,7 +571,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de erros de entrada (por intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de entrada de erros (por intervalos de {timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy - Copy"

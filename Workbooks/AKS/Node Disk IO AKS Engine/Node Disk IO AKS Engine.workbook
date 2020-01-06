@@ -376,7 +376,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Leitura {unit:label}/s</h3>"
+                "json": "<h3>{unit:label}/s lidos</h3>"
             },
             "customWidth": "50",
             "name": "text - 5"
@@ -384,7 +384,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Gravação {unit:label}/s</h3>"
+                "json": "<h3>{unit:label}/s gravados</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -442,7 +442,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de {unit: label} lidos (intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de {unit:label} lidos (intervalos de{timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy"
@@ -450,7 +450,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Total de {unit: label} gravados (intervalos de {timeRange:grain})</h3>"
+                "json": "<h3>Total de {unit:label} gravados (intervalos de{timeRange:grain})</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -505,7 +505,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Milissegundos por {unit:label} lido</h3>"
+                "json": "<h3>Milissegundos por {unit:label} lidos</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy"
@@ -513,7 +513,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>Milissegundos por {unit:label} gravado</h3>"
+                "json": "<h3>Milissegundos por {unit:label} gravados</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"

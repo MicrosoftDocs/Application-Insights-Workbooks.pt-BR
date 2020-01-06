@@ -281,7 +281,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"trend-computer\"></a>Tendência: {computer}"
+                "json": "## <a name=\"trend-no_loc_phcomputerno_loc_ph\"></a>Tendência: {computer}"
             },
             "conditionalVisibility": null
         },

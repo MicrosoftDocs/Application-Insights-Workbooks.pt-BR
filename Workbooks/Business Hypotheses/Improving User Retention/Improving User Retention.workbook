@@ -5,13 +5,13 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"hypothesis---proposed-change-will-improve-user-retention-by-expected-improvement\"></a>Hipótese – _[alteração de proposta]_ melhorará a retenção de usuários por _[aperfeiçoamento esperado]_\n---\nUma boa hipótese é a essência da tomada de decisão controlada por dados. Hipóteses ajudam você a transformar informações sobre o uso do cliente do seu aplicativo em uma proposta acionável para melhorias. Use esta pasta de trabalho para criar uma hipótese sobre como melhorar as taxas de retenção dos seus usuários."
+                "json": "# <a name=\"hypothesis---_proposed-change_-will-improve-user-retention-by-_expected-improvement_\"></a>Hipótese – _[alteração de proposta]_ melhorará a retenção de usuários por _[aperfeiçoamento esperado]_\n---\nUma boa hipótese é a essência da tomada de decisão controlada por dados. Hipóteses ajudam você a transformar informações sobre o uso do cliente do seu aplicativo em uma proposta acionável para melhorias. Use esta pasta de trabalho para criar uma hipótese sobre como melhorar as taxas de retenção dos seus usuários."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"problem---problem-statement\"></a>Problema – _[demonstrativo do problema]_\nAdicione um resumo do problema na seção. O resumo deve ser conciso e com comprimento não maior do que algumas frases. Relate claramente o problema e evite detalhes não essenciais. \n\n\n"
+                "json": "## <a name=\"problem---_problem-statement_\"></a>Problema – _[demonstrativo do problema]_\nAdicione um resumo do problema na seção. O resumo deve ser conciso e com comprimento não maior do que algumas frases. Relate claramente o problema e evite detalhes não essenciais. \n\n\n"
             }
         },
         {
@@ -180,7 +180,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"potential-solution---solution-description\"></a>Solução em potencial – _[descrição da solução]_\nUse esta seção para descrever a solução proposta.\n"
+                "json": "## <a name=\"potential-solution---_solution-description_\"></a>Solução em potencial – _[descrição da solução]_\nUse esta seção para descrever a solução proposta.\n"
             }
         },
         {
@@ -204,13 +204,13 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"expected-outcome---user-retention-improves-to-retentiongoal\"></a>Resultado esperado – melhora a retenção do usuário para {RetentionGoal}%\nEsta seção lista claramente os resultados mensuráveis de implementar a solução proposta.\n\n"
+                "json": "## <a name=\"expected-outcome---user-retention-improves-to-no_loc_phretentiongoalno_loc_ph\"></a>Resultado esperado – melhora a retenção do usuário para {RetentionGoal}%\nEsta seção lista claramente os resultados mensuráveis de implementar a solução proposta.\n\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"primary-goal---retention-rate-hits-retentiongoal\"></a>Meta principal – a taxa de retenção atinge {RetentionGoal}%\n"
+                "json": "### <a name=\"primary-goal---retention-rate-hits-no_loc_phretentiongoalno_loc_ph\"></a>Meta principal – a taxa de retenção atinge {RetentionGoal}%\n"
             }
         },
         {
