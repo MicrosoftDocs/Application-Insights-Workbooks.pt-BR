@@ -236,7 +236,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"malicious-traffic\"></a><span data-ttu-id=\"dd2d1-101\">Tráfego mal-intencionado</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-101\">Malicious Traffic</span></span>\n<span data-ttu-id=\"dd2d1-102\">💡 *Selecione `MaliciousIp` ou `Country` (ou ambos) para filtrar os dados de tráfego nas tabelas a seguir. Selecione `Overall` em ambas as tabelas para reverter para a exibição de tráfego geral.*</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-102\">💡 *Select either `MaliciousIp` or `Country` (or both) to filter traffic data in the tables below. Select `Overall` in both tables to revert back to the overall traffic view.*</span></span>"
+                "json": "## <a name=\"malicious-traffic\"></a>Tráfego mal-intencionado\n💡 *Selecione `MaliciousIp` ou `Country` (ou ambos) para filtrar os dados de tráfego nas tabelas a seguir. Selecione `Overall` em ambas as tabelas para reverter para a exibição de tráfego geral.*"
             },
             "conditionalVisibility": null
         },
@@ -460,7 +460,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"overall-trafficmaliciousiptextcountryname\"></a><span data-ttu-id=\"dd2d1-103\">Tráfego total {MaliciousIpText}{CountryName}</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-103\">Overall Traffic{MaliciousIpText}{CountryName}</span></span>"
+                "json": "## <a name=\"overall-trafficno_loc_phmaliciousiptextno_loc_phno_loc_phcountrynameno_loc_ph\"></a>Tráfego geral{MaliciousIpText}{CountryName}"
             },
             "conditionalVisibility": null
         },
@@ -487,7 +487,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"top-vms-network-trafficmaliciousiptextcountryname\"></a><span data-ttu-id=\"dd2d1-104\">Principais VMs (Tráfego de rede){MaliciousIpText}{CountryName}</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-104\">Top VMs (Network Traffic){MaliciousIpText}{CountryName}</span></span>"
+                "json": "## <a name=\"top-vms-network-trafficno_loc_phmaliciousiptextno_loc_phno_loc_phcountrynameno_loc_ph\"></a>Principais VMs (tráfego de rede){MaliciousIpText}{CountryName}"
             },
             "conditionalVisibility": null
         },
@@ -562,7 +562,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"top-destinations-remote-ipsmaliciousiptextcountryname\"></a><span data-ttu-id=\"dd2d1-105\">Principais destinos (IPs remotos){MaliciousIpText}{CountryName}</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-105\">Top Destinations (Remote IPs){MaliciousIpText}{CountryName}</span></span>"
+                "json": "## <a name=\"top-destinations-remote-ipsno_loc_phmaliciousiptextno_loc_phno_loc_phcountrynameno_loc_ph\"></a>Principais destinos (IPs remotos){MaliciousIpText}{CountryName}"
             },
             "conditionalVisibility": null
         },
@@ -650,7 +650,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"security-detection\"></a><span data-ttu-id=\"dd2d1-106\">Detecção de segurança</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-106\">Security Detection</span></span>"
+                "json": "## <a name=\"security-detection\"></a>Detecção de segurança"
             },
             "conditionalVisibility": null
         },
@@ -714,7 +714,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"dd2d1-107\">⚠ `SecurityDetection` não foi detectado neste workspace.</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-107\">⚠ `SecurityDetection` was not detected in this workspace.</span></span> <span data-ttu-id=\"dd2d1-108\">Carregue a Detecção de Segurança ou aguarde até que os dados sejam populados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd2d1-108\">Please either onboard Security Detection or wait until data has been populated.</span></span>"
+                "json": "⚠ `SecurityDetection` não foi detectado neste workspace. Carregue a Detecção de Segurança ou aguarde até que os dados sejam populados."
             },
             "conditionalVisibility": {
                 "parameterName": "SecurityDetectionTest",

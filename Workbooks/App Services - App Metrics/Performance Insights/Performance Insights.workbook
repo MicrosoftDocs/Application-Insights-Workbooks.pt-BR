@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"application-performance-insights\"></a><span data-ttu-id=\"de4a1-101\">Insights de Desempenho do Aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-101\">Application Performance Insights</span></span>\n<span data-ttu-id=\"de4a1-102\">Use esse relatório para identificar as operações mais lentas em seus aplicativos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-102\">Use this report to identify the slowest operations in your applications.</span></span> <span data-ttu-id=\"de4a1-103\">Essas informações podem ser usadas para diagnosticar problemas em potencial ou ajudar a focar o seu desenvolvimento em curso na melhoria do desempenho geral do aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-103\">This information can be used to diagnose potential problems or help focus your ongoing development to improve the overall performance of the application.</span></span>"
+                "json": "# <a name=\"application-performance-insights\"></a>Insights de Desempenho do Aplicativo\nUse esse relatório para identificar as operações mais lentas em seus aplicativos. Essas informações podem ser usadas para diagnosticar problemas em potencial ou ajudar a focar o seu desenvolvimento em curso na melhoria do desempenho geral do aplicativo."
             },
             "conditionalVisibility": null
         },
@@ -214,7 +214,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"de4a1-104\">💡 *Clique nas linhas da tabela acima para ver os detalhes para outras operações*</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-104\">💡 *Click on the rows of the table above to see details for other operations*</span></span>"
+                "json": "💡 *Clique nas linhas da tabela acima para ver os detalhes para outras operações*"
             },
             "conditionalVisibility": null
         },
@@ -251,14 +251,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"operation-details----selectedoperation\"></a><span data-ttu-id=\"de4a1-105\">Detalhes da Operação – {SelectedOperation}</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-105\">Operation Details -- {SelectedOperation}</span></span>\n"
+                "json": "## <a name=\"operation-details----no_loc_phselectedoperationno_loc_ph\"></a>Detalhes da operação – {SelectedOperation}\n"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"operation-duration-ms\"></a><span data-ttu-id=\"de4a1-106\">Duração da Operação (ms)</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-106\">Operation Duration (ms)</span></span>\n"
+                "json": "### <a name=\"operation-duration-ms\"></a>Duração da Operação (ms)\n"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -266,7 +266,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"all-operations\"></a><span data-ttu-id=\"de4a1-107\">Todas as operações</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-107\">All Operations</span></span>"
+                "json": "### <a name=\"all-operations\"></a>Todas as operações"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -335,14 +335,14 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"dependency-performance\"></a><span data-ttu-id=\"de4a1-108\">Desempenho de Dependência</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-108\">Dependency Performance</span></span>\n"
+                "json": "### <a name=\"dependency-performance\"></a>Desempenho de Dependência\n"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"de4a1-109\">Selecione uma operação na tabela acima para ver o desempenho das respectivas dependências.</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-109\">Select an operation in the table above to see the performance of its dependencies.</span></span> "
+                "json": "Selecione uma operação na tabela acima para ver o desempenho das respectivas dependências. "
             },
             "conditionalVisibility": {
                 "parameterName": "SelectedOperation",
@@ -400,7 +400,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"de4a1-110\">Os gráficos a seguir mostram o desempenho das dependências de *{SelectedOperation}*.</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-110\">The charts below show performance of the dependencies of *{SelectedOperation}*.</span></span> <span data-ttu-id=\"de4a1-111\">Os dados são filtrados apenas para essas operações cujas durações estejam entre p{StartPercentile} e p{EndPercentile} de toda a distribuição.</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-111\">The data is filtered only to those operations whose durations fall between p{StartPercentile} and p{EndPercentile} of the entire distribution.</span></span> <span data-ttu-id=\"de4a1-112\">Altere os parâmetros `AnalysisSet`, `StartPercentile` ou `EndPercentile` para ajustar a janela de percentil da análise</span><span class=\"sxs-lookup\"><span data-stu-id=\"de4a1-112\">Change parameters `AnalysisSet`, `StartPercentile` or `EndPercentile` to tweak the percentile window of analysis</span></span>"
+                "json": "Os gráficos a seguir mostram o desempenho das dependências de *{SelectedOperation}*. Os dados são filtrados apenas para essas operações cujas durações estejam entre p{StartPercentile} e p{EndPercentile} de toda a distribuição. Altere os parâmetros `AnalysisSet`, `StartPercentile` ou `EndPercentile` para ajustar a janela de percentil da análise"
             },
             "conditionalVisibility": {
                 "parameterName": "SelectedOperation",

@@ -5,19 +5,19 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"hypothesis---proposed-change-will-improve-user-retention-by-expected-improvement\"></a><span data-ttu-id=\"eaf3a-101\">Hipótese – _[alteração de proposta]_ melhorará a retenção de usuários por _[aperfeiçoamento esperado]_</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-101\">Hypothesis - _[proposed change]_ will improve user retention by _[expected improvement]_</span></span>\n---\n<span data-ttu-id=\"eaf3a-102\">Uma boa hipótese é a essência da tomada de decisão controlada por dados.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-102\">A good hypothesis is the heart of data-driven decision making.</span></span> <span data-ttu-id=\"eaf3a-103\">Hipóteses ajudam você a transformar informações sobre o uso do cliente do seu aplicativo em uma proposta acionável para melhorias.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-103\">Hypotheses help you turn information about your customers' usage of your app into actionable proposal for improvements.</span></span> <span data-ttu-id=\"eaf3a-104\">Use esta pasta de trabalho para criar uma hipótese sobre como melhorar as taxas de retenção dos seus usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-104\">Use this workbook to craft a hypothesis about improving the retention rates of your users.</span></span>"
+                "json": "# <a name=\"hypothesis---_proposed-change_-will-improve-user-retention-by-_expected-improvement_\"></a>Hipótese – _[alteração de proposta]_ melhorará a retenção de usuários por _[aperfeiçoamento esperado]_\n---\nUma boa hipótese é a essência da tomada de decisão controlada por dados. Hipóteses ajudam você a transformar informações sobre o uso do cliente do seu aplicativo em uma proposta acionável para melhorias. Use esta pasta de trabalho para criar uma hipótese sobre como melhorar as taxas de retenção dos seus usuários."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"problem---problem-statement\"></a><span data-ttu-id=\"eaf3a-105\">Problema – _[demonstrativo do problema]_</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-105\">Problem - _[problem statement]_</span></span>\n<span data-ttu-id=\"eaf3a-106\">Adicione um resumo do problema na seção.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-106\">Add a summary of the problem in the section.</span></span> <span data-ttu-id=\"eaf3a-107\">O resumo deve ser conciso e com comprimento não maior do que algumas frases.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-107\">The summary should be concise and not more than a few sentences long.</span></span> <span data-ttu-id=\"eaf3a-108\">Relate claramente o problema e evite detalhes não essenciais.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-108\">Clearly state the problem and avoid nonessential details.</span></span> \n\n\n"
+                "json": "## <a name=\"problem---_problem-statement_\"></a>Problema – _[demonstrativo do problema]_\nAdicione um resumo do problema na seção. O resumo deve ser conciso e com comprimento não maior do que algumas frases. Relate claramente o problema e evite detalhes não essenciais. \n\n\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"whats-the-retention-problem\"></a><span data-ttu-id=\"eaf3a-109\">O que é o problema de retenção?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-109\">What's the retention problem?</span></span>\n<span data-ttu-id=\"eaf3a-110\">Modifique os parâmetros abaixo para mostrar a taxa de retenção de atividades que você está analisando.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-110\">Modify the parameters below to show the retention rate of activities you are analyzing.</span></span> <span data-ttu-id=\"eaf3a-111\">Sua meta deve ser realçar um problema de retenção no seu aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-111\">Your goal should be highlighting a retention problem in your app.</span></span>"
+                "json": "### <a name=\"whats-the-retention-problem\"></a>O que é o problema de retenção?\nModifique os parâmetros abaixo para mostrar a taxa de retenção de atividades que você está analisando. Sua meta deve ser realçar um problema de retenção no seu aplicativo."
             }
         },
         {
@@ -79,7 +79,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"as-a-benchmark-whats-the-retention-rate-of-a-similar-feature\"></a><span data-ttu-id=\"eaf3a-112\">Como um parâmetro de comparação, qual é a taxa de retenção de um recurso semelhante?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-112\">As a benchmark, what's the retention rate of a similar feature?</span></span>\n<span data-ttu-id=\"eaf3a-113\">Use esta seção para comparar a retenção de suas atividades com outras semelhantes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-113\">Use this section to compare the retention of your activities with similar ones.</span></span> <span data-ttu-id=\"eaf3a-114\">Isso ajudará a definir o contexto dos aprimoramentos que você está tentando fazer.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-114\">This will help set the context of the improvements you are trying to make.</span></span>"
+                "json": "### <a name=\"as-a-benchmark-whats-the-retention-rate-of-a-similar-feature\"></a>Como um parâmetro de comparação, qual é a taxa de retenção de um recurso semelhante?\nUse esta seção para comparar a retenção de suas atividades com outras semelhantes. Isso ajudará a definir o contexto dos aprimoramentos que você está tentando fazer."
             }
         },
         {
@@ -119,13 +119,13 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-do-we-suspect-retention-for-this-feature-is-low\"></a><span data-ttu-id=\"eaf3a-115\">Por que suspeitamos que a retenção para esse recurso é baixa?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-115\">Why do we suspect retention for this feature is low?</span></span>\n<span data-ttu-id=\"eaf3a-116\">Esta seção fornece explicações sobre o motivo pelo qual a retenção pode estar baixa.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-116\">This section provides explanations for why the retention could be low.</span></span> <span data-ttu-id=\"eaf3a-117\">A solução que você propõe abordará alguns ou todos os problemas identificados aqui.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-117\">The solution you propose will address some or all of the issues identified here.</span></span>"
+                "json": "### <a name=\"why-do-we-suspect-retention-for-this-feature-is-low\"></a>Por que suspeitamos que a retenção para esse recurso é baixa?\nEsta seção fornece explicações sobre o motivo pelo qual a retenção pode estar baixa. A solução que você propõe abordará alguns ou todos os problemas identificados aqui."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"whats-the-potential-benefit-to-your-business-if-you-improve-retention-for-this-feature\"></a><span data-ttu-id=\"eaf3a-118\">Qual será o possível benefício para seu negócio se você melhorar a retenção para este recurso?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-118\">What's the potential benefit to your business if you improve retention for this feature?</span></span>\n<span data-ttu-id=\"eaf3a-119\">Esta seção ajuda você a entender os aprimoramentos em usuários ativos mensais para que você possa ver se sua retenção aumentou.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-119\">This section helps you understand the improvements in monthly active users you can see if your retention increased.</span></span> <span data-ttu-id=\"eaf3a-120\">Use o parâmetro _RetentionGoal_ para definir a meta para a retenção com a solução proposta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-120\">Use the _RetentionGoal_ parameter to set the goal for retention with the proposed solution.</span></span>"
+                "json": "### <a name=\"whats-the-potential-benefit-to-your-business-if-you-improve-retention-for-this-feature\"></a>Qual será o possível benefício para seu negócio se você melhorar a retenção para este recurso?\nEsta seção ajuda você a entender os aprimoramentos em usuários ativos mensais para que você possa ver se sua retenção aumentou. Use o parâmetro _RetentionGoal_ para definir a meta para a retenção com a solução proposta."
             }
         },
         {
@@ -140,7 +140,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "RetentionGoal",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"eaf3a-121\">A meta de taxa de retenção, expressa como percentual (0 a 100)</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-121\">The goal for Retention Rate expressed as percentage (0-100)</span></span>",
+                        "description": "A meta de taxa de retenção, expressa como percentual (0 a 100)",
                         "isRequired": true,
                         "query": "let timeRange = {TimeRange};\r\nlet monthDefinition = {RetentionPeriod};\r\nlet hlls = union customEvents, pageViews\r\n| where timestamp >= startofmonth(now() - timeRange - 2 * monthDefinition)\r\n| where name in ({Activities}) or '*' in ({Activities})\r\n| summarize Hlls = hll(user_Id) by bin(timestamp, 1d)\r\n| project DaysToMerge = timestamp, Hlls;\r\nlet churnSeriesWithHllsToInclude = materialize(range d from 0d to 0d step 1d\r\n| extend Day = startofday(now() - d)\r\n| extend R = range(0d, monthDefinition - 1d, 1d)\r\n| mvexpand R\r\n| extend ThisMonth = Day - totimespan(R)\r\n| extend LastMonth = Day - monthDefinition - totimespan(R)\r\n| project Day, ThisMonth, LastMonth);\r\nchurnSeriesWithHllsToInclude\r\n| extend DaysToMerge = ThisMonth\r\n| join kind= inner (hlls) on DaysToMerge \r\n| project Day, ThisMonthHlls = Hlls\r\n| union (\r\nchurnSeriesWithHllsToInclude\r\n| extend DaysToMerge = LastMonth\r\n| join kind= inner (hlls) on DaysToMerge\r\n| project Day, LastMonthHlls = Hlls)\r\n| summarize ThisMonth = hll_merge(ThisMonthHlls), LastMonth = hll_merge(LastMonthHlls) by Day\r\n| evaluate dcount_intersect(ThisMonth, LastMonth)\r\n| where Day >= startofday(now() - timeRange)\r\n| extend ChurnedUsers = (dcount_hll(LastMonth) - s1) // Last Months Users - Returning Users\r\n| project Retention = round(iff((s1 + ChurnedUsers) == 0, 0.0, 100.0 * s1 / (s1 + ChurnedUsers)) * 1.1, 1)\r\n| extend Retention = iff(Retention > 100, 100.0, Retention)\r\n"
                     }
@@ -162,55 +162,55 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"what-customer-evidence-do-you-have\"></a><span data-ttu-id=\"eaf3a-122\">Qual evidência de cliente você tem?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-122\">What customer evidence do you have?</span></span>\n<span data-ttu-id=\"eaf3a-123\">Adicione comentários dos clientes que confirmem a existência do problema e que sua solução proposta vai realmente resolvê-lo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-123\">Add customer feedback that confirms that the existence of the problem and that your proposed solution will truly address it.</span></span>"
+                "json": "### <a name=\"what-customer-evidence-do-you-have\"></a>Qual evidência de cliente você tem?\nAdicione comentários dos clientes que confirmem a existência do problema e que sua solução proposta vai realmente resolvê-lo."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"how-are-your-competitors-solving-this-problem\"></a><span data-ttu-id=\"eaf3a-124\">Como seus concorrentes estão resolvendo esse problema?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-124\">How are your competitors solving this problem?</span></span>\n<span data-ttu-id=\"eaf3a-125\">Use esta seção para mostrar como seus concorrentes resolvem esse problema em seus aplicativos.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-125\">Use this section to show how your competitors address this problem in their apps.</span></span>\n"
+                "json": "### <a name=\"how-are-your-competitors-solving-this-problem\"></a>Como seus concorrentes estão resolvendo esse problema?\nUse esta seção para mostrar como seus concorrentes resolvem esse problema em seus aplicativos.\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"open-questions\"></a><span data-ttu-id=\"eaf3a-126\">Perguntas em aberto</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-126\">Open Questions</span></span>\n<span data-ttu-id=\"eaf3a-127\">Liste todas as perguntas ou discussões que ainda não foram resolvidas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-127\">List all questions or discussions that are still unresolved.</span></span>"
+                "json": "### <a name=\"open-questions\"></a>Perguntas em aberto\nListe todas as perguntas ou discussões que ainda não foram resolvidas."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"potential-solution---solution-description\"></a><span data-ttu-id=\"eaf3a-128\">Solução em potencial – _[descrição da solução]_</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-128\">Potential solution - _[solution description]_</span></span>\n<span data-ttu-id=\"eaf3a-129\">Use esta seção para descrever a solução proposta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-129\">Use this section describe the proposed solution.</span></span>\n"
+                "json": "## <a name=\"potential-solution---_solution-description_\"></a>Solução em potencial – _[descrição da solução]_\nUse esta seção para descrever a solução proposta.\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-it-will-work\"></a><span data-ttu-id=\"eaf3a-130\">Por que ela funcionará?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-130\">Why it will work?</span></span>\n<span data-ttu-id=\"eaf3a-131\">Descreva sua teoria do comportamento do usuário que resultará nessa proposta, levando a uma maior retenção de usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-131\">Describe your theory of user behavior that will result in this proposal leading to greater user retention.</span></span>"
+                "json": "### <a name=\"why-it-will-work\"></a>Por que ela funcionará?\nDescreva sua teoria do comportamento do usuário que resultará nessa proposta, levando a uma maior retenção de usuários."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-might-it-not-work\"></a><span data-ttu-id=\"eaf3a-132\">Por que talvez não funcione?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-132\">Why might it not work?</span></span>\n<span data-ttu-id=\"eaf3a-133\">Pense e lista o motivo pelo qual a solução pode não resultar no cumprimento das metas que você tiver definiu – por exemplo, teorias alternativas para a causa do problema.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-133\">Think about and list reason why the solution may not result in meeting the goals you have set - e.g. alternate theories for the cause of the problem.</span></span>"
+                "json": "### <a name=\"why-might-it-not-work\"></a>Por que talvez não funcione?\nPense e lista o motivo pelo qual a solução pode não resultar no cumprimento das metas que você tiver definiu – por exemplo, teorias alternativas para a causa do problema."
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"will-it-affect-other-scenarios\"></a><span data-ttu-id=\"eaf3a-134\">Isso afetará outros cenários?</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-134\">Will it affect other scenarios?</span></span>\n<span data-ttu-id=\"eaf3a-135\">Liste os recursos e cenários que podem ser afetados pela solução proposta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-135\">List the other features and scenarios that could be affected by the proposed solution.</span></span> "
+                "json": "### <a name=\"will-it-affect-other-scenarios\"></a>Isso afetará outros cenários?\nListe os recursos e cenários que podem ser afetados pela solução proposta. "
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"expected-outcome---user-retention-improves-to-retentiongoal\"></a><span data-ttu-id=\"eaf3a-136\">Resultado esperado – melhora a retenção do usuário para {RetentionGoal}%</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-136\">Expected outcome - User retention improves to {RetentionGoal}%</span></span>\n<span data-ttu-id=\"eaf3a-137\">Esta seção lista claramente os resultados mensuráveis de implementar a solução proposta.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-137\">This section clearly lists out the measurable outcomes of implementing the proposed solution.</span></span>\n\n"
+                "json": "## <a name=\"expected-outcome---user-retention-improves-to-no_loc_phretentiongoalno_loc_ph\"></a>Resultado esperado – melhora a retenção do usuário para {RetentionGoal}%\nEsta seção lista claramente os resultados mensuráveis de implementar a solução proposta.\n\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"primary-goal---retention-rate-hits-retentiongoal\"></a><span data-ttu-id=\"eaf3a-138\">Meta principal – a taxa de retenção atinge {RetentionGoal}%</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-138\">Primary Goal - Retention Rate hits {RetentionGoal}%</span></span>\n"
+                "json": "### <a name=\"primary-goal---retention-rate-hits-no_loc_phretentiongoalno_loc_ph\"></a>Meta principal – a taxa de retenção atinge {RetentionGoal}%\n"
             }
         },
         {
@@ -228,7 +228,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"other-goals\"></a><span data-ttu-id=\"eaf3a-139\">Outras metas</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-139\">Other Goals</span></span>\n<span data-ttu-id=\"eaf3a-140\">Liste quaisquer metas secundárias que você tenha relacionado a este esforço.</span><span class=\"sxs-lookup\"><span data-stu-id=\"eaf3a-140\">List any secondary goals you may have related to this effort.</span></span> "
+                "json": "### <a name=\"other-goals\"></a>Outras metas\nListe quaisquer metas secundárias que você tenha relacionado a este esforço. "
             }
         }
     ]

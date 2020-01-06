@@ -76,7 +76,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"e884e-101\">Comparar o tráfego entre dois períodos de duas máquinas <span title=\"{Computer:value}</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-101\">Compare traffic between two times periods for machine <span title=\"{Computer:value}</span></span>\"><span data-ttu-id=\"e884e-102\">`{Computer}`</span> no espaço de trabalho <span title=\"{Workspace:value}</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-102\">`{Computer}`</span> in workspace <span title=\"{Workspace:value}</span></span>\">`{Workspace:label}`</span>\n\n---"
+                "json": "Comparar o tráfego entre dois períodos do computador <span title=\"{Computer:value}\">`{Computer}`</span> no workspace <span title=\"{Workspace:value}\">`{Workspace:label}`</span>\n\n---"
             },
             "conditionalVisibility": null
         },
@@ -92,7 +92,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "StartDate",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-103\">Usar o formato aaaa-MM-DD para indicar em qual data os dados de rede devem ser iniciados</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-103\">Use the format yyy-MM-DD to denote at which date to start network data</span></span>",
+                        "description": "Usar o formato aaaa-MM-DD para indicar em qual data os dados de rede devem ser iniciados",
                         "isRequired": true,
                         "query": "// {Workspace} {Computer}\r\nprint strcat(format_datetime(now(), 'yyyy-MM-dd'))",
                         "crossComponentResources": [
@@ -107,7 +107,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-104\">Usar o formato de intervalo de tempo do kusto para especificar o período de tempo em que os dados da rede devem ser recuperados</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-104\">Use kusto timespan format to specify the length of time to retrieve network data</span></span>",
+                        "description": "Usar o formato de intervalo de tempo do kusto para especificar o período de tempo em que os dados da rede devem ser recuperados",
                         "isRequired": true,
                         "value": "24h",
                         "isHiddenWhenLocked": false,
@@ -118,7 +118,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeGrain",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-105\">Usar o formato de intervalo de tempo do kusto para especificar o tamanho do compartimento do gráfico</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-105\">Use kusto timespan format to specify the bin size of the chart</span></span>",
+                        "description": "Usar o formato de intervalo de tempo do kusto para especificar o tamanho do compartimento do gráfico",
                         "isRequired": true,
                         "value": "15m",
                         "isHiddenWhenLocked": false,
@@ -186,7 +186,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "StartDate",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-106\">Usar o formato aaaa-MM-DD para indicar em qual data os dados de rede devem ser iniciados</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-106\">Use the format yyyy-MM-DD to denote at which date to start network data</span></span>",
+                        "description": "Usar o formato aaaa-MM-DD para indicar em qual data os dados de rede devem ser iniciados",
                         "isRequired": true,
                         "query": "// {Workspace} {Computer}\r\nprint strcat(format_datetime(now()-1d, 'yyyy-MM-dd'))",
                         "crossComponentResources": [
@@ -201,7 +201,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-107\">Usar o formato de intervalo de tempo do kusto para especificar o período de tempo em que os dados da rede devem ser recuperados</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-107\">Use kusto timespan format to specify the length of time to retrieve network data</span></span>",
+                        "description": "Usar o formato de intervalo de tempo do kusto para especificar o período de tempo em que os dados da rede devem ser recuperados",
                         "isRequired": true,
                         "value": "24h",
                         "isHiddenWhenLocked": false,
@@ -212,7 +212,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeGrain",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"e884e-108\">Usar o formato de intervalo de tempo do kusto para especificar o tamanho do compartimento do gráfico</span><span class=\"sxs-lookup\"><span data-stu-id=\"e884e-108\">Use kusto timespan format to specify the bin size of the chart</span></span>",
+                        "description": "Usar o formato de intervalo de tempo do kusto para especificar o tamanho do compartimento do gráfico",
                         "isRequired": true,
                         "value": "15m",
                         "isHiddenWhenLocked": false,

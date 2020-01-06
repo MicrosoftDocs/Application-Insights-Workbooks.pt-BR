@@ -5,7 +5,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"new-returning-and-churned-users\"></a><span data-ttu-id=\"5b877-101\">Usuários novos, retornando e formados</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-101\">New, Returning and Churned Users</span></span>\n\n<span data-ttu-id=\"5b877-102\">Qual a capacidade de seu aplicativo de fazer com que os usuários retornem?</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-102\">How well does your app keep users coming back?</span></span> <span data-ttu-id=\"5b877-103\">Compreender a desistência do aplicativo – quando as pessoas usam seu aplicativo, mas não retornam – é a chave para aumentar o seu uso.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-103\">Understanding your app's churn -- when people use your app, but then don't come back -- is key to growing usage of your app.</span></span> <span data-ttu-id=\"5b877-104\">Esta pasta de trabalho analisa:</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-104\">This workbook analyzes:</span></span>\n- <span data-ttu-id=\"5b877-105\">O uso ativo do aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-105\">Active usage of your app</span></span>\n- <span data-ttu-id=\"5b877-106\">Quantos usuários desistiram desde o período anterior</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-106\">How many users churned since the previous period</span></span>\n- <span data-ttu-id=\"5b877-107\">A oportunidade de crescimento apresentada pela manutenção de um maior número desses usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-107\">The growth opportunity presented by retaining more of these users.</span></span>"
+                "json": "# <a name=\"new-returning-and-churned-users\"></a>Usuários novos, retornando e formados\n\nQual a capacidade de seu aplicativo de fazer com que os usuários retornem? Compreender a desistência do aplicativo – quando as pessoas usam seu aplicativo, mas não retornam – é a chave para aumentar o seu uso. Esta pasta de trabalho analisa:\n- O uso ativo do aplicativo\n- Quantos usuários desistiram desde o período anterior\n- A oportunidade de crescimento apresentada pela manutenção de um maior número desses usuários."
             }
         },
         {
@@ -20,7 +20,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Metric",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"5b877-108\">Define o número de dias em um mês.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-108\">Defines the number of days in a month.</span></span> <span data-ttu-id=\"5b877-109\">Use 30d para uma representação mais tradicional de um mês.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-109\">Use 30d for a more traditional representation of a month.</span></span> <span data-ttu-id=\"5b877-110\">Use d 28 para evitar altos/baixos semanais devido a fins de semana.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-110\">Use 28d to prevent weekly ups/downs due to weekends.</span></span>",
+                        "description": "Define o número de dias em um mês. Use 30d para uma representação mais tradicional de um mês. Use d 28 para evitar altos/baixos semanais devido a fins de semana.",
                         "isRequired": true,
                         "multiSelect": null,
                         "query": "datatable(key: string, display: string)[\r\n'1d', 'Daily Active Users',\r\n'7d', 'Weekly Active Users',\r\n'28d', 'Monthly Active Users (28d)',\r\n'30d', 'Monthly Active Users (30d)',\r\n]",
@@ -31,7 +31,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Activities",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"5b877-111\">Uma lista separada por vírgula de atividades para contar (por exemplo, 'EventA', 'EventB', 'PageViewC').</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-111\">A comma seperated list of activities to count (e.g. 'EventA', 'EventB', 'PageViewC').</span></span> <span data-ttu-id=\"5b877-112\">Use '\\*' se você deseja incluir todos os eventos e exibições de página.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-112\">Use '\\*' if you want to include all events and page views.</span></span>",
+                        "description": "Uma lista separada por vírgula de atividades para contar (por exemplo, 'EventA', 'EventB', 'PageViewC'). Use '*' se você deseja incluir todos os eventos e exibições de página.",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "'",
@@ -40,7 +40,7 @@
                     },
                     {
                         "name": "OtherFilters",
-                        "description": "<span data-ttu-id=\"5b877-113\">Outros filtros a usar</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-113\">Other filters to use</span></span>",
+                        "description": "Outros filtros a usar",
                         "id": "f5554bff-7f79-444a-8073-5f9592474a0c",
                         "type": 1
                     },
@@ -49,7 +49,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"5b877-114\">Intervalo de tempo para análise</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-114\">Time range for analysis</span></span>",
+                        "description": "Intervalo de tempo para análise",
                         "isRequired": true,
                         "multiSelect": null,
                         "query": "datatable(key:string, display:string) \r\n[ \r\n\"7d\", \"Last 7 days\", \r\n\"14d\", \"Last 14 days\", \r\n\"30d\", \"Last 30 days\", \r\n\"60d\", \"Last 60 days\", \r\n\"90d\", \"Last 90 days\"\r\n] ",
@@ -61,7 +61,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"active-users\"></a><span data-ttu-id=\"5b877-115\">Usuários ativos</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-115\">Active Users</span></span>"
+                "json": "## <a name=\"active-users\"></a>Usuários ativos"
             }
         },
         {
@@ -79,13 +79,13 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"5b877-116\">| Métrica | Definição | | ----- |: ----- |: ----- | | Usuários ativos | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez nesse período.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-116\">| Metric | Definition | | ----- |: ----- |: ----- | | Active users | Count of how many people used your app at least once this period.</span></span> <span data-ttu-id=\"5b877-117\">Usuários ativos = Usuários retornando + Novos usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-117\">Active Users = Returning users + New users.</span></span> <span data-ttu-id=\"5b877-118\">| | Usuários retornando | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez neste período e no período anterior.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-118\">| | Returning users | Count of how many people used your app at least once this period and the previous period.</span></span> <span data-ttu-id=\"5b877-119\">| | Novos usuários | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez no último período, mas não usaram no período anterior.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-119\">| | New users | Count of how many people used your app at least once in the last period, but did not use it the previous period.</span></span> <span data-ttu-id=\"5b877-120\">| | Usuários perdidos | Contagem de quantas pessoas usaram seu aplicativo no período anterior, mas não neste período.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-120\">| | Lost users | Count of how many people used your app the previous period but not this period.</span></span> |"
+                "json": "| Métrica | Definição | | ----- |: ----- |: ----- | | Usuários ativos | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez nesse período. Usuários ativos = Usuários retornando + Novos usuários. | | Usuários retornando | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez neste período e no período anterior. | | Novos usuários | Contagem de quantas pessoas usaram seu aplicativo pelo menos uma vez no último período, mas não usaram no período anterior. | | Usuários perdidos | Contagem de quantas pessoas usaram seu aplicativo no período anterior, mas não neste período. |"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"usage-growth\"></a><span data-ttu-id=\"5b877-121\">Aumento da utilização</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-121\">Usage Growth</span></span>\n<span data-ttu-id=\"5b877-122\">Este gráfico mostra a tendência das taxas de crescimento em {Period} para o aplicativo.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-122\">This chart shows you the trend of the {Period} growth rates of your app.</span></span> <span data-ttu-id=\"5b877-123\">Isso permite que você analise como suas taxas de crescimento de usuários Novos, Retornando, Perdidos e Gerais se alteram ao longo do tempo – por exemplo, veja se o crescimento está acelerando, desacelerando ou permanecendo constante.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-123\">This allows you to analyze how your New, Returning, Lost and Overall users growth rates change over time -- for instance see if growth is accelerating, decelerating or holding steady.</span></span> \n\n<span data-ttu-id=\"5b877-124\">As métricas na parte inferior mostram a taxa de crescimento atual.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-124\">The metrics at the bottow show the current growth rate.</span></span> <span data-ttu-id=\"5b877-125\">A série `Active Users` mostra a taxa de crescimento de uso geral.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-125\">The `Active Users` series shows the overall usage growth rate.</span></span>"
+                "json": "## <a name=\"usage-growth\"></a>Aumento da utilização\nEste gráfico mostra a tendência das taxas de crescimento em {Period} para o aplicativo. Isso permite que você analise como suas taxas de crescimento de usuários Novos, Retornando, Perdidos e Gerais se alteram ao longo do tempo – por exemplo, veja se o crescimento está acelerando, desacelerando ou permanecendo constante. \n\nAs métricas na parte inferior mostram a taxa de crescimento atual. A série `Active Users` mostra a taxa de crescimento de uso geral."
             }
         },
         {
@@ -103,7 +103,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"retention-rate\"></a><span data-ttu-id=\"5b877-126\">Taxa de retenção</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-126\">Retention Rate</span></span>\n<span data-ttu-id=\"5b877-127\">A taxa de retenção do aplicativo, definida como usuários recorrentes como percentual do total de usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-127\">Your app's retention rate, defined as returning users as percentage of total users.</span></span>"
+                "json": "## <a name=\"retention-rate\"></a>Taxa de retenção\nA taxa de retenção do aplicativo, definida como usuários recorrentes como percentual do total de usuários."
             }
         },
         {
@@ -121,7 +121,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"ratio-of-returning-to-new-users\"></a><span data-ttu-id=\"5b877-128\">Proporção entre usuários retornando e novos usuários</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-128\">Ratio of Returning to New Users</span></span>\n<span data-ttu-id=\"5b877-129\">Essa proporção indica quanto de seu uso vem de usuários existentes versus novos usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-129\">This ratio indicates how much of your usage comes from existing users vs. new users.</span></span> <span data-ttu-id=\"5b877-130\">Taxas menores indicam quantidades maiores de desistência, com uso proveniente principalmente de novos usuários.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-130\">Smaller ratios indicate larger amounts of churn, with usage primarily coming from new users.</span></span>"
+                "json": "## <a name=\"ratio-of-returning-to-new-users\"></a>Proporção entre usuários retornando e novos usuários\nEssa proporção indica quanto de seu uso vem de usuários existentes versus novos usuários. Taxas menores indicam quantidades maiores de desistência, com uso proveniente principalmente de novos usuários."
             }
         },
         {
@@ -139,7 +139,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"growth-opportunity\"></a><span data-ttu-id=\"5b877-131\">Oportunidade de crescimento</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-131\">Growth Opportunity</span></span>\n\n<span data-ttu-id=\"5b877-132\">Você deve se importar com a desistência do seu aplicativo?</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-132\">Should you care about your app's churn?</span></span> <span data-ttu-id=\"5b877-133\">Este gráfico mostra o potencial de aumentar o uso do aplicativo pela redução da desistência.</span><span class=\"sxs-lookup\"><span data-stu-id=\"5b877-133\">This chart shows the potential to grow your app's usage by reducing churn.</span></span>"
+                "json": "## <a name=\"growth-opportunity\"></a>Oportunidade de crescimento\n\nVocê deve se importar com a desistência do seu aplicativo? Este gráfico mostra o potencial de aumentar o uso do aplicativo pela redução da desistência."
             }
         },
         {

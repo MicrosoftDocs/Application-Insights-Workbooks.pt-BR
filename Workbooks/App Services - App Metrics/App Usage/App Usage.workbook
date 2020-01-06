@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"app-usage\"></a><span data-ttu-id=\"8fedd-101\">Uso do aplicativo</span><span class=\"sxs-lookup\"><span data-stu-id=\"8fedd-101\">App Usage</span></span>\n<span data-ttu-id=\"8fedd-102\">Use este relatório para descobrir quando as pessoas usam seu aplicativo, em quais páginas elas estão mais interessadas, onde os usuários estão localizados e quais navegadores e sistemas operacionais eles usam.</span><span class=\"sxs-lookup\"><span data-stu-id=\"8fedd-102\">Use this report to find out when people use your app, what pages they're most interested in, where your users are located, and what browsers and operating systems they use.</span></span> \n"
+                "json": "# <a name=\"app-usage\"></a>Uso do aplicativo\nUse este relatório para descobrir quando as pessoas usam seu aplicativo, em quais páginas elas estão mais interessadas, onde os usuários estão localizados e quais navegadores e sistemas operacionais eles usam. \n"
             },
             "conditionalVisibility": null
         },
@@ -220,7 +220,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"8fedd-103\">💡 *Selecione uma operação na tabela para ver seus detalhes de uso*</span><span class=\"sxs-lookup\"><span data-stu-id=\"8fedd-103\">💡 *Select an operation in the table to see its usage details*</span></span>"
+                "json": "💡 *Selecione uma operação na tabela para ver seus detalhes de uso*"
             },
             "conditionalVisibility": null
         },
@@ -249,7 +249,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"details---selectedoperationname\"></a><span data-ttu-id=\"8fedd-104\">Detalhes – {SelectedOperationName}</span><span class=\"sxs-lookup\"><span data-stu-id=\"8fedd-104\">Details - {SelectedOperationName}</span></span>\n"
+                "json": "## <a name=\"details---no_loc_phselectedoperationnameno_loc_ph\"></a>Detalhes – {SelectedOperationName}\n"
             },
             "conditionalVisibility": null
         },

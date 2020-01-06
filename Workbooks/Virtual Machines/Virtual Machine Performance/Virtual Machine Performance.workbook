@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"virtual-machine-performance\"></a><span data-ttu-id=\"d33b1-101\">Desempenho da máquina virtual</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-101\">Virtual Machine Performance</span></span>\n<span data-ttu-id=\"d33b1-102\">Analise os contadores de desempenho (processador, memória, disco, etc.) de suas VMs usando esta pasta de trabalho.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-102\">Analyze the performance counters (processor, memory, disk, etc.) of your VMs using this workbook.</span></span>  <span data-ttu-id=\"d33b1-103\">Você também pode optar por personalizar a análise usando o botão `Edit` na barra de ferramentas.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-103\">You can also choose to customize the analysis by using the `Edit` button in the toolbar.</span></span>"
+                "json": "# <a name=\"virtual-machine-performance\"></a>Desempenho da máquina virtual\nAnalise os contadores de desempenho (processador, memória, disco, etc.) de suas VMs usando esta pasta de trabalho.  Você também pode optar por personalizar a análise usando o botão `Edit` na barra de ferramentas."
             },
             "conditionalVisibility": null
         },
@@ -213,14 +213,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"d33b1-104\">Use o parâmetro `Counter` para alternar para um contador de VMs diferente.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-104\">Use the `Counter` parameter to switch to a different VM counter.</span></span> <span data-ttu-id=\"d33b1-105\">Você pode incluir mais VMs em sua análise usando o parâmetro `VirtualMachines`.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-105\">You can include more VMs in your analysis using the `VirtualMachines` parameter.</span></span> "
+                "json": "Use o parâmetro `Counter` para alternar para um contador de VMs diferente. Você pode incluir mais VMs em sua análise usando o parâmetro `VirtualMachines`. "
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"computers\"></a><span data-ttu-id=\"d33b1-106\">Computadores</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-106\">Computers</span></span>"
+                "json": "## <a name=\"computers\"></a>Computadores"
             },
             "conditionalVisibility": null
         },
@@ -274,14 +274,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"d33b1-107\">*Clique em uma linha para ver as tendências para apenas este computador*</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-107\">*Click on a row to see trends for just that computer*</span></span>"
+                "json": "*Clique em uma linha para ver as tendências para apenas este computador*"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"trend-computer\"></a><span data-ttu-id=\"d33b1-108\">Tendência: {computer}</span><span class=\"sxs-lookup\"><span data-stu-id=\"d33b1-108\">Trend: {computer}</span></span>"
+                "json": "## <a name=\"trend-no_loc_phcomputerno_loc_ph\"></a>Tendência: {computer}"
             },
             "conditionalVisibility": null
         },
