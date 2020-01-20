@@ -1,0 +1,367 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"getting-started-with-creating-new-views-in-workbooks\"></a>Introdução à criação de exibições em Pastas de Trabalho"
+            },
+            "name": "text - 0"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"workbooks-quick-start-templates\"></a>Modelos de Início Rápido de Pastas de Trabalho\n\nAs Pastas de Trabalho nos workspaces do Log Analytics já têm modelos personalizados criados para replicar os blocos existentes do designer de exibição. Abaixo você encontra os links para os modelos de acesso rápido ou abra os modelos na galeria das Pastas de Trabalho"
+            },
+            "name": "text - 14"
+        },
+        {
+            "type": 11,
+            "content": {
+                "version": "LinkItem/1.0",
+                "style": "nav",
+                "links": [
+                    {
+                        "cellValue": "",
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Donut & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Donut-List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Line Chart & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/LineChart-List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Number & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Number List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Line Chart, Callout, & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Line Chart Callout List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        },
+                        "alertRuleContext": {}
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Timeline & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Timeline List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        },
+                        "alertRuleContext": {}
+                    }
+                ]
+            },
+            "name": "links - 13"
+        },
+        {
+            "type": 11,
+            "content": {
+                "version": "LinkItem/1.0",
+                "style": "paragraph",
+                "links": [
+                    {
+                        "cellValue": "https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md",
+                        "linkTarget": "Url",
+                        "linkLabel": "View Designer transition guide",
+                        "preText": "For additional assistance, please reference the ",
+                        "postText": "",
+                        "style": "link"
+                    },
+                    {
+                        "cellValue": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks",
+                        "linkTarget": "Url",
+                        "linkLabel": "Workbooks documentation",
+                        "preText": " or the ",
+                        "style": "link"
+                    }
+                ]
+            },
+            "name": "links - 15"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"learn-more-features-about-workbooks\"></a>Conheça mais recursos das Pastas de Trabalho\n\nAs Pastas de Trabalho têm dois modos, um modo de edição e um de leitura. Por padrão, as Pastas de Trabalho e os modelos salvos são abertos no modo de leitura. Para começar a edição, clique no botão Editar na barra de ferramentas superior."
+            },
+            "name": "text - 2"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "Para editar uma célula, basta selecionar o botão Editar localizado no canto inferior direito de cada célula.\n\nAgora você pode criar um filtro de intervalo de tempo selecionando a opção \"Adicionar parâmetros\" e o \"Seletor de intervalo de tempo\", conforme mostrado no exemplo abaixo:"
+            },
+            "name": "text - 11"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "parameters": [
+                    {
+                        "id": "b8228ea2-2b9d-40e0-8b52-be60e28e805a",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Time",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 86400000
+                        },
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000
+                                },
+                                {
+                                    "durationMs": 900000
+                                },
+                                {
+                                    "durationMs": 1800000
+                                },
+                                {
+                                    "durationMs": 3600000
+                                },
+                                {
+                                    "durationMs": 14400000
+                                },
+                                {
+                                    "durationMs": 43200000
+                                },
+                                {
+                                    "durationMs": 86400000
+                                },
+                                {
+                                    "durationMs": 172800000
+                                },
+                                {
+                                    "durationMs": 259200000
+                                },
+                                {
+                                    "durationMs": 604800000
+                                },
+                                {
+                                    "durationMs": 1209600000
+                                },
+                                {
+                                    "durationMs": 2419200000
+                                },
+                                {
+                                    "durationMs": 2592000000
+                                },
+                                {
+                                    "durationMs": 5184000000
+                                },
+                                {
+                                    "durationMs": 7776000000
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces"
+            },
+            "name": "parameters - 3"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "Os parâmetros também podem ser personalizados para exibir assinaturas, recursos ou até mesmo serem baseados em uma consulta."
+            },
+            "name": "text - 4"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "crossComponentResources": [
+                    "{Subscriptions}"
+                ],
+                "parameters": [
+                    {
+                        "id": "b381b0aa-b7e0-457e-ae77-78a21fcd9b96",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Subscriptions",
+                        "type": 6,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "typeSettings": {
+                            "additionalResourceOptions": [
+                                "value::all"
+                            ],
+                            "includeAll": false
+                        },
+                        "timeContext": {
+                            "durationMs": 0
+                        },
+                        "timeContextFromParameter": "Time",
+                        "value": [
+                            "value::all"
+                        ]
+                    },
+                    {
+                        "id": "182f39eb-958f-449b-b97c-0517c39698e1",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Workspaces",
+                        "type": 5,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| project name, id\r\n| union (Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| order by name asc\r\n| take 5\r\n| project id, name)\r\n| summarize Count = count() by id, name\r\n| order by name asc\r\n| project value = id, label = id, selected = Count > 1",
+                        "crossComponentResources": [
+                            "{Subscriptions}"
+                        ],
+                        "typeSettings": {
+                            "additionalResourceOptions": [
+                                "value::all"
+                            ]
+                        },
+                        "timeContext": {
+                            "durationMs": 0
+                        },
+                        "timeContextFromParameter": "Time",
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    }
+                ],
+                "style": "pills",
+                "queryType": 1,
+                "resourceType": "microsoft.resourcegraph/resources"
+            },
+            "name": "parameters - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"running-queries-and-making-visualizations-in-workbooks\"></a>Executando consultas e criando visualizações nas Pastas de Trabalho\n\nAs consultas funcionam da mesma forma que nos workspaces do designer de exibição ou do LA. Com as Pastas de Trabalho, você pode alterar até mesmo o escopo da consulta, seja em vários workspaces ou em vários recursos.\n\nAs Pastas de Trabalho também permitem que você controle as várias opções que existem para as visualizações. Você pode criar grades, gráficos de pizza, gráficos de barras, gráficos de linhas e muito mais."
+            },
+            "name": "text - 6"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "Para começar, tente usar uma consulta de exemplo:\n``` \nsearch *\n| summarize AggregatedValue = count() by Type \n| order by AggregatedValue desc\n ```\n Em seguida, no menu suspenso Visualizações, selecione \"Gráfico de Pizza\". Observe que ao atualizar o parâmetro de tempo acima, você pode alterar os valores temporais exibidos."
+            },
+            "name": "text - 8"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type \r\n| order by AggregatedValue desc",
+                "size": 0,
+                "title": "An Example Pie Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "piechart"
+            },
+            "name": "query - 7"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "Também é possível reutilizar a consulta e formar um gráfico de barras. Para fazer isso, selecione a opção \"Gráfico de barras\" sob a lista suspensa de visualizações.\n\nVocê também pode fazer personalizações para as visualizações, como alterar para cores e dados exibidos, conforme mostrado nos exemplos abaixo.\n\nTambém é possível fazer inúmeras alterações estéticas nos gráficos. Por exemplo, há opções para alterar o tamanho de cada célula e para adicionar uma opção de exportar ou de fixar ao painel disponíveis em ⚙️, para as configurações avançadas."
+            },
+            "name": "text - 9"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type\r\n| order by AggregatedValue desc",
+                "size": 0,
+                "title": "One Example Bar Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "barchart"
+            },
+            "customWidth": "50",
+            "name": "query - 10"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type\r\n| order by AggregatedValue desc",
+                "size": 0,
+                "showAnalytics": true,
+                "title": "Another Example Bar Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "showExportToExcel": true,
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "barchart",
+                "chartSettings": {
+                    "seriesLabelSettings": [
+                        {
+                            "seriesName": "AzureDiagnostics",
+                            "color": "purple"
+                        },
+                        {
+                            "seriesName": "Usage",
+                            "color": "turquoise"
+                        }
+                    ]
+                }
+            },
+            "customWidth": "50",
+            "showPin": true,
+            "name": "query - 10 - Copy"
+        }
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
