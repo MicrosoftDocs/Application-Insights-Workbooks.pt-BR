@@ -1,6 +1,7 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "name": "Guia de transição do designer de exibição",
+    "description": "Guia de início rápido para usar Pastas de Trabalho para Usuários do Designer de Exibição",
     "author": "Microsoft",
     "galleries": [
         {

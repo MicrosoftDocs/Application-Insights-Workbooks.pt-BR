@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"line-chart-callout--list-template\"></a>Modelo de gráfico de linhas, de balão e de lista\nUse este relatório para modelar o modelo de gráfico de linhas, de balão e de lista no designer de exibição\n<br/>\n<br/>"
+                "json": "## <a name=\"line-chart-callout--list-template\"></a>Modelo de gráfico de linhas, de balão e de lista\nUse este relatório para modelar o bloco de Gráfico de Linhas, Balão e Lista do Designer de Exibição\n\n1. Para substituir os modos de exibição abaixo pelas suas próprias consultas, selecione o botão `Edit` na barra de ferramentas na parte superior da página para entrar no `Edit Mode`.\n\n2. Em seguida, selecione a opção `↑ Edit` no canto inferior direito da etapa de parâmetro abaixo, escolha o parâmetro `Message` e o ícone 🖊para abrir o menu de contexto. De lá, você pode substituir a consulta de número.\n*Inclua `| project Message = strcat('# ', Count)` para a formatação de texto grande.*\n\n3. Em seguida, escolha a opção `↑ Edit` no canto inferior direito das células de Lista e Gráfico de Linhas e cole a consulta.\n\n💡 Para obter instruções passo a passo individuais sobre como criar essa pasta de trabalho, siga nosso [guia](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/TileConversions.md#Donut-&-List) ou leia mais sobre outros recursos na [Documentação de Pastas de Trabalho](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks)\n<br/>\n<br/>"
             },
             "name": "text - 4"
         },
@@ -162,30 +162,6 @@
             "styleSettings": {
                 "showBorder": true
             }
-        },
-        {
-            "type": 11,
-            "content": {
-                "version": "LinkItem/1.0",
-                "style": "paragraph",
-                "links": [
-                    {
-                        "cellValue": "https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md",
-                        "linkTarget": "Url",
-                        "linkLabel": "View Designer transition guide",
-                        "preText": "For additional assistance, please check out our ",
-                        "style": "link"
-                    },
-                    {
-                        "cellValue": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks",
-                        "linkTarget": "Url",
-                        "linkLabel": "Workbooks documentation",
-                        "preText": " or the ",
-                        "style": "link"
-                    }
-                ]
-            },
-            "name": "links - 4"
         }
     ],
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"

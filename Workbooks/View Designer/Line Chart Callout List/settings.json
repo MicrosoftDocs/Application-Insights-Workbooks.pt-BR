@@ -1,6 +1,7 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "name": "Gráfico de linhas, balão e lista",
+    "description": "Estrutura de tópicos do gráfico de linhas, chamada e bloco de lista do Designer de Exibição",
     "author": "Microsoft",
     "galleries": [
         {
