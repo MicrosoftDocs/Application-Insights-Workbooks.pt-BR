@@ -1,6 +1,7 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "name": "Gráfico de rosca e lista",
+    "description": "Estrutura de tópicos do bloco de lista e rosca do Designer de Exibição",
     "author": "Microsoft",
     "galleries": [
         {
