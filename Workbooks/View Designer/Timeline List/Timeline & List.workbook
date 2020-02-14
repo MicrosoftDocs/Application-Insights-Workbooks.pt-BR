@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"timeline--list-template\"></a>Modelo de linha do tempo e de lista\nUse este relatório para modelar o bloco de linha do tempo e de lista no designer de exibição\n\n1. Para substituir os modos de exibição abaixo pelas suas próprias consultas, selecione o botão `Edit` na barra de ferramentas na parte superior da página para entrar no `Edit Mode`.\n\n2. Em seguida, escolha a opção `↑ Edit` no canto inferior direito do gráfico de linha do tempo e células de lista e cole a consulta.\n\n💡 Para obter instruções passo a passo individuais sobre como criar essa pasta de trabalho, siga nosso [guia](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/TileConversions.md#Timeline-&-List) ou leia mais sobre outros recursos na [Documentação de Pastas de Trabalho](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks)<br/>\n<br/>"
+                "json": "## <a name=\"timeline--list-template\"></a>Modelo de linha do tempo e de lista\nUse este relatório para modelar o bloco de linha do tempo e de lista no designer de exibição\n\n1. Para substituir os modos de exibição abaixo pelas suas próprias consultas, selecione o botão `Edit` na barra de ferramentas na parte superior da página para entrar no `Edit Mode`.\n\n2. Em seguida, escolha a opção `↑ Edit` no canto inferior direito do gráfico de linha do tempo e células de lista e cole a consulta.\n\n💡 Para obter instruções passo a passo individuais sobre como criar essa pasta de trabalho, siga nosso [guia](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/TileConversions.md#Timeline-&-List) ou leia mais sobre outros recursos na [Documentação de Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks)<br/>\n<br/>"
             },
             "name": "text - 3"
         },
@@ -100,10 +100,7 @@
             },
             "customWidth": "50",
             "showPin": true,
-            "name": "query - 1",
-            "styleSettings": {
-                "showBorder": true
-            }
+            "name": "query - 1"
         },
         {
             "type": 3,
@@ -137,17 +134,18 @@
                                 "showIcon": true
                             }
                         }
-                    ]
+                    ],
+                    "filter": true
                 },
                 "sortBy": []
             },
             "customWidth": "50",
             "showPin": true,
-            "name": "query - 2",
-            "styleSettings": {
-                "showBorder": true
-            }
+            "name": "query - 2"
         }
     ],
+    "styleSettings": {
+        "spacingStyle": "none"
+    },
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
 }
