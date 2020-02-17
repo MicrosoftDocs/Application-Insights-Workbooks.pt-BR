@@ -1,0 +1,13 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Dois Números e Lista",
+    "description": "Estrutura do Bloco Dois Números e Lista do Designer de Exibição",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.operationalinsights/workspaces",
+            "order": 400
+        }
+    ]
+}
