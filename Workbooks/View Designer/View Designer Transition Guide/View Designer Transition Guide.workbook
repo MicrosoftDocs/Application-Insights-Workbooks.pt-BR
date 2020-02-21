@@ -73,7 +73,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-convert-view-designer-dashboards-to-workbookshttpsgithubcommicrosoftapplication-insights-workbooksblobmasterdocumentationviewdesignerviewdesigneroverviewmd\"></a>[Por que converter painéis do Designer de Exibição para as Pastas de Trabalho?](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md)\n\nAs Pastas de Trabalho são uma plataforma que desbloqueia todo o potencial dos seus dados. Além de reter todos os recursos do Designer de Exibição, as Pastas de Trabalho oferecem maior flexibilidade e funcionalidade adicional por meio de texto, métricas, parâmetros e outras personalizações de gráfico.\n\n### <a name=\"advantages-of-workbooks-over-view-designer\"></a>Vantagens das Pastas de Trabalho ao Designer de Exibição\n* Compatível com logs E métricas\n* Permite exibições pessoais para controle de acesso individual e exibições de Pastas de Trabalho compartilhadas\n* Opções de layout personalizado com controles de guias, dimensionamento e escala\n* Compatível com consulta entre vários workspaces, aplicativos do Application Insights e assinaturas\n* Habilita parâmetros personalizados que atualizam dinamicamente gráficos e visualizações associados\n* Suporte da galeria de modelos do GitHub público"
+                "json": "### <a name=\"why-convert-view-designer-dashboards-to-workbooks\"></a>[Por que converter painéis do Designer de Exibição para as Pastas de Trabalho?](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-overview#why-convert-view-designer-dashboards-to-workbooks)\n\nAs Pastas de Trabalho são uma plataforma que desbloqueia todo o potencial dos seus dados. Além de reter todos os recursos do Designer de Exibição, as Pastas de Trabalho oferecem maior flexibilidade e funcionalidade adicional por meio de texto, métricas, parâmetros e outras personalizações de gráfico.\n\n### <a name=\"advantages-of-workbooks-over-view-designer\"></a>Vantagens das Pastas de Trabalho ao Designer de Exibição\n* Compatível com logs E métricas\n* Permite exibições pessoais para controle de acesso individual e exibições de Pastas de Trabalho compartilhadas\n* Opções de layout personalizado com controles de guias, dimensionamento e escala\n* Compatível com consulta entre vários workspaces, aplicativos do Application Insights e assinaturas\n* Habilita parâmetros personalizados que atualizam dinamicamente gráficos e visualizações associados\n* Suporte da galeria de modelos do GitHub público"
             },
             "customWidth": "75",
             "name": "why workbooks",
@@ -84,7 +84,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"workbooks-quick-start-templates-httpsgithubcommicrosoftapplication-insights-workbooksblobmasterdocumentationviewdesignertileconversionsmd\"></a>[Modelos de Início Rápido de Pastas de Trabalho](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/TileConversions.md)\n\nAs Pastas de Trabalho nos workspaces do Log Analytics já têm modelos personalizados criados para replicar os blocos existentes do designer de exibição. Abaixo você encontra os links para os modelos de acesso rápido ou abra os modelos na galeria das Pastas de Trabalho.\n\nDepois de selecionar um link de modelo, siga estas etapas para atualizar suas exibições.\n\n1. Selecione o botão `Edit` na barra de ferramentas na parte superior da página para entrar no `Edit Mode`.\n\n2. Em seguida, escolha a opção `↑ Edit` no canto inferior direito de uma célula e cole sua consulta."
+                "json": "### <a name=\"workbooks-quick-start-templates\"></a>[Modelos de Início Rápido de Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-tiles)\n\nAs Pastas de Trabalho nos workspaces do Log Analytics já têm modelos personalizados criados para replicar os blocos existentes do designer de exibição. Abaixo você encontra os links para os modelos de acesso rápido ou abra os modelos na galeria das Pastas de Trabalho.\n\nDepois de selecionar um link de modelo, siga estas etapas para atualizar suas exibições.\n\n1. Selecione o botão `Edit` na barra de ferramentas na parte superior da página para entrar no `Edit Mode`.\n\n2. Em seguida, escolha a opção `↑ Edit` no canto inferior direito de uma célula e cole sua consulta."
             },
             "name": "quick start",
             "styleSettings": {
@@ -205,7 +205,7 @@
                 "style": "paragraph",
                 "links": [
                     {
-                        "cellValue": "https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md",
+                        "cellValue": "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-overview",
                         "linkTarget": "Url",
                         "linkLabel": "View Designer transition documentation",
                         "preText": "For additional assistance, please reference the ",
@@ -226,14 +226,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"understanding-editing-in-workbookshttpsdocsmicrosoftcomen-usazureazure-monitorappusage-workbooksediting-rearranging-cloning-and-deleting-workbook-sections\"></a>[Noções básicas sobre edição em pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#editing-rearranging-cloning-and-deleting-workbook-sections)\n\nO Designer de Exibição faz os usuários selecionarem um tipo de visualização específica e editarem a consulta para atualizar a fonte de dados.\n\nAs Pastas de Trabalho permitem que os usuários executem a consulta pela primeira vez e personalizem a visualização ideal para os dados. As Pastas de Trabalho têm dois modos, um modo de edição e um de leitura. Por padrão, as Pastas de Trabalho e os modelos salvos são abertos no modo de leitura. Para começar a edição, clique no botão `🖊️ Edit` na barra de ferramentas superior. \n\nPara editar uma célula, basta selecionar o botão `↑ Edit` localizado no canto inferior direito de cada célula. As Pastas de Trabalho permitem que os usuários editem várias etapas ao mesmo tempo. Para retornar ao modo de leitura, selecione `Done Editing` na barra de ferramentas superior."
+                "json": "## <a name=\"understanding-editing-in-workbooks\"></a>[Noções básicas sobre edição em pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#editing-rearranging-cloning-and-deleting-workbook-sections)\n\nO Designer de Exibição faz os usuários selecionarem um tipo de visualização específica e editarem a consulta para atualizar a fonte de dados.\n\nAs Pastas de Trabalho permitem que os usuários executem a consulta pela primeira vez e personalizem a visualização ideal para os dados. As Pastas de Trabalho têm dois modos, um modo de edição e um de leitura. Por padrão, as Pastas de Trabalho e os modelos salvos são abertos no modo de leitura. Para começar a edição, clique no botão `🖊️ Edit` na barra de ferramentas superior. \n\nPara editar uma célula, basta selecionar o botão `↑ Edit` localizado no canto inferior direito de cada célula. As Pastas de Trabalho permitem que os usuários editem várias etapas ao mesmo tempo. Para retornar ao modo de leitura, selecione `Done Editing` na barra de ferramentas superior."
             },
             "name": "edit mode"
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"parameters-in-workbookshttpsdocsmicrosoftcomen-usazureazure-monitorappusage-workbooksadding-parameter-sections\"></a>[Parâmetros em Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#adding-parameter-sections)\n\nAgora você pode criar um filtro de intervalo de tempo selecionando a opção \"Adicionar parâmetros\" e o \"Seletor de intervalo de tempo\", conforme mostrado no exemplo abaixo:"
+                "json": "## <a name=\"parameters-in-workbooks\"></a>[Parâmetros em Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#adding-parameter-sections)\n\nAgora você pode criar um filtro de intervalo de tempo selecionando a opção \"Adicionar parâmetros\" e o \"Seletor de intervalo de tempo\", conforme mostrado no exemplo abaixo:"
             },
             "name": "Parameters"
         },
@@ -381,7 +381,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"running-queries-and-making-visualizations-in-workbookshttpsdocsmicrosoftcomen-usazureazure-monitorappusage-workbooksadding-query-sections\"></a>[Como executar consultas e criar visualizações nas Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#adding-query-sections)\n\nAs consultas funcionam da mesma forma que nos workspaces do designer de exibição ou do LA. Com as Pastas de Trabalho, você pode alterar até mesmo o escopo da consulta, seja em vários workspaces ou em vários recursos.\n\nAs Pastas de Trabalho também permitem que você controle as várias opções que existem para as visualizações. Você pode criar grades, gráficos de pizza, gráficos de barras, gráficos de linhas e muito mais."
+                "json": "### <a name=\"running-queries-and-making-visualizations-in-workbooks\"></a>[Como executar consultas e criar visualizações nas Pastas de Trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#adding-query-sections)\n\nAs consultas funcionam da mesma forma que nos workspaces do designer de exibição ou do LA. Com as Pastas de Trabalho, você pode alterar até mesmo o escopo da consulta, seja em vários workspaces ou em vários recursos.\n\nAs Pastas de Trabalho também permitem que você controle as várias opções que existem para as visualizações. Você pode criar grades, gráficos de pizza, gráficos de barras, gráficos de linhas e muito mais."
             },
             "name": "running queries"
         },
@@ -411,7 +411,7 @@
         {
             "type": 1,
             "content": {
-                "json": "Também é possível reutilizar a consulta e formar um gráfico de barras. Para fazer isso, selecione a opção \"Gráfico de barras\" sob a lista suspensa de visualizações.\n\n### <a name=\"customizing-visualizationshttpsdocsmicrosoftcomen-usazureazure-monitorappusage-workbooksadvanced-analytic-query-settings\"></a>[Como personalizar visualizações](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#advanced-analytic-query-settings)\n\nVocê também pode fazer personalizações para as visualizações, como alterar para cores e dados exibidos, conforme mostrado nos exemplos abaixo.\n\nTambém é possível fazer inúmeras alterações estéticas nos gráficos. Por exemplo, há opções para alterar o tamanho de cada célula e para adicionar uma opção de exportar ou de fixar ao painel disponíveis em ⚙️, para as configurações avançadas."
+                "json": "Também é possível reutilizar a consulta e formar um gráfico de barras. Para fazer isso, selecione a opção \"Gráfico de barras\" sob a lista suspensa de visualizações.\n\n### <a name=\"customizing-visualizations\"></a>[Como personalizar visualizações](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks#advanced-analytic-query-settings)\n\nVocê também pode fazer personalizações para as visualizações, como alterar para cores e dados exibidos, conforme mostrado nos exemplos abaixo.\n\nTambém é possível fazer inúmeras alterações estéticas nos gráficos. Por exemplo, há opções para alterar o tamanho de cada célula e para adicionar uma opção de exportar ou de fixar ao painel disponíveis em ⚙️, para as configurações avançadas."
             },
             "name": "customizing"
         },
@@ -471,7 +471,7 @@
                 "style": "paragraph",
                 "links": [
                     {
-                        "cellValue": "https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md",
+                        "cellValue": "https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-overview",
                         "linkTarget": "Url",
                         "linkLabel": "View Designer transition documentation",
                         "preText": "For additional assistance, please reference the ",
