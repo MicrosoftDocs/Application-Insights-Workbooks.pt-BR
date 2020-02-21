@@ -1,16 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Visão geral do Cosmos DB",
+    "name": "Visão geral de conexões (desenvolvimento)",
     "author": "Microsoft",
+    "isPreview": true,
     "galleries": [
         {
-            "type": "workbook",
-            "resourceType": "Azure Monitor",
-            "categoryKey": "azureMonitorInsights",
-            "order": 100
-        },
-        {
-            "type": "cosmosdb-insights",
+            "type": "vm-insights",
             "resourceType": "Azure Monitor",
             "order": 100
         }

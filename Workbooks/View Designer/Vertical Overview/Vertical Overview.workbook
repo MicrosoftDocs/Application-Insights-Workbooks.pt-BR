@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"vertical-overview\"></a>Visão geral vertical\nEste relatório utiliza vários modos de exibição consolidados em Pastas de Trabalho usando um layout vertical.\n\nOs usuários podem modificar as consultas usando o botão `🖊️ Edit` da barra de ferramentas superior, além de poder alterá-las para uma etapa específica usando o botão `↑ Edit` no canto inferior direito.\n<br/>\n<br/>"
+                "json": "## <a name=\"vertical-overview\"></a>Visão geral vertical\nEste relatório utiliza vários modos de exibição consolidados em Pastas de Trabalho usando um layout vertical.\n\nOs usuários podem modificar as consultas usando o botão `🖊️ Edit` da barra de ferramentas superior, além de poder alterá-las para uma etapa específica usando o botão `↑ Edit` no canto inferior direito.\n\nLeia mais sobre a conversão do [Designer de Exibição em pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-options) ou descubra [recursos de pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/workbooks-overview) adicionais.\n<br/>\n<br/>"
             },
             "name": "text - 7"
         },
@@ -161,7 +161,7 @@
             "type": 3,
             "content": {
                 "version": "KqlItem/1.0",
-                "query": "search *\r\n| summarize AggregatedValue = count() by Type, bin(TimeGenerated, 1h)\r\n| sort by TimeGenerated desc\r\n| render linechart\r\n",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type, bin(TimeGenerated, 1h)\r\n| sort by TimeGenerated desc",
                 "size": 1,
                 "showAnalytics": true,
                 "title": "Data Types Over Time",
@@ -171,7 +171,8 @@
                 "timeContextFromParameter": "TimeRange",
                 "showExportToExcel": true,
                 "queryType": 0,
-                "resourceType": "microsoft.operationalinsights/workspaces"
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "linechart"
             },
             "customWidth": "50",
             "showPin": true,

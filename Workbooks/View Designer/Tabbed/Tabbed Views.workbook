@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"tabbed-overview\"></a>Visão geral com guias\nEste relatório utiliza as guias das Pastas de Trabalho para consolidar várias exibições em uma pasta de trabalho.\n\nOs usuários podem modificar as consultas usando o botão Editar 🖊️ na barra de ferramentas superior, além de poder alterá-las para uma etapa específica usando o botão Editar ↑ no canto inferior direito.\n<br/>\n<br/>"
+                "json": "## <a name=\"tabbed-overview\"></a>Visão geral com guias\nEste relatório utiliza as guias das Pastas de Trabalho para consolidar várias exibições em uma pasta de trabalho.\n\nOs usuários podem modificar as consultas usando o botão Editar 🖊️ na barra de ferramentas superior, além de poder alterá-las para uma etapa específica usando o botão Editar ↑ no canto inferior direito.\n\nLeia mais sobre a conversão do [Designer de Exibição em pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/view-designer-conversion-options) ou descubra [recursos de pastas de trabalho](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/workbooks-overview) adicionais.\n<br/>\n<br/>"
             },
             "name": "text - 7"
         },
