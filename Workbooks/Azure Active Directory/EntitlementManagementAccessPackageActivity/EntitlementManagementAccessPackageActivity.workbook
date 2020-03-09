@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"entitlement-management-access-package-activity\"></a>Atividade de pacote de acesso de gerenciamento de direitos"
+                "json": "## <a name=\"entitlement-management-access-package-activity\"></a>Atividade do Pacote de Acesso de Gerenciamento de Direitos"
             },
             "name": "text - 2"
         },

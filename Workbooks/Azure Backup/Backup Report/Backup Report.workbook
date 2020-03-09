@@ -488,7 +488,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<div style=\"text-align:center;\"><span style=\"font-size:14px;font-weight:600;\"> Bem-vindo(a) ao relatório do Backup do Azure! </span> <br> <br> <span style=\"font-size:12px;font-weight:600;\"> Selecione seus workspaces e clique na guia Resumo acima para começar </span> </div>"
+                "json": "<div style=\"text-align:center;\"><span style=\"font-size:14px;font-weight:600;\"> Bem-vindo(a) aos relatórios do Backup do Azure! </span> <br> <br> <span style=\"font-size:12px;font-weight:600;\"> Selecione seus workspaces e clique na guia Resumo acima para começar </span> </div>"
             },
             "conditionalVisibility": {
                 "parameterName": "TabName",
@@ -498,44 +498,16 @@
             "name": "Overview-WelcomeText"
         },
         {
-            "type": 3,
+            "type": 1,
             "content": {
-                "version": "KqlItem/1.0",
-                "query": "{\"version\":\"1.0.0\",\"content\":\"[\\r\\n{\\\"feature\\\": \\\"Trend Analysis\\\"},\\r\\n{\\\"feature\\\": \\\"Auditing of Backups\\\"},\\r\\n{\\\"feature\\\": \\\"Usage Allocation\\\"},\\r\\n{\\\"feature\\\": \\\"Multi-Region Support\\\"},\\r\\n{\\\"feature\\\": \\\"Multi-Tenant Support\\\"}\\r\\n]\",\"transformers\":null}",
-                "size": 0,
-                "queryType": 8,
-                "visualization": "graph",
-                "graphSettings": {
-                    "type": 2,
-                    "topContent": {
-                        "formatOptions": {
-                            "showIcon": true
-                        }
-                    },
-                    "centerContent": {
-                        "columnMatch": "feature",
-                        "formatter": 1,
-                        "formatOptions": {
-                            "showIcon": true
-                        }
-                    },
-                    "nodeIdField": "feature",
-                    "nodeSize": null,
-                    "staticNodeSize": 100,
-                    "colorSettings": {
-                        "nodeColorField": "feature",
-                        "type": 1,
-                        "colorPalette": "pastel"
-                    },
-                    "hivesMargin": 5
-                }
+                "json": "<div style=\"text-align:center;\"><span style=\"font-size:12px;font-weight:500;\"> <u>Principais recursos</u> </span>  <span style=\"font-size:12px;font-weight:400;\"> <br><br>  Exibir relatórios entre tipos, assinaturas e regiões de carga de trabalho <br><br> Exibir relatórios entre seus locatários usando o Azure Lighthouse <br><br> Acompanhar e prever o uso em um nível de item de backup e em um cofre <br><br> Analisar tendências de trabalhos, itens de backup, políticas e muito mais <br><br> Auditar backups e restaurações para todos os seus itens de backup </span> <br> </div>"
             },
             "conditionalVisibility": {
                 "parameterName": "TabName",
                 "comparison": "isEqualTo",
                 "value": "Overview"
             },
-            "name": "Overview-Image"
+            "name": "text - 66"
         },
         {
             "type": 3,
