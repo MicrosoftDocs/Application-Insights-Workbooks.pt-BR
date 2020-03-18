@@ -264,7 +264,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"mitigation\"></a>Redução\nUse esta seção lista as etapas de recuperação para os problemas conhecidos. Isso permite o compartilhamento de informações com investigadores de problemas futuros. "
+                "json": "## <a name=\"mitigation\"></a>Atenuação\nUse esta seção lista as etapas de recuperação para os problemas conhecidos. Isso permite o compartilhamento de informações com investigadores de problemas futuros. "
             },
             "conditionalVisibility": null,
             "halfWidth": false

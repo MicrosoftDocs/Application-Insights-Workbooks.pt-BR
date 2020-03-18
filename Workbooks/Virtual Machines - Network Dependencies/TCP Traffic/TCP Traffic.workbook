@@ -248,16 +248,16 @@
                         "crossComponentResources": [
                             "{Workspaces}"
                         ],
-                        "value": null,
                         "isHiddenWhenLocked": true,
                         "timeContextFromParameter": "TimeRange",
                         "queryType": 0,
-                        "resourceType": "microsoft.operationalinsights/workspaces"
+                        "resourceType": "microsoft.operationalinsights/workspaces",
+                        "value": null
                     }
                 ],
                 "style": "pills",
                 "queryType": 0,
-                "resourceType": "microsoft.resources/subscriptions"
+                "resourceType": "microsoft.operationalinsights/workspaces"
             },
             "name": "parameters - 0"
         },
@@ -274,28 +274,15 @@
             "name": "text - 3"
         },
         {
-            "type": 1,
-            "content": {
-                "json": "## <a name=\"port-activity-by-computer-process-ip-and-port\"></a>Atividade de porta por computador, processo, IP e porta"
-            },
-            "conditionalVisibility": {
-                "parameterName": "Test",
-                "comparison": "isEqualTo",
-                "value": "1"
-            },
-            "name": "text - 1"
-        },
-        {
             "type": 3,
             "content": {
                 "version": "KqlItem/1.0",
-                "query": "VMBoundPort\n| where Ip != \"127.0.0.1\"\n| summarize BytesSent=sum(BytesSent), BytesReceived=sum(BytesReceived), LinksEstablished=sum(LinksEstablished), LinksTerminated=sum(LinksTerminated), arg_max(TimeGenerated, LinksLive) by Computer, ProcessName, Ip, Port, IsWildcardBind\n| project-away TimeGenerated\n| order by BytesSent desc",
-                "size": 2,
-                "showAnalytics": true,
-                "timeContext": {
-                    "durationMs": 0
-                },
+                "query": "let overallData = VMConnection\n| summarize Sent = sum(BytesSent), Received = sum(BytesReceived)\n| extend Total = todouble(Sent)+todouble(Received)\n| extend Computer = '🔵 Overall', Type = '1';\nVMConnection\n| summarize Sent = sum(BytesSent), Received = sum(BytesReceived) by Computer\n| extend Total = todouble(Sent)+todouble(Received), Type = '2'\n| union overallData\n| order by Type asc, Total desc\n| project-away Type",
+                "size": 1,
                 "timeContextFromParameter": "TimeRange",
+                "exportFieldName": "Computer",
+                "exportParameterName": "Computer",
+                "exportDefaultValue": "🔵 Overall",
                 "queryType": 0,
                 "resourceType": "microsoft.operationalinsights/workspaces",
                 "crossComponentResources": [
@@ -304,14 +291,14 @@
                 "gridSettings": {
                     "formatters": [
                         {
-                            "columnMatch": "BytesSent",
+                            "columnMatch": "Sent",
                             "formatter": 4,
                             "formatOptions": {
-                                "palette": "orange",
+                                "palette": "blue",
                                 "showIcon": true
                             },
                             "numberFormat": {
-                                "unit": 17,
+                                "unit": 2,
                                 "options": {
                                     "style": "decimal",
                                     "useGrouping": true
@@ -319,14 +306,14 @@
                             }
                         },
                         {
-                            "columnMatch": "BytesReceived",
+                            "columnMatch": "Received",
                             "formatter": 4,
                             "formatOptions": {
-                                "palette": "green",
+                                "palette": "purple",
                                 "showIcon": true
                             },
                             "numberFormat": {
-                                "unit": 17,
+                                "unit": 2,
                                 "options": {
                                     "style": "decimal",
                                     "useGrouping": true
@@ -334,32 +321,21 @@
                             }
                         },
                         {
-                            "columnMatch": "LinksEstablished",
+                            "columnMatch": "Total",
                             "formatter": 4,
                             "formatOptions": {
-                                "palette": "blueDark",
+                                "palette": "turquoise",
                                 "showIcon": true
-                            }
-                        },
-                        {
-                            "columnMatch": "LinksTerminated",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "blueDark",
-                                "showIcon": true
-                            }
-                        },
-                        {
-                            "columnMatch": "LinksLive",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "blueDark",
-                                "showIcon": true
+                            },
+                            "numberFormat": {
+                                "unit": 2,
+                                "options": {
+                                    "style": "decimal",
+                                    "useGrouping": true
+                                }
                             }
                         }
-                    ],
-                    "rowLimit": 10000,
-                    "filter": true
+                    ]
                 }
             },
             "conditionalVisibility": {
@@ -367,7 +343,81 @@
                 "comparison": "isEqualTo",
                 "value": "1"
             },
-            "name": "query - 2"
+            "name": "query - 1"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "crossComponentResources": [
+                    "{Workspaces}"
+                ],
+                "parameters": [
+                    {
+                        "id": "29398687-fa75-4afa-806c-89a376bd0c21",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "ComputerName",
+                        "type": 1,
+                        "value": null,
+                        "isHiddenWhenLocked": true,
+                        "criteriaData": [
+                            {
+                                "condition": "if (Computer == '🔵 Overall'), result = '*'",
+                                "criteriaContext": {
+                                    "leftOperand": "Computer",
+                                    "operator": "==",
+                                    "rightValType": "static",
+                                    "rightVal": "🔵 Overall",
+                                    "resultValType": "static",
+                                    "resultVal": "*"
+                                }
+                            },
+                            {
+                                "condition": "else result = Computer",
+                                "criteriaContext": {
+                                    "operator": "Default",
+                                    "rightValType": "param",
+                                    "resultValType": "param",
+                                    "resultVal": "Computer"
+                                }
+                            }
+                        ],
+                        "timeContext": {
+                            "durationMs": 86400000
+                        }
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces"
+            },
+            "conditionalVisibility": {
+                "parameterName": "Test",
+                "comparison": "isEqualTo",
+                "value": "1"
+            },
+            "name": "parameters - 2"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "VMConnection\n| where Computer in (\"{ComputerName}\") or '*' in (\"{ComputerName}\") \n| summarize Sent = sum(BytesSent), Received = sum(BytesReceived) by bin(TimeGenerated, {TimeRange:grain})",
+                "size": 0,
+                "timeContextFromParameter": "TimeRange",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "crossComponentResources": [
+                    "{Workspaces}"
+                ],
+                "visualization": "linechart"
+            },
+            "conditionalVisibility": {
+                "parameterName": "Test",
+                "comparison": "isEqualTo",
+                "value": "1"
+            },
+            "name": "query - 3"
         }
     ],
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
