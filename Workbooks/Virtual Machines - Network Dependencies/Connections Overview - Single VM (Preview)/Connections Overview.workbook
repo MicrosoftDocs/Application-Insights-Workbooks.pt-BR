@@ -493,7 +493,7 @@
         {
             "type": 1,
             "content": {
-                "json": "💡 <em>Selecione uma linha na tabela abaixo para exibir os detalhes de conexão para essa entrada.</em>"
+                "json": "💡 <em>Selecione uma linha na tabela abaixo para ver os detalhes de conexão dessa entrada.</em>"
             },
             "conditionalVisibility": {
                 "parameterName": "Test",

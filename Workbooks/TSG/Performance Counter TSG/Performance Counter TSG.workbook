@@ -217,7 +217,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"solutions\"></a>Soluções\nSe a utilização da CPU é realmente resultado de aumento de carga, então o dimensionamento é a resposta mais apropriada:\n* Expandir – adicionar mais recursos de computação. Se 10 VMs são usadas para atender ao aplicativo, dimensione-o para 15 para aliviar a carga das VMs existentes.\n* Escalar verticalmente – use recursos com uma qualidade mais alta (atualização de CPU de 2 núcleos para CPU de 8 núcleos)"
+                "json": "## <a name=\"solutions\"></a>Soluções\nSe a utilização da CPU é realmente resultado de aumento de carga, então o dimensionamento é a resposta mais apropriada:\n* Escalar horizontalmente – adicionar mais recursos de computação. Se 10 VMs são usadas para atender ao aplicativo, dimensione-o para 15 para aliviar a carga das VMs existentes.\n* Escalar verticalmente – use recursos com uma qualidade mais alta (atualização de CPU de 2 núcleos para CPU de 8 núcleos)"
             },
             "conditionalVisibility": null
         }

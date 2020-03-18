@@ -248,7 +248,6 @@
                         "crossComponentResources": [
                             "{Workspaces}"
                         ],
-                        "value": null,
                         "isHiddenWhenLocked": true,
                         "timeContextFromParameter": "TimeRange",
                         "queryType": 0,
@@ -257,7 +256,7 @@
                 ],
                 "style": "pills",
                 "queryType": 0,
-                "resourceType": "microsoft.resources/subscriptions"
+                "resourceType": "microsoft.operationalinsights/workspaces"
             },
             "name": "parameters - 0"
         },
@@ -274,24 +273,138 @@
             "name": "text - 3"
         },
         {
-            "type": 1,
+            "type": 3,
             "content": {
-                "json": "## <a name=\"port-activity-by-computer-process-ip-and-port\"></a>Atividade de porta por computador, processo, IP e porta"
+                "version": "KqlItem/1.0",
+                "query": "let overallData = VMConnection\n| summarize Established = sum(LinksEstablished), Failed = sum(LinksFailed)\n| extend PercentFailed = (todouble(Failed)/todouble(Failed+Established))*100.0\n| extend Computer = '🔵 Overall', Type = '1';\nVMConnection\n| summarize Established = sum(LinksEstablished), Failed = sum(LinksFailed) by Computer\n| extend PercentFailed = (todouble(Failed)/todouble(Failed+Established))*100.0, Type = '2'\n| union overallData\n| order by Type asc, PercentFailed desc\n| project-away Type",
+                "size": 1,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "exportFieldName": "Computer",
+                "exportParameterName": "Computer",
+                "exportDefaultValue": "🔵 Overall",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "crossComponentResources": [
+                    "{Workspaces}"
+                ],
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Established",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "palette": "blue",
+                                "showIcon": true
+                            },
+                            "numberFormat": {
+                                "unit": 17,
+                                "options": {
+                                    "style": "decimal",
+                                    "useGrouping": true
+                                }
+                            }
+                        },
+                        {
+                            "columnMatch": "Failed",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "palette": "purple",
+                                "showIcon": true
+                            },
+                            "numberFormat": {
+                                "unit": 17,
+                                "options": {
+                                    "style": "decimal",
+                                    "useGrouping": true
+                                }
+                            }
+                        },
+                        {
+                            "columnMatch": "PercentFailed",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "palette": "lightBlue",
+                                "showIcon": true
+                            },
+                            "numberFormat": {
+                                "unit": 1,
+                                "options": {
+                                    "style": "decimal",
+                                    "minimumFractionDigits": 2,
+                                    "maximumFractionDigits": 2
+                                }
+                            }
+                        }
+                    ]
+                }
             },
             "conditionalVisibility": {
                 "parameterName": "Test",
                 "comparison": "isEqualTo",
                 "value": "1"
             },
-            "name": "text - 1"
+            "name": "query - 1"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "crossComponentResources": [
+                    "{Workspaces}"
+                ],
+                "parameters": [
+                    {
+                        "id": "ac3dc2cc-de39-4fe9-ba0c-bc722f953ffa",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "ComputerName",
+                        "type": 1,
+                        "value": "*",
+                        "isHiddenWhenLocked": true,
+                        "criteriaData": [
+                            {
+                                "condition": "if (Computer == '🔵 Overall'), result = '*'",
+                                "criteriaContext": {
+                                    "leftOperand": "Computer",
+                                    "operator": "==",
+                                    "rightValType": "static",
+                                    "rightVal": "🔵 Overall",
+                                    "resultValType": "static",
+                                    "resultVal": "*"
+                                }
+                            },
+                            {
+                                "condition": "else result = Computer",
+                                "criteriaContext": {
+                                    "operator": "Default",
+                                    "rightValType": "param",
+                                    "resultValType": "param",
+                                    "resultVal": "Computer"
+                                }
+                            }
+                        ],
+                        "timeContextFromParameter": "TimeRange"
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces"
+            },
+            "conditionalVisibility": {
+                "parameterName": "Test",
+                "comparison": "isEqualTo",
+                "value": "1"
+            },
+            "name": "parameters - 2"
         },
         {
             "type": 3,
             "content": {
                 "version": "KqlItem/1.0",
-                "query": "VMBoundPort\n| where Ip != \"127.0.0.1\"\n| summarize BytesSent=sum(BytesSent), BytesReceived=sum(BytesReceived), LinksEstablished=sum(LinksEstablished), LinksTerminated=sum(LinksTerminated), arg_max(TimeGenerated, LinksLive) by Computer, ProcessName, Ip, Port, IsWildcardBind\n| project-away TimeGenerated\n| order by BytesSent desc",
-                "size": 2,
-                "showAnalytics": true,
+                "query": "VMConnection\n| where Computer in (\"{ComputerName}\") or '*' in (\"{ComputerName}\") \n| summarize Established = sum(LinksEstablished), Failed = sum(LinksFailed) by bin(TimeGenerated, {TimeRange:grain})",
+                "size": 0,
                 "timeContext": {
                     "durationMs": 0
                 },
@@ -301,73 +414,38 @@
                 "crossComponentResources": [
                     "{Workspaces}"
                 ],
-                "gridSettings": {
-                    "formatters": [
-                        {
-                            "columnMatch": "BytesSent",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "orange",
-                                "showIcon": true
-                            },
-                            "numberFormat": {
-                                "unit": 17,
-                                "options": {
-                                    "style": "decimal",
-                                    "useGrouping": true
-                                }
-                            }
-                        },
-                        {
-                            "columnMatch": "BytesReceived",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "green",
-                                "showIcon": true
-                            },
-                            "numberFormat": {
-                                "unit": 17,
-                                "options": {
-                                    "style": "decimal",
-                                    "useGrouping": true
-                                }
-                            }
-                        },
-                        {
-                            "columnMatch": "LinksEstablished",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "blueDark",
-                                "showIcon": true
-                            }
-                        },
-                        {
-                            "columnMatch": "LinksTerminated",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "blueDark",
-                                "showIcon": true
-                            }
-                        },
-                        {
-                            "columnMatch": "LinksLive",
-                            "formatter": 4,
-                            "formatOptions": {
-                                "palette": "blueDark",
-                                "showIcon": true
-                            }
-                        }
-                    ],
-                    "rowLimit": 10000,
-                    "filter": true
-                }
+                "visualization": "timechart"
             },
             "conditionalVisibility": {
                 "parameterName": "Test",
                 "comparison": "isEqualTo",
                 "value": "1"
             },
-            "name": "query - 2"
+            "customWidth": "50",
+            "name": "query - 3"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "VMConnection\r\n| where Computer in (\"{ComputerName}\") or '*' in (\"{ComputerName}\") \r\n| summarize Established = sum(LinksEstablished), Failed = sum(LinksFailed) by bin(TimeGenerated, {TimeRange:grain})\r\n| project TimeGenerated, PercentFailed = (todouble(Failed)/todouble(Failed+Established))*100",
+                "size": 0,
+                "aggregation": 3,
+                "timeContextFromParameter": "TimeRange",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "crossComponentResources": [
+                    "{Workspaces}"
+                ],
+                "visualization": "timechart"
+            },
+            "conditionalVisibility": {
+                "parameterName": "Test",
+                "comparison": "isEqualTo",
+                "value": "1"
+            },
+            "customWidth": "50",
+            "name": "query - 4"
         }
     ],
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
