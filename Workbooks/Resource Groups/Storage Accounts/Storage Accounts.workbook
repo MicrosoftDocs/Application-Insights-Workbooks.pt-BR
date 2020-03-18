@@ -316,7 +316,7 @@
         {
             "type": 1,
             "content": {
-                "json": "💡 _Clique nos links na célula para ver mais detalhes sobre uma conta de armazenamento_"
+                "json": "💡 _Clique nos links nas células para ver mais detalhes sobre uma conta de armazenamento_"
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",
