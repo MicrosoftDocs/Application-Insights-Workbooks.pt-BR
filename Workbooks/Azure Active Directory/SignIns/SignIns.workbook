@@ -239,7 +239,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<br />\n💡 _Clique em um bloco ou uma linha na grade para aprofundar ainda mais_"
+                "json": "<br />\n💡 _Clique em um bloco ou em uma linha na grade para aprofundar ainda mais_"
             },
             "conditionalVisibility": null,
             "name": "text - 6 - Copy"
