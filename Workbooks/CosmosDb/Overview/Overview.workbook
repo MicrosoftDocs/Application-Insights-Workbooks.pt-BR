@@ -10,7 +10,7 @@
                         "id": "1f74ed9a-e3ed-498d-bd5b-f68f3836a117",
                         "version": "KqlParameterItem/1.0",
                         "name": "Subscription",
-                        "label": "Subscriptions",
+                        "label": "Assinaturas",
                         "type": 6,
                         "description": "Todas as assinaturas com contas do Cosmos DB",
                         "isRequired": true,
@@ -55,7 +55,7 @@
                         "id": "c4b69c01-2263-4ada-8d9c-43433b739ff3",
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
-                        "label": "Time Range",
+                        "label": "Intervalo de tempo",
                         "isRequired": true,
                         "value": {
                             "durationMs": 14400000
@@ -236,14 +236,14 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Overview",
+                                    "linkLabel": "Visão geral",
                                     "subTarget": "Overview",
                                     "style": "link"
                                 },
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Failures",
+                                    "linkLabel": "Falhas",
                                     "subTarget": "Failures",
                                     "style": "link"
                                 },
@@ -257,7 +257,7 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Operations",
+                                    "linkLabel": "Operações",
                                     "subTarget": "Operation",
                                     "style": "link"
                                 }
@@ -576,31 +576,31 @@
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-TotalRequests Timeline",
-                                        "label": "Requests Timeline"
+                                        "label": "Linha do Tempo das Solicitações"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DocumentCount",
-                                        "label": "Documents"
+                                        "label": "Documentos"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DocumentCount Timeline",
-                                        "label": "Document Count (Average) Timeline"
+                                        "label": "Linha do Tempo da Contagem de Documentos (média)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DataUsage",
-                                        "label": "Data Usage"
+                                        "label": "Uso de dados"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DataUsage Timeline",
-                                        "label": "Data Usage (Average) Timeline"
+                                        "label": "Linha do Tempo do Uso de Dados (média)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-ProvisionedThroughput",
-                                        "label": "Provisioned throughput (RUs/5m)"
+                                        "label": "Taxa de transferência provisionada (RUs/5m)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-ProvisionedThroughput Timeline",
-                                        "label": "Provisioned Throughput (Max) Timeline"
+                                        "label": "Linha do Tempo da Taxa de Transferência Provisionada (Máx.)"
                                     }
                                 ]
                             },
@@ -788,11 +788,11 @@
                                 "labelSettings": [
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-TotalRequests",
-                                        "label": "Total Requests (Count)"
+                                        "label": "Total de Solicitações (Contagem)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-TotalRequests Timeline",
-                                        "label": "Total Requests Timeline"
+                                        "label": "Linha do Tempo do Total de Solicitações"
                                     }
                                 ]
                             },
@@ -1034,35 +1034,35 @@
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DocumentCount",
-                                        "label": "Documents"
+                                        "label": "Documentos"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DocumentCount Timeline",
-                                        "label": "Documents Timeline"
+                                        "label": "Linha do Tempo de Documentos"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DataUsage",
-                                        "label": "Data Usage"
+                                        "label": "Uso de dados"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-DataUsage Timeline",
-                                        "label": "Data Usage (Sum) Timeline"
+                                        "label": "Linha do Tempo do Uso de Dados (Soma)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-IndexUsage",
-                                        "label": "Index Usage"
+                                        "label": "Uso do índice"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-IndexUsage Timeline",
-                                        "label": "Index Usage (Sum) Timeline"
+                                        "label": "Linha do Tempo do Uso do Índice (Soma)"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-AvailableStorage",
-                                        "label": "Available Storage"
+                                        "label": "Armazenamento disponível"
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-AvailableStorage Timeline",
-                                        "label": "Available Storage (Sum) Timeline"
+                                        "label": "Linha do Tempo de Armazenamento Disponível (Soma)"
                                     }
                                 ]
                             },
@@ -1220,7 +1220,7 @@
                                     },
                                     {
                                         "columnId": "microsoft.documentdb/databaseaccounts-Requests-TotalRequests Timeline",
-                                        "label": "Requests Timeline"
+                                        "label": "Linha do Tempo das Solicitações"
                                     }
                                 ]
                             },
