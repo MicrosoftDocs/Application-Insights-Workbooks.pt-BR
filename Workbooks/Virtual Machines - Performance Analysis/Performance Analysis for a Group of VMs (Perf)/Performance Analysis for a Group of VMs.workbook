@@ -335,7 +335,7 @@
                         "id": "41bb3710-5e9e-4b66-91fd-e11435899880",
                         "version": "KqlParameterItem/1.0",
                         "name": "ComputerNameContains",
-                        "label": "Computer Name Contains",
+                        "label": "O nome do computador contém",
                         "type": 1,
                         "description": "Isso filtrará os computadores cujo nome contém a palavra-chave. Isso consultará todos os computadores no workspace.",
                         "value": ""
@@ -608,7 +608,7 @@
                             "formatter": 7,
                             "formatOptions": {
                                 "linkTarget": "CellDetails",
-                                "linkLabel": "ℹ️ Info"
+                                "linkLabel": "ℹ️ Informações"
                             }
                         },
                         {
@@ -756,7 +756,7 @@
                         },
                         {
                             "columnId": "Average",
-                            "label": "Average"
+                            "label": "Média"
                         },
                         {
                             "columnId": "P95th",
@@ -768,11 +768,11 @@
                         },
                         {
                             "columnId": "Trend (Average)",
-                            "label": "Trend (Average)"
+                            "label": "Tendência (média)"
                         },
                         {
                             "columnId": "Properties",
-                            "label": "Properties"
+                            "label": "Propriedades"
                         }
                     ]
                 }
@@ -880,7 +880,7 @@
                             "formatter": 7,
                             "formatOptions": {
                                 "linkTarget": "CellDetails",
-                                "linkLabel": "️️️ℹ Info",
+                                "linkLabel": "️️️ℹ Informações",
                                 "showIcon": true
                             }
                         },

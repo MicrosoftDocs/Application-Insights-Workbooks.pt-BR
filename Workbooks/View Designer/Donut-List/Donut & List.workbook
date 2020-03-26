@@ -87,7 +87,7 @@
                 "query": "search *\r\n| where TimeGenerated {TimeRange}\r\n| summarize AggregatedValue = count() by Type | order by AggregatedValue desc\r\n",
                 "size": 1,
                 "showAnalytics": true,
-                "title": "Data Type Distribution",
+                "title": "Distribuição do tipo de dados",
                 "timeContext": {
                     "durationMs": 0
                 },

@@ -13,7 +13,7 @@
                         "id": "1f74ed9a-e3ed-498d-bd5b-f68f3836a117",
                         "version": "KqlParameterItem/1.0",
                         "name": "Subscription",
-                        "label": "Subscriptions",
+                        "label": "Assinaturas",
                         "type": 6,
                         "description": "Todas as assinaturas com o Cache Redis",
                         "isRequired": true,
@@ -35,7 +35,7 @@
                         "id": "f60ea0a0-3703-44ca-a59b-df0246423f41",
                         "version": "KqlParameterItem/1.0",
                         "name": "Resources",
-                        "label": "Redis caches",
+                        "label": "Caches Redis",
                         "type": 5,
                         "isRequired": true,
                         "multiSelect": true,
@@ -58,7 +58,7 @@
                         "id": "182d6324-854c-4cc0-802a-de4f3bee9f76",
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
-                        "label": "Time range",
+                        "label": "Intervalo de horas",
                         "type": 4,
                         "isRequired": true,
                         "value": {
@@ -195,21 +195,21 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Overview",
+                                    "linkLabel": "Visão geral",
                                     "subTarget": "Overview",
                                     "style": "link"
                                 },
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Operations",
+                                    "linkLabel": "Operações",
                                     "subTarget": "Operations",
                                     "style": "link"
                                 },
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Usage",
+                                    "linkLabel": "Uso",
                                     "subTarget": "Usage",
                                     "style": "link",
                                     "workbookContext": {},
@@ -218,7 +218,7 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Failures",
+                                    "linkLabel": "Falhas",
                                     "subTarget": "Failures",
                                     "style": "link"
                                 }
@@ -500,27 +500,27 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--usedmemory",
-                                        "label": "Used Memory"
+                                        "label": "Memória Usada"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--usedmemory Timeline",
-                                        "label": "Used Memory Timeline"
+                                        "label": "Linha do tempo de memória usada"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--usedmemorypercentage",
-                                        "label": "Used Memory Percentage"
+                                        "label": "Porcentagem de memória utilizada"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--usedmemorypercentage Timeline",
-                                        "label": "Used Memory Percentage Timeline"
+                                        "label": "Linha do tempo de porcentagem de memória usada"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--serverLoad",
-                                        "label": "Server Load"
+                                        "label": "Carga do Servidor"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--serverLoad Timeline",
-                                        "label": "Server Load Timeline"
+                                        "label": "Linha do tempo de carga do servidor"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--percentProcessorTime",
@@ -528,31 +528,31 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--percentProcessorTime Timeline",
-                                        "label": "CPU Timeline"
+                                        "label": "Linha do tempo de CPU"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--connectedclients",
-                                        "label": "Connected Clients"
+                                        "label": "Clientes conectados"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--connectedclients Timeline",
-                                        "label": "Connected Clients Timeline"
+                                        "label": "Linha do tempo de clientes conectados"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachemisses",
-                                        "label": "Cache Misses"
+                                        "label": "Erros de Cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachemisses Timeline",
-                                        "label": "Cache Misses Timeline"
+                                        "label": "Linha do tempo de perdas no cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--errors",
-                                        "label": "Errors (Max)"
+                                        "label": "Erros (Máx.)"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--errors Timeline",
-                                        "label": "Errors Timeline"
+                                        "label": "Linha do tempo de erros"
                                     }
                                 ]
                             },
@@ -756,19 +756,19 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--totalcommandsprocessed",
-                                        "label": "Total Operations"
+                                        "label": "Total de Operações"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--totalcommandsprocessed Timeline",
-                                        "label": "Total Operations Timeline"
+                                        "label": "Linha do tempo de total de operações"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--operationsPerSecond",
-                                        "label": "Operations Per Second"
+                                        "label": "Operations por segundo"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--operationsPerSecond Timeline",
-                                        "label": "Operations Per Second Timeline"
+                                        "label": "Linha do tempo de operações por segundo"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--getcommands",
@@ -776,15 +776,15 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--getcommands Timeline",
-                                        "label": "Gets Timeline"
+                                        "label": "Linha do tempo de gets"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--setcommands",
-                                        "label": "Sets"
+                                        "label": "Conjuntos"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--setcommands Timeline",
-                                        "label": "Sets Timeline"
+                                        "label": "Linha do tempo de sets"
                                     }
                                 ]
                             },
@@ -990,35 +990,35 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cacheRead",
-                                        "label": "Cache Read"
+                                        "label": "Cache Lido"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cacheRead Timeline",
-                                        "label": "Cache Read Timeline"
+                                        "label": "Linha do tempo de leitura do cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cacheWrite",
-                                        "label": "Cache Write"
+                                        "label": "Gravação no Cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cacheWrite Timeline",
-                                        "label": "Cache Write Timeline"
+                                        "label": "Linha do tempo de gravação no cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachehits",
-                                        "label": "Cache Hits"
+                                        "label": "Acertos do Cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachehits Timeline",
-                                        "label": "Cache Hits Timeline"
+                                        "label": "Linha do tempo de acertos do cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachemisses",
-                                        "label": "Cache Misses"
+                                        "label": "Erros de Cache"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--cachemisses Timeline",
-                                        "label": "Cache Misses Timeline"
+                                        "label": "Linha do tempo de perdas no cache"
                                     }
                                 ]
                             },
@@ -1155,11 +1155,11 @@
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--errors",
-                                        "label": "Total Errors"
+                                        "label": "Total de Erros"
                                     },
                                     {
                                         "columnId": "microsoft.cache/redis--errors Timeline",
-                                        "label": "Errors Timeline"
+                                        "label": "Linha do tempo de erros"
                                     }
                                 ]
                             },

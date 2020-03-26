@@ -33,7 +33,7 @@
                         "id": "bb1c10ec-cc9a-436e-8abc-7536ff78a19e",
                         "version": "KqlParameterItem/1.0",
                         "name": "ResourceType",
-                        "label": "Resource Type",
+                        "label": "Tipo de recurso",
                         "type": 7,
                         "isRequired": true,
                         "multiSelect": true,
@@ -74,17 +74,17 @@
                     {
                         "cellValue": "tabView",
                         "linkTarget": "parameter",
-                        "linkLabel": "Map View",
+                        "linkLabel": "Exibição de mapa",
                         "subTarget": "Map",
-                        "preText": "Map View",
+                        "preText": "Exibição de mapa",
                         "style": "link"
                     },
                     {
                         "cellValue": "tabView",
                         "linkTarget": "parameter",
-                        "linkLabel": "Resource View",
+                        "linkLabel": "Modo de Exibição de Recursos",
                         "subTarget": "Resource",
-                        "preText": "Resource View",
+                        "preText": "Modo de Exibição de Recursos",
                         "style": "link"
                     }
                 ]
@@ -248,7 +248,7 @@
                         },
                         {
                             "columnId": "resourceGroup",
-                            "label": "Resource Group"
+                            "label": "Grupo de recursos"
                         }
                     ]
                 }
