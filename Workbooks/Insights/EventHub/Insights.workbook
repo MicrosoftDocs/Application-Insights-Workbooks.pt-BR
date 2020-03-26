@@ -13,7 +13,7 @@
                         "id": "1f74ed9a-e3ed-498d-bd5b-f68f3836a117",
                         "version": "KqlParameterItem/1.0",
                         "name": "Subscription",
-                        "label": "Subscriptions",
+                        "label": "Assinaturas",
                         "type": 6,
                         "description": "Todas as assinaturas com os Hubs de Eventos",
                         "isRequired": true,
@@ -35,7 +35,7 @@
                         "id": "f60ea0a0-3703-44ca-a59b-df0246423f41",
                         "version": "KqlParameterItem/1.0",
                         "name": "Resources",
-                        "label": "Event hubs namespaces",
+                        "label": "Namespaces dos hubs de eventos",
                         "type": 5,
                         "isRequired": true,
                         "multiSelect": true,
@@ -58,7 +58,7 @@
                         "id": "182d6324-854c-4cc0-802a-de4f3bee9f76",
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeRange",
-                        "label": "Time range",
+                        "label": "Intervalo de horas",
                         "type": 4,
                         "isRequired": true,
                         "value": {
@@ -191,7 +191,7 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Overview",
+                                    "linkLabel": "Visão geral",
                                     "subTarget": "Overview",
                                     "style": "link"
                                 },
@@ -205,14 +205,14 @@
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Messages",
+                                    "linkLabel": "Mensagens",
                                     "subTarget": "Messages",
                                     "style": "link"
                                 },
                                 {
                                     "cellValue": "selectedTab",
                                     "linkTarget": "parameter",
-                                    "linkLabel": "Throughput",
+                                    "linkLabel": "Produtividade",
                                     "subTarget": "Throughput",
                                     "style": "link",
                                     "workbookContext": {},
@@ -478,39 +478,39 @@
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ActiveConnections Timeline",
-                                        "label": "ActiveConnections Timeline"
+                                        "label": "Linha do tempo de ActiveConnections"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ConnectionsOpened",
-                                        "label": "Connections Opened. (Average)"
+                                        "label": "Conexões Abertas. (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ConnectionsOpened Timeline",
-                                        "label": "Connections Opened. Timeline"
+                                        "label": "Conexões Abertas. Linha do tempo"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ConnectionsClosed",
-                                        "label": "Connections Closed. (Average)"
+                                        "label": "Conexões Fechadas. (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ConnectionsClosed Timeline",
-                                        "label": "Connections Closed. Timeline"
+                                        "label": "Conexões Fechadas. Linha do tempo"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--SuccessfulRequests",
-                                        "label": "Successful Requests"
+                                        "label": "Solicitações bem sucedidas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--SuccessfulRequests Timeline",
-                                        "label": "Successful Requests Timeline"
+                                        "label": "Linha do tempo de solicitações bem-sucedidas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ThrottledRequests",
-                                        "label": "Throttled Requests."
+                                        "label": "Solicitações Limitadas."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ThrottledRequests Timeline",
-                                        "label": "Throttled Requests. Timeline"
+                                        "label": "Solicitações Limitadas. Linha do tempo"
                                     }
                                 ]
                             },
@@ -827,51 +827,51 @@
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingRequests",
-                                        "label": "Incoming Requests"
+                                        "label": "Solicitações de entrada"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingRequests Timeline",
-                                        "label": "Incoming Requests Timeline"
+                                        "label": "Linha do tempo de solicitações de entrada"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--SuccessfulRequests",
-                                        "label": "Successful Requests"
+                                        "label": "Solicitações bem sucedidas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--SuccessfulRequests Timeline",
-                                        "label": "Successful Requests Timeline"
+                                        "label": "Linha do tempo de solicitações bem-sucedidas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ServerErrors",
-                                        "label": "Server Errors."
+                                        "label": "Erros do Servidor."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ServerErrors Timeline",
-                                        "label": "Server Errors. Timeline"
+                                        "label": "Erros do Servidor. Linha do tempo"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--UserErrors",
-                                        "label": "User Errors."
+                                        "label": "Erros de Usuário."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--UserErrors Timeline",
-                                        "label": "User Errors. Timeline"
+                                        "label": "Erros de Usuário. Linha do tempo"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ThrottledRequests",
-                                        "label": "Throttled Requests."
+                                        "label": "Solicitações Limitadas."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--ThrottledRequests Timeline",
-                                        "label": "Throttled Requests. Timeline"
+                                        "label": "Solicitações Limitadas. Linha do tempo"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--QuotaExceededErrors",
-                                        "label": "Quota Exceeded Errors."
+                                        "label": "Cota de Erros Excedida."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--QuotaExceededErrors Timeline",
-                                        "label": "Quota Exceeded Errors. Timeline"
+                                        "label": "Cota de Erros Excedida. Linha do tempo"
                                     }
                                 ]
                             },
@@ -1107,35 +1107,35 @@
                                 "labelSettings": [
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingMessages",
-                                        "label": "Incoming Messages"
+                                        "label": "Mensagens de entrada"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingMessages Timeline",
-                                        "label": "Incoming Messages Timeline"
+                                        "label": "Linha do tempo de mensagens de entrada"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--OutgoingMessages",
-                                        "label": "Outgoing Messages"
+                                        "label": "Mensagens de saída"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--OutgoingMessages Timeline",
-                                        "label": "Outgoing Messages Timeline"
+                                        "label": "Linha do tempo de mensagens de saída"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CapturedMessages",
-                                        "label": "Captured Messages"
+                                        "label": "Mensagens capturadas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CapturedMessages Timeline",
-                                        "label": "Captured Messages Timeline"
+                                        "label": "Linha do tempo de mensagens capturadas"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CaptureBacklog",
-                                        "label": "Capture Backlog"
+                                        "label": "Lista de pendências de captura"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CaptureBacklog Timeline",
-                                        "label": "Capture Backlog Timeline"
+                                        "label": "Linha do tempo da lista de pendências de captura"
                                     }
                                 ]
                             },
@@ -1331,27 +1331,27 @@
                                 "labelSettings": [
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingBytes",
-                                        "label": "Incoming Bytes."
+                                        "label": "Bytes de Entrada."
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--IncomingBytes Timeline",
-                                        "label": "Incoming Bytes Timeline"
+                                        "label": "Linha do tempo de bytes de entrada"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--OutgoingBytes",
-                                        "label": "Outgoing Bytes"
+                                        "label": "Bytes de saída"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--OutgoingBytes Timeline",
-                                        "label": "Outgoing Bytes Timeline"
+                                        "label": "Linha do tempo de bytes de saída"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CapturedBytes",
-                                        "label": "Captured Bytes"
+                                        "label": "Bytes capturados"
                                     },
                                     {
                                         "columnId": "microsoft.eventhub/namespaces--CapturedBytes Timeline",
-                                        "label": "Captured Bytes Timeline"
+                                        "label": "Linha do tempo de bytes capturados"
                                     }
                                 ]
                             },

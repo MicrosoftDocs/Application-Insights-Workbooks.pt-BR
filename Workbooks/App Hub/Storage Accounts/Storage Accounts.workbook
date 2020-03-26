@@ -13,7 +13,7 @@
                         "id": "1f74ed9a-e3ed-498d-bd5b-f68f3836a117",
                         "version": "KqlParameterItem/1.0",
                         "name": "InputContext",
-                        "label": "Input context",
+                        "label": "Contexto de entrada",
                         "type": 5,
                         "description": "Todas as assinaturas com Contas de armazenamento",
                         "isRequired": true,
@@ -30,7 +30,7 @@
                         "id": "102e5ff4-5a4b-4186-87ea-e4ccb0392e2c",
                         "version": "KqlParameterItem/1.0",
                         "name": "ResourceGraphQuery",
-                        "label": "Resource graph query snippet",
+                        "label": "Snippet da consulta do Resource Graph",
                         "type": 1,
                         "query": "Resources\r\n| take 1\r\n| project InputContext = tolower('{InputContext}')\r\n| extend ResourceQueryId = extract(@'(/subscriptions/.+/resourcegroups/.+/providers/microsoft.resourcegraph/queries/.+)', 1, InputContext)\r\n| project QuerySnippet = iff(ResourceQueryId == '', 'Resources | where id startswith \"{InputContext}\"', strcat('{', '{','{InputContext}', '}', '}'))",
                         "crossComponentResources": [
@@ -44,7 +44,7 @@
                         "id": "e94aafa3-c5d9-4523-89f0-4e87aa754511",
                         "version": "KqlParameterItem/1.0",
                         "name": "StorageAccounts",
-                        "label": "Storage Accounts",
+                        "label": "Contas de armazenamento",
                         "type": 5,
                         "isRequired": true,
                         "multiSelect": true,
@@ -147,7 +147,7 @@
                         "value": {
                             "durationMs": 14400000
                         },
-                        "label": "Time Range"
+                        "label": "Intervalo de tempo"
                     },
                     {
                         "id": "63640264-0edc-4e98-bba7-d8056705e70e",
@@ -191,7 +191,7 @@
                     {
                         "cellValue": "selectedTab",
                         "linkTarget": "parameter",
-                        "linkLabel": "Overview",
+                        "linkLabel": "Visão geral",
                         "subTarget": "Overview"
                     },
                     {
@@ -438,38 +438,38 @@
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Transaction-Transactions Timeline",
-                            "label": "Transactions Timeline"
+                            "label": "Linha do tempo de transações"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Transaction-SuccessE2ELatency",
-                            "label": "E2E Latency"
+                            "label": "Latência E2E"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Transaction-SuccessE2ELatency Timeline",
-                            "label": "E2E Latency Timeline"
+                            "label": "Linha do tempo de latência E2E"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Transaction-SuccessServerLatency",
-                            "label": "Server Latency"
+                            "label": "Latência do servidor"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Transaction-SuccessServerLatency Timeline",
-                            "label": "Server Latency Timeline"
+                            "label": "Linha do tempo de latência do servidor"
                         },
                         {
                             "columnId": "Success/Errors"
                         },
                         {
                             "columnId": "AuthenticationError/Errors",
-                            "label": "AuthenticationError/Errors"
+                            "label": "AuthenticationError/erros"
                         },
                         {
                             "columnId": "ClientOtherError/Errors",
-                            "label": "ClientOtherError/Errors"
+                            "label": "ClientOtherError/erros"
                         },
                         {
                             "columnId": "ClientTimeoutError/Errors",
-                            "label": "ClientTimeoutError/Errors"
+                            "label": "ClientTimeoutError/erros"
                         }
                     ]
                 },
@@ -669,43 +669,43 @@
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Capacity-UsedCapacity",
-                            "label": "Account used capacity"
+                            "label": "Capacidade utilizada pela conta"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts-Capacity-UsedCapacity Timeline",
-                            "label": "Account used capacity timeline"
+                            "label": "Linha do tempo de capacidade utilizada pela conta"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/blobservices-Capacity-BlobCapacity",
-                            "label": "Blob capacity"
+                            "label": "Capacidade do blob"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/blobservices-Capacity-BlobCapacity Timeline",
-                            "label": "Blob capacity Timeline"
+                            "label": "Linha do tempo de capacidade do blob"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/fileservices-Capacity-FileCapacity",
-                            "label": "File capacity"
+                            "label": "Capacidade do arquivo"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/fileservices-Capacity-FileCapacity Timeline",
-                            "label": "File capacity Timeline"
+                            "label": "Linha do tempo de capacidade do arquivo"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/queueservices-Capacity-QueueCapacity",
-                            "label": "Queue capacity"
+                            "label": "Capacidade da fila"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/queueservices-Capacity-QueueCapacity Timeline",
-                            "label": "Queue capacity Timeline"
+                            "label": "Linha do tempo de capacidade da fila"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/tableservices-Capacity-TableCapacity",
-                            "label": "Table capacity"
+                            "label": "Capacidade da tabela"
                         },
                         {
                             "columnId": "microsoft.storage/storageaccounts/tableservices-Capacity-TableCapacity Timeline",
-                            "label": "Table capacity Timeline"
+                            "label": "Linha do tempo de capacidade da tabela"
                         }
                     ]
                 },

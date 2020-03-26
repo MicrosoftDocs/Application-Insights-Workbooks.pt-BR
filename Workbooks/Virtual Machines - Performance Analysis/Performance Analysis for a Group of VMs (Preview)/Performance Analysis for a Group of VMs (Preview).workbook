@@ -232,7 +232,7 @@
                             ],
                             "allowCustom": true
                         },
-                        "label": "Time Range"
+                        "label": "Intervalo de tempo"
                     },
                     {
                         "id": "d6de19ff-cde4-41c2-9fba-b441312ea5c9",
@@ -287,14 +287,14 @@
                     {
                         "cellValue": "tab",
                         "linkTarget": "parameter",
-                        "linkLabel": "Top 100 Machines",
+                        "linkLabel": "100 principais computadores",
                         "subTarget": "top100",
                         "style": "link"
                     },
                     {
                         "cellValue": "tab",
                         "linkTarget": "parameter",
-                        "linkLabel": "Top 10 Machines",
+                        "linkLabel": "10 principais computadores",
                         "subTarget": "top10",
                         "style": "link"
                     }
@@ -314,7 +314,7 @@
                         "id": "41bb3710-5e9e-4b66-91fd-e11435899880",
                         "version": "KqlParameterItem/1.0",
                         "name": "ComputerNameContains",
-                        "label": "Computer Name Contains",
+                        "label": "O nome do computador contém",
                         "type": 1,
                         "description": "Isso filtrará os computadores cujo nome contém a palavra-chave. Isso consultará todos os computadores no workspace.",
                         "value": ""
@@ -559,7 +559,7 @@
                             "formatter": 7,
                             "formatOptions": {
                                 "linkTarget": "CellDetails",
-                                "linkLabel": "ℹ️ Info"
+                                "linkLabel": "ℹ️ Informações"
                             }
                         },
                         {
@@ -707,7 +707,7 @@
                         },
                         {
                             "columnId": "Average",
-                            "label": "Average"
+                            "label": "Média"
                         },
                         {
                             "columnId": "P95th",
@@ -719,11 +719,11 @@
                         },
                         {
                             "columnId": "Trend (Average)",
-                            "label": "Trend (Average)"
+                            "label": "Tendência (média)"
                         },
                         {
                             "columnId": "Properties",
-                            "label": "Properties"
+                            "label": "Propriedades"
                         }
                     ]
                 }
