@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Conformidade",
+        "description": "Oferece insights sobre a conformidade do dispositivo no Intune",
+        "order": 300
+    }
+}
