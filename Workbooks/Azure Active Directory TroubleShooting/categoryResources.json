@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Solucionar problemas",
+        "description": "Oferece insights sobre a solução de problemas",
+        "order": 200
+    }
+}

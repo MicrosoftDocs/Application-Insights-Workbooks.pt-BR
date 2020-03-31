@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Análise de desempenho",
+        "description": "Procurar por problemas comuns dos Conjuntos de Dimensionamento de Máquinas Virtuais por meio de métricas",
+        "order": 200
+    }
+}
