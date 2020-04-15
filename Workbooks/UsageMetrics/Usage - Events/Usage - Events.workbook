@@ -627,7 +627,7 @@
         {
             "type": 1,
             "content": {
-                "json": "Evento ‍📅 da exibição de página 📄"
+                "json": "Evento ‍📄 da exibição de página 📅"
             },
             "customWidth": "30",
             "name": "text - 12",
