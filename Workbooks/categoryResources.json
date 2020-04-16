@@ -1,0 +1,64 @@
+{
+    "categories": [
+        {
+            "key": "YourUniqueCategoryKey",
+            "settings": {
+                "en-us": {
+                    "name": "Your category name",
+                    "description": "Descrição da categoria",
+                    "order": 100
+                }
+            }
+        },
+        {
+            "key": "azureMonitorVirtualMachines",
+            "settings": {
+                "en-us": {
+                    "name": "Virtual Machines",
+                    "description": "Analisar os dados de monitoramento de suas VMs",
+                    "order": 100
+                }
+            }
+        },
+        {
+            "key": "azureMonitorVirtualMachinesPerf",
+            "settings": {
+                "en-us": {
+                    "name": "Virtual Machines (Perf)",
+                    "description": "Analisar os dados de monitoramento de suas VMs",
+                    "order": 105
+                }
+            }
+        },
+        {
+            "key": "azureMonitorInsights",
+            "settings": {
+                "en-us": {
+                    "name": "Insights",
+                    "description": "Oferece insights para seus recursos do Azure",
+                    "order": 2000
+                }
+            }
+        },
+        {
+            "key": "vmInsightsVirtualMachinesInsightsMetrics",
+            "settings": {
+                "en-us": {
+                    "name": "Performance Analysis (Insights Metrics)",
+                    "description": "Procurar por problemas comuns com sua VM por meio de métricas",
+                    "order": 205
+                }
+            }
+        },
+        {
+            "key": "vmInsightsVirtualMachinesPerf",
+            "settings": {
+                "en-us": {
+                    "name": "Performance Analysis (Perf)",
+                    "description": "Procurar por problemas comuns com sua VM por meio de métricas",
+                    "order": 205
+                }
+            }
+        }
+    ]
+}
