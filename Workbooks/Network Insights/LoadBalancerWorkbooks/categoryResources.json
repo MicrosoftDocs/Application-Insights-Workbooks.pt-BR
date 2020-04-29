@@ -1,7 +1,7 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "en-us": {
-        "name": "Insights de rede",
+        "name": "Insights de rede de balanceadores de carga",
         "description": "",
         "order": 100
     }
