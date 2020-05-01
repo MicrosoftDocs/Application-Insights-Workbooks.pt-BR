@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Insights de recursos",
+        "description": "Oferece insights no nível do recurso",
+        "order": 100
+    }
+}
