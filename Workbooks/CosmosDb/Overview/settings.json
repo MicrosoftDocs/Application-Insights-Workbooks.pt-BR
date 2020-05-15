@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Visão geral do Cosmos DB",
+    "name": "Visão geral do Azure Cosmos DB",
     "author": "Microsoft",
     "galleries": [
         {

@@ -1,7 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Visão geral do Cache Redis",
-    "isPreview": true,
+    "name": "Visão geral do Cache do Azure para Redis",
     "author": "Microsoft",
     "galleries": [
         {
