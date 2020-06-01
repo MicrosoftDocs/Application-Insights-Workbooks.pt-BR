@@ -1,0 +1,12 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Logs de coleta",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workloads-shared",
+            "resourceType": "Azure Monitor",
+            "order": 500
+        }
+    ]
+}

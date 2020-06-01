@@ -1,0 +1,317 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "crossComponentResources": [
+                    "value::all"
+                ],
+                "parameters": [
+                    {
+                        "id": "0d87fd70-3f59-4824-b3ac-9867394090a5",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "VirtualMachine",
+                        "type": 5,
+                        "isRequired": true,
+                        "value": "value::1",
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.compute/virtualmachines": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::1"
+                            ]
+                        },
+                        "resourceType": "microsoft.insights/components"
+                    },
+                    {
+                        "id": "5f0382e3-69e0-40be-ad21-cca781fe81e1",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Workspace",
+                        "type": 5,
+                        "isRequired": true,
+                        "query": "Resources\r\n| where type =~ 'microsoft.compute/virtualmachines/extensions' and name in~ ('omsagentforlinux', 'OMSExtension') and id startswith '{VirtualMachine}'\r\n| project WorkspaceId = tostring(properties.settings.workspaceId)\r\n| join kind = inner (Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| project id, WorkspaceId = tostring(properties.customerId)) on WorkspaceId\r\n| project value = id, label = id, selected = true",
+                        "crossComponentResources": [
+                            "value::all"
+                        ],
+                        "typeSettings": {
+                            "additionalResourceOptions": [],
+                            "showDefault": false
+                        },
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    },
+                    {
+                        "id": "b189ae66-10a0-417b-8e1e-dc3b9b4ae028",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "WorkspaceLocation",
+                        "type": 8,
+                        "isRequired": true,
+                        "query": "Resources\r\n| where id =~ '{Workspace}'\r\n| project value = location, label = location, selected = true\r\n",
+                        "crossComponentResources": [
+                            "value::all"
+                        ],
+                        "typeSettings": {
+                            "additionalResourceOptions": [],
+                            "showDefault": false
+                        },
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    },
+                    {
+                        "id": "504c4e1f-42e8-4628-adfe-17fa76991377",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "ResourceGroup",
+                        "type": 1,
+                        "isRequired": true,
+                        "query": "Resources\r\n| where id =~ '{VirtualMachine}'\r\n| project rg = strcat('/subscriptions/', subscriptionId, '/resourceGroups/', resourceGroup)",
+                        "crossComponentResources": [
+                            "value::all"
+                        ],
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    },
+                    {
+                        "id": "ddd077a9-ac70-4970-a6b3-1cf74224e9d8",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "VmRegion",
+                        "type": 8,
+                        "isRequired": true,
+                        "query": "Resources\r\n| where id =~ '{VirtualMachine}'\r\n| project value = location, label = location, selected = true",
+                        "crossComponentResources": [
+                            "value::all"
+                        ],
+                        "isHiddenWhenLocked": true,
+                        "typeSettings": {
+                            "additionalResourceOptions": []
+                        },
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    }
+                ],
+                "style": "above",
+                "queryType": 1,
+                "resourceType": "microsoft.resourcegraph/resources"
+            },
+            "conditionalVisibility": {
+                "parameterName": "1",
+                "comparison": "isEqualTo",
+                "value": "2"
+            },
+            "name": "parameters - 0"
+        },
+        {
+            "type": 12,
+            "content": {
+                "version": "NotebookGroup/1.0",
+                "groupType": "editable",
+                "items": [
+                    {
+                        "type": 1,
+                        "content": {
+                            "json": "## <a name=\"azure-monitor-for-microsoft-sql-server\"></a>Azure Monitor para Microsoft SQL Server\n<br />\n\n![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/DeployVme/sql-logo.jpg)\n"
+                        },
+                        "name": "text - 2"
+                    },
+                    {
+                        "type": 11,
+                        "content": {
+                            "version": "LinkItem/1.0",
+                            "style": "tabs",
+                            "links": [
+                                {
+                                    "cellValue": "selectedTab",
+                                    "linkTarget": "parameter",
+                                    "linkLabel": "Visão geral",
+                                    "subTarget": "Overview",
+                                    "style": "link"
+                                },
+                                {
+                                    "cellValue": "selectedTab",
+                                    "linkTarget": "parameter",
+                                    "linkLabel": "Pré-requisitos",
+                                    "subTarget": "Prerequisites",
+                                    "style": "link"
+                                },
+                                {
+                                    "cellValue": "selectedTab",
+                                    "linkTarget": "parameter",
+                                    "linkLabel": "Configurar monitoramento",
+                                    "subTarget": "Configure",
+                                    "style": "link"
+                                }
+                            ]
+                        },
+                        "name": "links - 5",
+                        "styleSettings": {
+                            "margin": "15px 0 0 0"
+                        }
+                    },
+                    {
+                        "type": 12,
+                        "content": {
+                            "version": "NotebookGroup/1.0",
+                            "groupType": "editable",
+                            "items": [
+                                {
+                                    "type": 1,
+                                    "content": {
+                                        "json": "Os ambientes de SQL Server estão se tornando mais complexos, ao mesmo tempo que permanecem sendo um componente crítico da sua arquitetura de aplicativo. É difícil acompanhar esse crescimento contínuo sem as ferramentas de monitoramento de SQL corretas. E se você pudesse gerenciar proativamente o seu ambiente de SQL Server e diagnosticar problemas de desempenho de banco de dados exibindo a integridade de todas as suas instâncias de SQL Server em uma tela, a qualquer momento, em qualquer lugar, em qualquer dispositivo? Com a ferramenta de monitoramento de SQL Server correta você pode.\n\nCom o Azure Monitor para SQL Server, você pode gerenciar o seu ambiente de SQL Server enquanto obtém visibilidade no seu sistema operacional (Windows ou Linux) e também monitora a sua infraestrutura de virtualização. Facilite a configuração com modelos, alertas automatizados e ações personalizáveis. Gaste menos tempo resolvendo problemas diagnosticando com precisão os problemas de desempenho de banco de dados históricos e em tempo real e concentre-se em medidas mais proativas como ajuste de consulta.\n\n[Assista ao vídeo]()<br />\n[Saiba mais]()<br />\n[Documentação]()<br />"
+                                    },
+                                    "name": "text - 0"
+                                }
+                            ]
+                        },
+                        "conditionalVisibility": {
+                            "parameterName": "selectedTab",
+                            "comparison": "isEqualTo",
+                            "value": "Overview"
+                        },
+                        "name": "Overview group"
+                    },
+                    {
+                        "type": 12,
+                        "content": {
+                            "version": "NotebookGroup/1.0",
+                            "groupType": "editable",
+                            "items": [
+                                {
+                                    "type": 1,
+                                    "content": {
+                                        "json": "#### <a name=\"create-sql-user-accounts\"></a>Criar contas de usuário do SQL\nVocê precisa criar um logon em cada instância que deseja monitorar com o script a seguir:\n\n```\nUSE master;\nGO\nCREATE LOGIN [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW SERVER STATE TO [telegraf];\nGO\nGRANT VIEW ANY DEFINITION TO [telegraf];\nGO\n```\n\nPara o Banco de Dados SQL do Azure, você precisa da permissão Exibir Estado do Banco de Dados e pode criar um usuário com uma senha diretamente no banco de dados.\n\n```\nCREATE USER [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW DATABASE STATE TO [telegraf];\nGO\n```\n\n#### <a name=\"enable-firewall-rules\"></a>Habilitar regras de firewall\nHabilite as regras de firewall para permitir que a máquina virtual de monitoramento remoto acesse a instância do SQL Server."
+                                    },
+                                    "name": "text - 0"
+                                }
+                            ]
+                        },
+                        "conditionalVisibility": {
+                            "parameterName": "selectedTab",
+                            "comparison": "isEqualTo",
+                            "value": "Prerequisites"
+                        },
+                        "name": "Prerequisites group"
+                    },
+                    {
+                        "type": 12,
+                        "content": {
+                            "version": "NotebookGroup/1.0",
+                            "groupType": "editable",
+                            "items": [
+                                {
+                                    "type": 1,
+                                    "content": {
+                                        "json": "O Azure Monitor precisa acessar as informações de integridade armazenadas nas tabelas de exibição de gerenciamento dinâmico do SQL Server. Forneça a *cadeia de conexão* para permitir esse acesso abaixo. Mais informações sobre o formato das cadeias de conexão podem ser encontradas abaixo."
+                                    },
+                                    "name": "text - 3"
+                                },
+                                {
+                                    "type": 9,
+                                    "content": {
+                                        "version": "KqlParameterItem/1.0",
+                                        "parameters": [
+                                            {
+                                                "id": "0fcd1a59-1ca7-4e29-a0c7-6eb5b032ef6a",
+                                                "version": "KqlParameterItem/1.0",
+                                                "name": "SqlConnectionString",
+                                                "label": "Cadeias de conexão SQL",
+                                                "type": 1,
+                                                "isRequired": true,
+                                                "resourceType": "microsoft.insights/components",
+                                                "value": ""
+                                            }
+                                        ],
+                                        "style": "above",
+                                        "queryType": 0,
+                                        "resourceType": "microsoft.insights/components"
+                                    },
+                                    "name": "parameters - 1"
+                                },
+                                {
+                                    "type": 11,
+                                    "content": {
+                                        "version": "LinkItem/1.0",
+                                        "style": "paragraph",
+                                        "links": [
+                                            {
+                                                "cellValue": "",
+                                                "linkTarget": "ArmTemplate",
+                                                "linkLabel": "Habilitar o monitoramento de SQL >",
+                                                "style": "primary",
+                                                "linkIsContextBlade": true,
+                                                "templateRunContext": {
+                                                    "componentIdSource": "parameter",
+                                                    "componentId": "ResourceGroup",
+                                                    "templateUriSource": "static",
+                                                    "templateUri": "https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/MSSql-watcher/azuredeploy.json",
+                                                    "templateParameters": [
+                                                        {
+                                                            "name": "vmId",
+                                                            "source": "parameter",
+                                                            "value": "VirtualMachine",
+                                                            "kind": "value"
+                                                        },
+                                                        {
+                                                            "name": "omsWorkspaceId",
+                                                            "source": "parameter",
+                                                            "value": "Workspace",
+                                                            "kind": "value"
+                                                        },
+                                                        {
+                                                            "name": "workspaceRegion",
+                                                            "source": "parameter",
+                                                            "value": "WorkspaceLocation",
+                                                            "kind": "value"
+                                                        },
+                                                        {
+                                                            "name": "sqlConnectionStrings",
+                                                            "source": "parameter",
+                                                            "value": "SqlConnectionString",
+                                                            "kind": "value"
+                                                        },
+                                                        {
+                                                            "name": "VmRegion",
+                                                            "source": "parameter",
+                                                            "value": "VmRegion",
+                                                            "kind": "value"
+                                                        }
+                                                    ],
+                                                    "titleSource": "static",
+                                                    "title": "Habilitar o Azure Monitor para Microsoft SQL Server",
+                                                    "descriptionSource": "static",
+                                                    "description": "![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/DeployVme/sql-logo.jpg)\n\n<br/>\n<br/>\nEstamos prontos para habilitar o Azure Monitor para SQL Server para a sua máquina virtual. Escolha **Habilitar monitoramento** para iniciar o monitoramento com as configurações recomendadas.\n",
+                                                    "runLabelSource": "static",
+                                                    "runLabel": "Enable monitoring"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "name": "links - 4",
+                                    "styleSettings": {
+                                        "margin": "20px 0 0 0"
+                                    }
+                                },
+                                {
+                                    "type": 1,
+                                    "content": {
+                                        "json": "<br />\n**Saiba mais sobre cadeias de conexão**\n\nForneça a cadeia de conexão usada para se conectar ao SQL Server no formato abaixo:\n\n```\nServer=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1; \n```\nOu,\n```\nServer=127.0.0.1;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\n```\n\n\nConsulte https://github.com/denisenkom/go-mssqldb para obter parâmetros de conexão detalhados."
+                                    },
+                                    "name": "text - 3"
+                                }
+                            ]
+                        },
+                        "conditionalVisibility": {
+                            "parameterName": "selectedTab",
+                            "comparison": "isEqualTo",
+                            "value": "Configure"
+                        },
+                        "name": "Configure group"
+                    }
+                ]
+            },
+            "name": "Overview group"
+        }
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
