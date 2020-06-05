@@ -32,7 +32,7 @@
                         "name": "Workspace",
                         "type": 5,
                         "isRequired": true,
-                        "query": "Resources\r\n| where type =~ 'microsoft.compute/virtualmachines/extensions' and name in~ ('omsagentforlinux', 'OMSExtension') and id startswith '{VirtualMachine}'\r\n| project WorkspaceId = tostring(properties.settings.workspaceId)\r\n| join kind = inner (Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| project id, WorkspaceId = tostring(properties.customerId)) on WorkspaceId\r\n| project value = id, label = id, selected = true",
+                        "query": "Resources\r\n| where type =~ 'microsoft.compute/virtualmachines/extensions' and properties.type == 'OmsAgentForLinux' and properties.publisher == 'Microsoft.EnterpriseCloud.Monitoring' and id startswith '{VirtualMachine}'\r\n| project WorkspaceId = tostring(properties.settings.workspaceId)\r\n| join kind = inner (Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| project id, WorkspaceId = tostring(properties.customerId)) on WorkspaceId\r\n| project value = id, label = id, selected = true",
                         "crossComponentResources": [
                             "value::all"
                         ],
@@ -158,7 +158,7 @@
                                 {
                                     "type": 1,
                                     "content": {
-                                        "json": "Os ambientes de SQL Server estão se tornando mais complexos, ao mesmo tempo que permanecem sendo um componente crítico da sua arquitetura de aplicativo. É difícil acompanhar esse crescimento contínuo sem as ferramentas de monitoramento de SQL corretas. E se você pudesse gerenciar proativamente o seu ambiente de SQL Server e diagnosticar problemas de desempenho de banco de dados exibindo a integridade de todas as suas instâncias de SQL Server em uma tela, a qualquer momento, em qualquer lugar, em qualquer dispositivo? Com a ferramenta de monitoramento de SQL Server correta você pode.\n\nCom o Azure Monitor para SQL Server, você pode gerenciar o seu ambiente de SQL Server enquanto obtém visibilidade no seu sistema operacional (Windows ou Linux) e também monitora a sua infraestrutura de virtualização. Facilite a configuração com modelos, alertas automatizados e ações personalizáveis. Gaste menos tempo resolvendo problemas diagnosticando com precisão os problemas de desempenho de banco de dados históricos e em tempo real e concentre-se em medidas mais proativas como ajuste de consulta.\n\n[Assista ao vídeo]()<br />\n[Saiba mais]()<br />\n[Documentação]()<br />"
+                                        "json": "Os ambientes de SQL Server estão se tornando mais complexos, ao mesmo tempo que permanecem sendo um componente crítico da sua arquitetura de aplicativo. É difícil acompanhar esse crescimento contínuo sem as ferramentas de monitoramento de SQL corretas. E se você pudesse gerenciar proativamente o seu ambiente de SQL Server e diagnosticar problemas de desempenho de banco de dados exibindo a integridade de todas as suas instâncias de SQL Server em uma tela, a qualquer momento, em qualquer lugar, em qualquer dispositivo? Com a ferramenta de monitoramento de SQL Server correta você pode.\n\nCom o Azure Monitor para SQL Server, você pode gerenciar o seu ambiente de SQL Server enquanto obtém visibilidade no seu sistema operacional (Windows ou Linux) e também monitora a sua infraestrutura de virtualização. Facilite a configuração com modelos, alertas automatizados e ações personalizáveis. Gaste menos tempo resolvendo problemas diagnosticando com precisão os problemas de desempenho de banco de dados históricos e em tempo real e concentre-se em medidas mais proativas como ajuste de consulta.\n\n"
                                     },
                                     "name": "text - 0"
                                 }
@@ -218,11 +218,15 @@
                                                 "label": "Cadeias de conexão SQL",
                                                 "type": 1,
                                                 "isRequired": true,
-                                                "resourceType": "microsoft.insights/components",
-                                                "value": ""
+                                                "value": "",
+                                                "typeSettings": {
+                                                    "multiLineText": true,
+                                                    "editorLanguage": "text"
+                                                },
+                                                "resourceType": "microsoft.insights/components"
                                             }
                                         ],
-                                        "style": "above",
+                                        "style": "formVertical",
                                         "queryType": 0,
                                         "resourceType": "microsoft.insights/components"
                                     },
@@ -287,6 +291,10 @@
                                             }
                                         ]
                                     },
+                                    "conditionalVisibility": {
+                                        "parameterName": "SqlConnectionString",
+                                        "comparison": "isNotEqualTo"
+                                    },
                                     "name": "links - 4",
                                     "styleSettings": {
                                         "margin": "20px 0 0 0"
@@ -295,7 +303,7 @@
                                 {
                                     "type": 1,
                                     "content": {
-                                        "json": "<br />\n**Saiba mais sobre cadeias de conexão**\n\nForneça a cadeia de conexão usada para se conectar ao SQL Server no formato abaixo:\n\n```\nServer=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1; \n```\nOu,\n```\nServer=127.0.0.1;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\n```\n\n\nConsulte https://github.com/denisenkom/go-mssqldb para obter parâmetros de conexão detalhados."
+                                        "json": "<br />\n**Saiba mais sobre cadeias de conexão**\n\nForneça uma ou mais cadeias de conexão como uma coleção separada por vírgulas de cadeias de caracteres (entre aspas duplas):\n\n```\n\"Server=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\",\n\"Server=myothersqlserver.database.windows.net;Port=1433;database=mydb3;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\"\n```\nOu,\n```\n\"Server=127.0.0.1;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\"\n```\n\n\nConsulte https://github.com/denisenkom/go-mssqldb para obter parâmetros de conexão detalhados."
                                     },
                                     "name": "text - 3"
                                 }
