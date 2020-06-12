@@ -84,9 +84,6 @@
                             "value::all"
                         ],
                         "isHiddenWhenLocked": true,
-                        "typeSettings": {
-                            "additionalResourceOptions": []
-                        },
                         "queryType": 1,
                         "resourceType": "microsoft.resourcegraph/resources"
                     }
@@ -100,7 +97,7 @@
                 "comparison": "isEqualTo",
                 "value": "2"
             },
-            "name": "parameters - 0"
+            "name": "armparameters"
         },
         {
             "type": 12,
@@ -111,9 +108,19 @@
                     {
                         "type": 1,
                         "content": {
-                            "json": "## <a name=\"azure-monitor-for-microsoft-sql-server\"></a>Azure Monitor para Microsoft SQL Server\n<br />\n\n![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/DeployVme/sql-logo.jpg)\n"
+                            "json": "## <a name=\"azure-monitor-for-microsoft-sql-server\"></a>Azure Monitor para Microsoft SQL Server"
                         },
-                        "name": "text - 2"
+                        "name": "infoText"
+                    },
+                    {
+                        "type": 1,
+                        "content": {
+                            "json": "![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/Logos/sql-logo.jpg)\n"
+                        },
+                        "name": "mssqllogo",
+                        "styleSettings": {
+                            "margin": "20px 0 0 20px"
+                        }
                     },
                     {
                         "type": 11,
@@ -144,7 +151,7 @@
                                 }
                             ]
                         },
-                        "name": "links - 5",
+                        "name": "tabs",
                         "styleSettings": {
                             "margin": "15px 0 0 0"
                         }
@@ -160,7 +167,7 @@
                                     "content": {
                                         "json": "Os ambientes de SQL Server estão se tornando mais complexos, ao mesmo tempo que permanecem sendo um componente crítico da sua arquitetura de aplicativo. É difícil acompanhar esse crescimento contínuo sem as ferramentas de monitoramento de SQL corretas. E se você pudesse gerenciar proativamente o seu ambiente de SQL Server e diagnosticar problemas de desempenho de banco de dados exibindo a integridade de todas as suas instâncias de SQL Server em uma tela, a qualquer momento, em qualquer lugar, em qualquer dispositivo? Com a ferramenta de monitoramento de SQL Server correta você pode.\n\nCom o Azure Monitor para SQL Server, você pode gerenciar o seu ambiente de SQL Server enquanto obtém visibilidade no seu sistema operacional (Windows ou Linux) e também monitora a sua infraestrutura de virtualização. Facilite a configuração com modelos, alertas automatizados e ações personalizáveis. Gaste menos tempo resolvendo problemas diagnosticando com precisão os problemas de desempenho de banco de dados históricos e em tempo real e concentre-se em medidas mais proativas como ajuste de consulta.\n\n"
                                     },
-                                    "name": "text - 0"
+                                    "name": "mssqlinformation"
                                 }
                             ]
                         },
@@ -182,7 +189,7 @@
                                     "content": {
                                         "json": "#### <a name=\"create-sql-user-accounts\"></a>Criar contas de usuário do SQL\nVocê precisa criar um logon em cada instância que deseja monitorar com o script a seguir:\n\n```\nUSE master;\nGO\nCREATE LOGIN [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW SERVER STATE TO [telegraf];\nGO\nGRANT VIEW ANY DEFINITION TO [telegraf];\nGO\n```\n\nPara o Banco de Dados SQL do Azure, você precisa da permissão Exibir Estado do Banco de Dados e pode criar um usuário com uma senha diretamente no banco de dados.\n\n```\nCREATE USER [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW DATABASE STATE TO [telegraf];\nGO\n```\n\n#### <a name=\"enable-firewall-rules\"></a>Habilitar regras de firewall\nHabilite as regras de firewall para permitir que a máquina virtual de monitoramento remoto acesse a instância do SQL Server."
                                     },
-                                    "name": "text - 0"
+                                    "name": "prerequisitesmssqlremote"
                                 }
                             ]
                         },
@@ -204,7 +211,7 @@
                                     "content": {
                                         "json": "O Azure Monitor precisa acessar as informações de integridade armazenadas nas tabelas de exibição de gerenciamento dinâmico do SQL Server. Forneça a *cadeia de conexão* para permitir esse acesso abaixo. Mais informações sobre o formato das cadeias de conexão podem ser encontradas abaixo."
                                     },
-                                    "name": "text - 3"
+                                    "name": "samplemysqlconnectionstring"
                                 },
                                 {
                                     "type": 9,
@@ -214,23 +221,37 @@
                                             {
                                                 "id": "0fcd1a59-1ca7-4e29-a0c7-6eb5b032ef6a",
                                                 "version": "KqlParameterItem/1.0",
-                                                "name": "SqlConnectionString",
-                                                "label": "Cadeias de conexão SQL",
+                                                "name": "TelegrafConfig",
+                                                "label": "Cadeias de conexão do MSSQL",
                                                 "type": 1,
                                                 "isRequired": true,
-                                                "value": "",
+                                                "value": "[[inputs.sqlserver]]\r\n  servers = [\r\n   'Server=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;',\r\n  ]\r\n  query_version = 2\r\n  exclude_query = [ 'Schedulers' , 'SqlRequests']\r\n\r\n  [inputs.sqlserver.tags]\r\n    insight = \"mssql\"",
                                                 "typeSettings": {
                                                     "multiLineText": true,
                                                     "editorLanguage": "text"
                                                 },
                                                 "resourceType": "microsoft.insights/components"
+                                            },
+                                            {
+                                                "id": "293d29d9-d41b-43fa-9f39-cca636c83b23",
+                                                "version": "KqlParameterItem/1.0",
+                                                "name": "ServerUpdated",
+                                                "type": 1,
+                                                "isRequired": true,
+                                                "query": "Resources\n| take 1\n| project x = iff(\"{TelegrafConfig:escapejson}\" !contains \"Server=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\", \"updated\", \"not updated\")",
+                                                "crossComponentResources": [
+                                                    "value::all"
+                                                ],
+                                                "isHiddenWhenLocked": true,
+                                                "queryType": 1,
+                                                "resourceType": "microsoft.resourcegraph/resources"
                                             }
                                         ],
                                         "style": "formVertical",
-                                        "queryType": 0,
-                                        "resourceType": "microsoft.insights/components"
+                                        "queryType": 1,
+                                        "resourceType": "microsoft.resourcegraph/resources"
                                     },
-                                    "name": "parameters - 1"
+                                    "name": "telegrafconfigfield"
                                 },
                                 {
                                     "type": 11,
@@ -239,16 +260,16 @@
                                         "style": "paragraph",
                                         "links": [
                                             {
-                                                "cellValue": "",
+                                                "cellValue": "f",
                                                 "linkTarget": "ArmTemplate",
-                                                "linkLabel": "Habilitar o monitoramento de SQL >",
+                                                "linkLabel": "Habilitar o SQL Monitoring",
                                                 "style": "primary",
                                                 "linkIsContextBlade": true,
                                                 "templateRunContext": {
                                                     "componentIdSource": "parameter",
                                                     "componentId": "ResourceGroup",
                                                     "templateUriSource": "static",
-                                                    "templateUri": "https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/MSSql-watcher/azuredeploy.json",
+                                                    "templateUri": "https://azmonsolutions.blob.core.windows.net/workloadinsights/MSSql-watcherWorkload.json",
                                                     "templateParameters": [
                                                         {
                                                             "name": "vmId",
@@ -269,13 +290,13 @@
                                                             "kind": "value"
                                                         },
                                                         {
-                                                            "name": "sqlConnectionStrings",
+                                                            "name": "serializedTelegrafConfig",
                                                             "source": "parameter",
-                                                            "value": "SqlConnectionString",
+                                                            "value": "TelegrafConfig",
                                                             "kind": "value"
                                                         },
                                                         {
-                                                            "name": "VmRegion",
+                                                            "name": "vmRegion",
                                                             "source": "parameter",
                                                             "value": "VmRegion",
                                                             "kind": "value"
@@ -284,7 +305,7 @@
                                                     "titleSource": "static",
                                                     "title": "Habilitar o Azure Monitor para Microsoft SQL Server",
                                                     "descriptionSource": "static",
-                                                    "description": "![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/DeployVme/sql-logo.jpg)\n\n<br/>\n<br/>\nEstamos prontos para habilitar o Azure Monitor para SQL Server para a sua máquina virtual. Escolha **Habilitar monitoramento** para iniciar o monitoramento com as configurações recomendadas.\n",
+                                                    "description": "![Logotipo do SQL](https://raw.githubusercontent.com/acearun/managedsolutions/master/Templates/Logos/sql-logo.jpg)\n\n<br/>\n<br/>\nEstamos prontos para habilitar o Azure Monitor para SQL Server para a sua máquina virtual. Escolha **Habilitar monitoramento** para iniciar o monitoramento com as configurações recomendadas.\n",
                                                     "runLabelSource": "static",
                                                     "runLabel": "Enable monitoring"
                                                 }
@@ -292,10 +313,41 @@
                                         ]
                                     },
                                     "conditionalVisibility": {
-                                        "parameterName": "SqlConnectionString",
+                                        "parameterName": "TelegrafConfig",
                                         "comparison": "isNotEqualTo"
                                     },
-                                    "name": "links - 4",
+                                    "conditionalVisibilities": [
+                                        {
+                                            "parameterName": "TelegrafConfig",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "VirtualMachine",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "Workspace",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "WorkspaceLocation",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "VmRegion",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "ResourceGroup",
+                                            "comparison": "isNotEqualTo"
+                                        },
+                                        {
+                                            "parameterName": "ServerUpdated",
+                                            "comparison": "isEqualTo",
+                                            "value": "updated"
+                                        }
+                                    ],
+                                    "name": "enablemssqlmonitoringlink",
                                     "styleSettings": {
                                         "margin": "20px 0 0 0"
                                     }
@@ -303,9 +355,21 @@
                                 {
                                     "type": 1,
                                     "content": {
+                                        "json": "💡 Atualize a matriz `servers` na configuração do MSSQL Telegraf para habilitar o monitoramento."
+                                    },
+                                    "conditionalVisibility": {
+                                        "parameterName": "ServerUpdated",
+                                        "comparison": "isEqualTo",
+                                        "value": "not updated"
+                                    },
+                                    "name": "checkconfigvalidity"
+                                },
+                                {
+                                    "type": 1,
+                                    "content": {
                                         "json": "<br />\n**Saiba mais sobre cadeias de conexão**\n\nForneça uma ou mais cadeias de conexão como uma coleção separada por vírgulas de cadeias de caracteres (entre aspas duplas):\n\n```\n\"Server=mysqlserver.database.windows.net;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\",\n\"Server=myothersqlserver.database.windows.net;Port=1433;database=mydb3;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\"\n```\nOu,\n```\n\"Server=127.0.0.1;Port=1433;database=mydb;User Id=<user>;Password=<pw>;app name=telegraf;log=1;\"\n```\n\n\nConsulte https://github.com/denisenkom/go-mssqldb para obter parâmetros de conexão detalhados."
                                     },
-                                    "name": "text - 3"
+                                    "name": "mysqlsampleconnectionstring"
                                 }
                             ]
                         },
