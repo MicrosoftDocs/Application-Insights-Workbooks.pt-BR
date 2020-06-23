@@ -1,0 +1,13 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "SAP HANA",
+    "description": "Exibe métricas de infraestrutura do HANA",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "Microsoft.HanaOnAzure/sapMonitors",
+            "order": 100
+        }
+    ]
+}
