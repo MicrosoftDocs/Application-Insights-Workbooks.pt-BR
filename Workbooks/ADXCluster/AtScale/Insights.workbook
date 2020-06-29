@@ -499,7 +499,7 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-KeepAlive",
-                                        "label": "Keep alive (Média)"
+                                        "label": "Keep alive (média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-KeepAlive Timeline",
@@ -523,7 +523,7 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-CacheUtilization",
-                                        "label": "Utilização de cache (Média)"
+                                        "label": "Utilização de cache (média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-CacheUtilization Timeline",
@@ -531,11 +531,11 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-TotalNumberOfThrottledCommands",
-                                        "label": "Número total de comandos limitados (Média)"
+                                        "label": "Número total de comandos limitados (média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-TotalNumberOfThrottledCommands Timeline",
-                                        "label": "Linha do tempo do número total de comandos limitados (Média)"
+                                        "label": "Linha do tempo do número total de comandos limitados (média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-InstanceCount",
@@ -779,19 +779,19 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportMaxLatenessMinutes",
-                                        "label": "Atraso da exportação contínua (Máxima)"
+                                        "label": "Atraso da exportação contínua (máx.)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportPendingCount",
-                                        "label": "Contagem pendente da exportação contínua (Máxima)"
+                                        "label": "Contagem pendente da exportação contínua (máx.)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportResult",
-                                        "label": "Resultado da exportação contínua (Contagem)"
+                                        "label": "Resultado da exportação contínua (contagem)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportResult Timeline",
-                                        "label": "Linha do tempo de resultado da exportação contínua (Contagem)"
+                                        "label": "Linha do tempo do resultado da exportação contínua (contagem)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ExportUtilization",
