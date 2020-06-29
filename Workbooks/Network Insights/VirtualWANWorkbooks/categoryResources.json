@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "WANs Virtuais de insights de rede",
+        "description": "",
+        "order": 100
+    }
+}

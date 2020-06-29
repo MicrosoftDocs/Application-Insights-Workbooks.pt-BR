@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Insights do cluster do Azure Data Explorer",
+        "description": "Fornece insights para o seu cluster do Azure Data Explorer",
+        "order": 100
+    }
+}
