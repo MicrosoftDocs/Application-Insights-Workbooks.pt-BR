@@ -499,7 +499,7 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-KeepAlive",
-                                        "label": "Keep alive (média)"
+                                        "label": "Keep alive (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-KeepAlive Timeline",
@@ -523,7 +523,7 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-CacheUtilization",
-                                        "label": "Utilização de cache (média)"
+                                        "label": "Utilização de cache (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-CacheUtilization Timeline",
@@ -531,11 +531,11 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-TotalNumberOfThrottledCommands",
-                                        "label": "Número total de comandos limitados (média)"
+                                        "label": "Número total de comandos limitados (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-TotalNumberOfThrottledCommands Timeline",
-                                        "label": "Linha do tempo do número total de comandos limitados (média)"
+                                        "label": "Linha do tempo do número total de comandos limitados (Média)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Cluster health-InstanceCount",
@@ -779,19 +779,19 @@
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportMaxLatenessMinutes",
-                                        "label": "Atraso da exportação contínua (máx.)"
+                                        "label": "Atraso da exportação contínua (Máxima)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportPendingCount",
-                                        "label": "Contagem pendente da exportação contínua (máx.)"
+                                        "label": "Contagem pendente da exportação contínua (Máxima)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportResult",
-                                        "label": "Resultado da exportação contínua (contagem)"
+                                        "label": "Resultado da exportação contínua (Contagem)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ContinuousExportResult Timeline",
-                                        "label": "Linha do tempo do resultado da exportação contínua (contagem)"
+                                        "label": "Linha do tempo de resultado da exportação contínua (Contagem)"
                                     },
                                     {
                                         "columnId": "microsoft.kusto/clusters-Export health and performance-ExportUtilization",
@@ -1400,5 +1400,6 @@
             "name": "ADX Summary"
         }
     ],
+    "workbookPin": "Overview",
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
 }
