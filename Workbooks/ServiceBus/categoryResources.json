@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Insights do Barramento de Serviço do Azure",
+        "description": "Oferece insights para o seu Barramento de Serviço do Azure",
+        "order": 100
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Insights do Banco de Dados SQL",
+    "author": "Microsoft",
+    "isPreview": true,
+    "galleries": [
+        {
+            "type": "workloads-shared",
+            "resourceType": "Azure Monitor",
+            "order": 400
+        }
+    ]
+}
