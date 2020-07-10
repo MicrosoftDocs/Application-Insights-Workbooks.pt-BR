@@ -148,7 +148,7 @@
                                 {
                                     "type": 1,
                                     "content": {
-                                        "json": "#### <a name=\"create-sql-user-accounts\"></a>Criar contas de usuário do SQL\nVocê precisa criar um logon em cada instância que deseja monitorar com o script a seguir:\n\n```\nCREATE USER [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW DATABASE STATE TO [telegraf];\nGO\n```\n\n#### <a name=\"enable-firewall-rules\"></a>Habilitar regras de firewall\nHabilite as regras de firewall para permitir que a máquina virtual de monitoramento remoto acesse a instância do SQL Server."
+                                        "json": "#### <a name=\"create-sql-user-accounts\"></a>Criar contas de usuário do SQL\nVocê precisa criar um logon em cada instância que deseja monitorar com o script a seguir:\n\n```\nCREATE USER [telegraf] WITH PASSWORD = N'mystrongpassword';\nGO\nGRANT VIEW DATABASE STATE TO [telegraf];\nGO\n```\n\n#### <a name=\"firewall-rules-for-sql-database\"></a>Regras de firewall para banco de dados SQL\nAtualize as regras de firewall para permitir que a máquina virtual de monitoramento remoto acesse a instância do SQL Server.\n\n#### <a name=\"outbound-network-settings-for-the-remote-virtual-machine\"></a>Configurações de rede de saída para a máquina virtual remota\nVerifique se a máquina virtual tem a porta de saída, conforme especificado na configuração de SQL do Telegraf na próxima etapa."
                                     },
                                     "name": "prerequisitessqlazureremote"
                                 }
