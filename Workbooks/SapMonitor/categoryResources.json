@@ -2,7 +2,7 @@
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "en-us": {
         "name": "Azure Monitor para Soluções SAP",
-        "description": "Oferece insights sobre métricas de infraestrutura de cenários do SAP no Azure",
+        "description": "Fornece insights sobre métricas para cenários do SAP no Azure",
         "order": 100
     }
 }
