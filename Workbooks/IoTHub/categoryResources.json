@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Pastas de trabalho do Azure Monitor para IoT",
+        "description": "Fornece insights sobre métricas de IoT",
+        "order": 100
+    }
+}
