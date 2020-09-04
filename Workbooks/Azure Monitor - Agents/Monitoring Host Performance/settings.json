@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Integridade do Agente do Log Analytics – Monitoramento de Host",
+    "name": "Como monitorar o desempenho do host",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [
