@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Insights do contêiner",
+        "description": "Oferece insights para k8s do Azure e do Arc",
+        "order": 100
+    }
+}
