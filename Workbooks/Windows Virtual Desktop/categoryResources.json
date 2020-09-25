@@ -1,0 +1,8 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Área de Trabalho Virtual do Windows",
+        "description": "Fornece insights para seus pools de host da Área de Trabalho Virtual do Windows",
+        "order": 100
+    }
+}
