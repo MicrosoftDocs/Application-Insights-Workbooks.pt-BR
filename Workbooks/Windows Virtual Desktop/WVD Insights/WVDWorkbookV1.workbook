@@ -451,6 +451,23 @@
                             "value": "UtilizationReport"
                         },
                         "name": "utilizationreport"
+                    },
+                    {
+                        "type": 11,
+                        "content": {
+                            "version": "LinkItem/1.0",
+                            "style": "nav",
+                            "links": [
+                                {
+                                    "cellValue": "community-Workbooks/Windows Virtual Desktop/Check Configuration",
+                                    "linkTarget": "WorkbookTemplate",
+                                    "linkLabel": "Pasta de trabalho de configuração.",
+                                    "preText": "Para configurar o Azure Monitor a fim de obter Insights da Área de Trabalho Virtual do Windows, confira o",
+                                    "style": "link"
+                                }
+                            ]
+                        },
+                        "name": "links - 8"
                     }
                 ]
             },
