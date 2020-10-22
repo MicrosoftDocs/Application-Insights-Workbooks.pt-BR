@@ -1,7 +1,0 @@
-{
-    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Guia Detalhes da capacidade otimizada de disco do nó",
-    "author": "Microsoft",
-    "isPreview": true,
-    "galleries": []
-}
