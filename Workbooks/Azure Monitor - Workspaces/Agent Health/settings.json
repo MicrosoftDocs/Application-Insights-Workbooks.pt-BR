@@ -2,11 +2,6 @@
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "name": "Integridade do agente",
     "author": "Microsoft",
-    "galleries": [
-        {
-            "type": "workbook",
-            "resourceType": "Azure Monitor",
-            "order": 200
-        }
-    ]
+    "galleries": [],
+    "description": "não mostrada em nenhuma galeria, esta pasta de trabalho foi preterida; use Pastas de Trabalho/Azure Monitor – Agentes/Visão Geral"
 }
