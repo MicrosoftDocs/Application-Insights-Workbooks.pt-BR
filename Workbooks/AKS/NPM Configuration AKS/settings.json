@@ -1,17 +1,23 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "Implantações e HPAs",
+    "name": "Configuração do Gerenciador de Política de Rede",
     "author": "Microsoft",
+    "isPreview": true,
     "galleries": [
         {
             "type": "container-insights",
             "resourceType": "Microsoft.ContainerService/managedClusters",
-            "order": 800
+            "order": 900
         },
         {
             "type": "container-insights",
             "resourceType": "Microsoft.Kubernetes/connectedClusters",
-            "order": 800
+            "order": 900
+        },
+        {
+            "type": "workbook",
+            "resourceType": "Microsoft.Kubernetes/connectedClusters",
+            "order": 900
         }
     ]
 }
