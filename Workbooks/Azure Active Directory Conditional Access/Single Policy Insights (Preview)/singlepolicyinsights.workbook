@@ -165,7 +165,7 @@
             "content": {
                 "json": "## <a name=\"impact-summary\"></a>Resumo de impacto\nAqui está o impacto da política selecionada no locatário ao longo de {TimeRange}. \n\n💡 _Exibir resumo pelo número de usuários ou pelo número de entradas. Clique em um bloco para exibir os detalhes abaixo._"
             },
-            "name": "text - 5"
+            "name": "text - 5b"
         },
         {
             "type": 3,
@@ -669,7 +669,7 @@
                 "comparison": "isNotEqualTo",
                 "value": "0"
             },
-            "name": "text - 22"
+            "name": "text - 22b"
         },
         {
             "type": 3,

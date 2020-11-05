@@ -338,7 +338,7 @@
                 "comparison": "isEqualTo",
                 "value": "v2"
             },
-            "name": "Key metrics"
+            "name": "Key metricsb"
         },
         {
             "type": 10,
@@ -421,7 +421,7 @@
                 "comparison": "isEqualTo",
                 "value": "v1"
             },
-            "name": "Key metrics"
+            "name": "Key metricsc"
         },
         {
             "type": 11,
@@ -653,7 +653,7 @@
         {
             "type": 1,
             "content": {
-                "json": "#### <a name=\"backend-connect-time-vs-backend-first-byte-response-time-vs-backend-last-byte-response-time\"></a>Tempo de conexão de back-end versus tempo de resposta do primeiro byte de back-end versus tempo de resposta do último byte de back-end\n\nO **tempo de conexão de back-end** é o tempo de estabelecimento de uma conexão com o aplicativo back-end. Isso inclui a latência da rede, bem como o tempo de estabelecimento de novas conexões pela pilha TCP do servidor back-end. No caso do TLS, também inclui o tempo de handshake.\n\nO **tempo de resposta do primeiro byte de back-end** é o intervalo de tempo entre o início de estabelecimento de uma conexão com o servidor back-end e o recebimento do primeiro byte do cabeçalho de resposta. Isso aproxima a soma do *tempo de conexão de back-end*, do tempo que a solicitação leva para alcançar o back-end por meio do Gateway de Aplicativo, do tempo que o aplicativo back-end leva para responder (o tempo que o servidor leva para gerar conteúdo, possivelmente buscar consultas ao banco de dados) e do tempo que o primeiro byte da resposta leva para alcançar o gateway de aplicativo por meio do back-end.\n\nO **tempo de resposta do último byte de back-end** é o intervalo de tempo entre o início de estabelecimento de uma conexão com o servidor back-end e o recebimento do último byte do corpo de resposta. Isso aproxima a soma do *tempo de resposta do primeiro byte de back-end* e do tempo de transferência de dados (dependendo do tamanho dos objetos solicitados e da latência da rede do servidor, esse número pode variar bastante).\n\nCaso haja um pico na tendência do tempo de resposta do primeiro byte de back-end, mas a tendência do tempo de conexão de back-end seja estável, é possível concluir que a latência entre o gateway de aplicativo e o back-end e o tempo de estabelecimento da conexão são estáveis e que o pico se deve a um aumento no tempo de resposta do aplicativo back-end. Por outro lado, caso o pico no tempo de resposta do primeiro byte de back-end esteja associado a um pico correspondente no tempo de conexão de back-end, é possível deduzir que a rede entre o Gateway de Aplicativo e o servidor back-end ou a pilha TCP do servidor back-end está saturada. Caso você note um pico no tempo de resposta do último byte de back-end, mas o tempo de resposta do primeiro byte de back-end seja estável, é possível deduzir que o pico se deve à solicitação de um arquivo maior.\n\n"
+                "json": "#### <a name=\"backend-connect-time-vs-backend-first-byte-response-time-vs-backend-last-byte-response-time\"></a>Tempo de conexão de back-end versus tempo de resposta do primeiro byte de back-end versus tempo de resposta do último byte de back-end\n\nO **tempo de conexão de back-end** é o tempo de estabelecimento de uma conexão com o aplicativo back-end. Isso inclui a latência da rede, bem como o tempo de estabelecimento de novas conexões pela pilha TCP do servidor back-end. No caso do TLS, também inclui o tempo de handshake.\n\nO **tempo de resposta do primeiro byte de back-end** é o intervalo de tempo entre o início de estabelecimento de uma conexão com o servidor back-end e o recebimento do primeiro byte do cabeçalho de resposta. Isso aproxima a soma do *tempo de conexão de back-end* , do tempo que a solicitação leva para alcançar o back-end por meio do Gateway de Aplicativo, do tempo que o aplicativo back-end leva para responder (o tempo que o servidor leva para gerar conteúdo, possivelmente buscar consultas ao banco de dados) e do tempo que o primeiro byte da resposta leva para alcançar o gateway de aplicativo por meio do back-end.\n\nO **tempo de resposta do último byte de back-end** é o intervalo de tempo entre o início de estabelecimento de uma conexão com o servidor back-end e o recebimento do último byte do corpo de resposta. Isso aproxima a soma do *tempo de resposta do primeiro byte de back-end* e do tempo de transferência de dados (dependendo do tamanho dos objetos solicitados e da latência da rede do servidor, esse número pode variar bastante).\n\nCaso haja um pico na tendência do tempo de resposta do primeiro byte de back-end, mas a tendência do tempo de conexão de back-end seja estável, é possível concluir que a latência entre o gateway de aplicativo e o back-end e o tempo de estabelecimento da conexão são estáveis e que o pico se deve a um aumento no tempo de resposta do aplicativo back-end. Por outro lado, caso o pico no tempo de resposta do primeiro byte de back-end esteja associado a um pico correspondente no tempo de conexão de back-end, é possível deduzir que a rede entre o Gateway de Aplicativo e o servidor back-end ou a pilha TCP do servidor back-end está saturada. Caso você note um pico no tempo de resposta do último byte de back-end, mas o tempo de resposta do primeiro byte de back-end seja estável, é possível deduzir que o pico se deve à solicitação de um arquivo maior.\n\n"
             },
             "conditionalVisibilities": [
                 {
@@ -807,7 +807,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"capacity-units\"></a>Unidades de capacidade\nAs unidades de capacidade consumidas pelo seu gateway de aplicativo são determinadas por três dimensões: *unidade de computação*, *conexões atuais* e *taxa de transferência*. Cada unidade de capacidade é composta de no máximo: Uma *unidade de computação* ou 2.500 *conexões atuais* ou 2,22 Mbps *de taxa de transferência*. Verifique o valor das três métricas abaixo para descobrir qual variação levou às alterações em *Unidades de Capacidade*"
+                "json": "### <a name=\"capacity-units\"></a>Unidades de capacidade\nAs unidades de capacidade consumidas pelo seu gateway de aplicativo são determinadas por três dimensões: *unidade de computação* , *conexões atuais* e *taxa de transferência*. Cada unidade de capacidade é composta de no máximo: Uma *unidade de computação* ou 2.500 *conexões atuais* ou 2,22 Mbps *de taxa de transferência*. Verifique o valor das três métricas abaixo para descobrir qual variação levou às alterações em *Unidades de Capacidade*"
             },
             "conditionalVisibilities": [
                 {
@@ -1071,7 +1071,7 @@
                 "value": "1"
             },
             "customWidth": "50",
-            "name": "text - 17 - Copy"
+            "name": "text - 17 - Copyb"
         },
         {
             "type": 1,
@@ -1096,7 +1096,7 @@
                 "value": "1"
             },
             "customWidth": "50",
-            "name": "text - 17 - Copy - Copy"
+            "name": "text - 17 - Copy - Copyb"
         },
         {
             "type": 10,
@@ -1307,7 +1307,7 @@
                 "value": "3"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copyb"
         },
         {
             "type": 1,
@@ -1346,7 +1346,7 @@
                 "value": "3"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy - Copyc"
         },
         {
             "type": 10,
@@ -1559,7 +1559,7 @@
                 "value": "3"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copyb"
         },
         {
             "type": 1,
@@ -1584,7 +1584,7 @@
                 "value": "3"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copyd"
         },
         {
             "type": 1,
@@ -1609,7 +1609,7 @@
                 "value": "3"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy - Copyb"
         },
         {
             "type": 1,
@@ -1955,7 +1955,7 @@
                 "comparison": "isEqualTo",
                 "value": "3"
             },
-            "name": "text - 1 - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copyb"
         },
         {
             "type": 1,
@@ -2026,7 +2026,7 @@
                 "comparison": "isEqualTo",
                 "value": "3"
             },
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copyb"
         },
         {
             "type": 1,
@@ -2097,7 +2097,7 @@
                 "comparison": "isEqualTo",
                 "value": "3"
             },
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copyc"
         },
         {
             "type": 1,
@@ -2168,7 +2168,7 @@
                 "comparison": "isEqualTo",
                 "value": "3"
             },
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copyc"
         },
         {
             "type": 1,
@@ -2240,7 +2240,7 @@
                 "value": "4"
             },
             "customWidth": "50",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copye"
         },
         {
             "type": 1,
@@ -2253,7 +2253,7 @@
                 "value": "4"
             },
             "customWidth": "50",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copyc"
         },
         {
             "type": 10,
@@ -2352,7 +2352,7 @@
                 "value": "4"
             },
             "customWidth": "25",
-            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copy"
+            "name": "text - 1 - Copy - Copy - Copy - Copy - Copy - Copy - Copyf"
         },
         {
             "type": 1,
@@ -2905,7 +2905,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"current-capacity-units\"></a>Unidades de capacidade atuais\nContagem de unidades de capacidade consumidas para balancear a carga do tráfego. Há três determinantes das unidades de capacidade: *unidades de computação*, *conexões atuais* e *taxa de transferência*. Cada unidade de capacidade é composta de no máximo: Uma *unidade de computação* ou 2.500 *conexões atuais* ou 2,22 Mbps *de taxa de transferência*.\n"
+                "json": "### <a name=\"current-capacity-units\"></a>Unidades de capacidade atuais\nContagem de unidades de capacidade consumidas para balancear a carga do tráfego. Há três determinantes das unidades de capacidade: *unidades de computação* , *conexões atuais* e *taxa de transferência*. Cada unidade de capacidade é composta de no máximo: Uma *unidade de computação* ou 2.500 *conexões atuais* ou 2,22 Mbps *de taxa de transferência*.\n"
             },
             "conditionalVisibilities": [
                 {

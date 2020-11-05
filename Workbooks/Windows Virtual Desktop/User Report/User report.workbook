@@ -374,7 +374,7 @@
                                 {
                                     "type": 1,
                                     "content": {
-                                        "json": "**Nenhuma conexão** encontrada para **{UserName}** nos últimos **30 dias** .",
+                                        "json": "**Nenhuma conexão** encontrada para **{UserName}** nos últimos **30 dias**.",
                                         "style": "warning"
                                     },
                                     "conditionalVisibility": {
@@ -761,7 +761,7 @@
                                             }
                                         }
                                     },
-                                    "name": "PopularResourceByUser - Copy"
+                                    "name": "PopularResourceByUser - Copy2"
                                 },
                                 {
                                     "type": 3,

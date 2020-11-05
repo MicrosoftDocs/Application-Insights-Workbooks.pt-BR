@@ -901,7 +901,7 @@
                         "content": {
                             "json": "Use a guia **Habilitar monitoramento** para configurar computadores para iniciar o monitoramento de SQL Servers.\n"
                         },
-                        "name": "text - 0 - Copy"
+                        "name": "text - 0 - Copyb"
                     }
                 ]
             },
