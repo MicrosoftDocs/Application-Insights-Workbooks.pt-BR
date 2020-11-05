@@ -1,0 +1,9 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "en-us": {
+        "name": "Autenticação híbrida",
+        "isPreview": true,
+        "description": "Oferece insights para grupos, usuários e entradas na distribuição em etapas",
+        "order": 600
+    }
+}
