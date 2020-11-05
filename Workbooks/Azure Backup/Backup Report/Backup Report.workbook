@@ -199,7 +199,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<div style=\"text-align:left;\"><h1> <span style=\"font-size:12px;font-weight:400;font-style:italic\"> Você tem um cofres usando **configurações de diagnóstico herdadas**. Use as configurações de diagnóstico mais recentes em todos seus cofres para torná-los qualificados para atualizações de relatórios. <a href=\"https://aka.ms/AzureBackupUseResourceSpecific\" target=\"_blank\">Saiba mais</a> </span> </h1> </div>"
+                "json": "<div style=\"text-align:left;\"><h1> <span style=\"font-size:12px;font-weight:400;font-style:italic\"> Você tem um cofres usando **configurações de diagnóstico herdadas**. Use as configurações de diagnóstico mais recentes em todos seus cofres para torná-los qualificados para atualizações de relatórios. <a href=\"https://aka.ms/AzureBackupUseResourceSpecific\" target=\"_blank\">Saiba mais</a></span> </h1> </div>"
             },
             "conditionalVisibilities": [
                 {
@@ -484,7 +484,7 @@
                 "parameterName": "Workspaces",
                 "comparison": "isNotEqualTo"
             },
-            "name": "Overview-InstructionText2",
+            "name": "Overview-InstructionText2b",
             "styleSettings": {
                 "margin": "0% 0% 0% 0%",
                 "padding": "0% 0% 0% 0%"
@@ -493,7 +493,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<div style=\"text-align:left;\"><h1> <span style=\"font-size:12px;font-weight:400;font-style:italic\"> Você tem um cofres usando **configurações de diagnóstico herdadas**. Use as configurações de diagnóstico mais recentes em todos seus cofres para torná-los qualificados para atualizações de relatórios. <a href=\"https://aka.ms/AzureBackupUseResourceSpecific\" target=\"_blank\">Saiba mais</a> </span> </h1> </div>"
+                "json": "<div style=\"text-align:left;\"><h1> <span style=\"font-size:12px;font-weight:400;font-style:italic\"> Você tem um cofres usando **configurações de diagnóstico herdadas**. Use as configurações de diagnóstico mais recentes em todos seus cofres para torná-los qualificados para atualizações de relatórios. <a href=\"https://aka.ms/AzureBackupUseResourceSpecific\" target=\"_blank\">Saiba mais</a></span> </h1> </div>"
             },
             "conditionalVisibilities": [
                 {
