@@ -134,7 +134,7 @@
                         "resourceType": "microsoft.resourcegraph/resources"
                     },
                     {
-                        "id": "2edb83c2-527f-46fd-9e26-3e72d80da433",
+                        "id": "d3950ba8-36fb-4e6e-9e02-c7c764b655cd",
                         "version": "KqlParameterItem/1.0",
                         "name": "HasMonitorHosts",
                         "type": 1,
@@ -207,6 +207,42 @@
                         "name": "text - 1"
                     },
                     {
+                        "type": 9,
+                        "content": {
+                            "version": "KqlParameterItem/1.0",
+                            "crossComponentResources": [
+                                "value::all"
+                            ],
+                            "parameters": [
+                                {
+                                    "id": "47d10c5f-30e7-49ec-a61d-bc98f80e13b8",
+                                    "version": "KqlParameterItem/1.0",
+                                    "name": "poolWorspace",
+                                    "label": "Workspace do pool",
+                                    "type": 5,
+                                    "isRequired": true,
+                                    "query": "resources\r\n| where type =~ \"Microsoft.OperationalInsights/workspaces\"\r\n| project id, label=name, selected=id=~\"{poolla}\"",
+                                    "crossComponentResources": [
+                                        "value::all"
+                                    ],
+                                    "typeSettings": {
+                                        "additionalResourceOptions": [],
+                                        "showDefault": false
+                                    },
+                                    "timeContext": {
+                                        "durationMs": 86400000
+                                    },
+                                    "queryType": 1,
+                                    "resourceType": "microsoft.resourcegraph/resources"
+                                }
+                            ],
+                            "style": "pills",
+                            "queryType": 1,
+                            "resourceType": "microsoft.resourcegraph/resources"
+                        },
+                        "name": "parameters - 4"
+                    },
+                    {
                         "type": 12,
                         "content": {
                             "version": "NotebookGroup/1.0",
@@ -229,7 +265,7 @@
                                             {
                                                 "type": 1,
                                                 "content": {
-                                                    "json": "O Azure Monitor não está configurado para o pool de host do WVD selecionado.  \nVocê precisa definir as configurações de diagnóstico para o pool de host.\n\n1. Selecione **Configurar o pool de host**\n2. Selecione **Implantar** . Depois que a implantação for concluída, atualize a pasta de trabalho clicando no botão atualizar na parte superior.\n\n[Mais informações sobre o Azure Monitor para Área de Trabalho Virtual do Windows](https://docs.microsoft.com/en-us/azure/virtual-desktop/diagnostics-log-analytics)"
+                                                    "json": "O Azure Monitor não está configurado para o pool de host do WVD selecionado.  \nVocê precisa definir as configurações de diagnóstico para o pool de host.\n\n1. Selecione o workspace do Log Analytics no parâmetro **Workspace do pool**\n2. Selecione **Configurar o pool de host**\n3. Selecione **Implantar**. Depois que a implantação for concluída, atualize a pasta de trabalho clicando no botão atualizar na parte superior.\n\n[Mais informações sobre o Azure Monitor para Área de Trabalho Virtual do Windows](https://docs.microsoft.com/en-us/azure/virtual-desktop/diagnostics-log-analytics)"
                                                 },
                                                 "name": "text - 0"
                                             },
@@ -265,7 +301,7 @@
                                                                     {
                                                                         "name": "workspaceId",
                                                                         "source": "parameter",
-                                                                        "value": "Workspace",
+                                                                        "value": "poolWorspace",
                                                                         "kind": "stringValue"
                                                                     }
                                                                 ],
@@ -277,7 +313,11 @@
                                                         }
                                                     ]
                                                 },
-                                                "name": "links - 1"
+                                                "conditionalVisibility": {
+                                                    "parameterName": "poolWorspace",
+                                                    "comparison": "isNotEqualTo"
+                                                },
+                                                "name": "confighostpool"
                                             }
                                         ]
                                     },
@@ -699,7 +739,7 @@
                                             {
                                                 "type": 1,
                                                 "content": {
-                                                    "json": "Se houver contadores de desempenho ausentes, clique em **Configurar Contadores de Desempenho** .  \nDepois que a implantação for concluída, atualize a pasta de trabalho."
+                                                    "json": "Se houver contadores de desempenho ausentes, clique em **Configurar Contadores de Desempenho**.  \nDepois que a implantação for concluída, atualize a pasta de trabalho."
                                                 },
                                                 "name": "text - 4"
                                             },
@@ -844,7 +884,7 @@
                                             {
                                                 "type": 1,
                                                 "content": {
-                                                    "json": "Se houver eventos ausentes, clique em **Abrir Configuração do Workspace** .  \nEm seguida, clique em **Dados** e em **Logs de Eventos do Windows** . Adicione os eventos ausentes."
+                                                    "json": "Se houver eventos ausentes, clique em **Abrir Configuração do Workspace**.  \nEm seguida, clique em **Dados** e em **Logs de Eventos do Windows**. Adicione os eventos ausentes."
                                                 },
                                                 "name": "text - 5"
                                             },
@@ -864,7 +904,7 @@
                                                         }
                                                     ]
                                                 },
-                                                "name": "links - 3 - Copy"
+                                                "name": "configEvents"
                                             }
                                         ]
                                     },
