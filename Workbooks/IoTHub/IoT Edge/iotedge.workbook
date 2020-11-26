@@ -201,7 +201,7 @@
         {
             "type": 1,
             "content": {
-                "json": "💡*Selecione um dispositivo e clique na guia \" **Analisar detalhes...** \"*"
+                "json": "💡*Selecione um dispositivo e clique na guia \"**Analisar detalhes...**\"*"
             },
             "conditionalVisibilities": [
                 {
