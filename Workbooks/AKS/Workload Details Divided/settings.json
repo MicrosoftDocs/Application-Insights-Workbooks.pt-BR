@@ -2,7 +2,6 @@
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
     "name": "Detalhes da carga de trabalho",
     "author": "Microsoft",
-    "isPreview": true,
     "galleries": [
         {
             "type": "container-insights",
