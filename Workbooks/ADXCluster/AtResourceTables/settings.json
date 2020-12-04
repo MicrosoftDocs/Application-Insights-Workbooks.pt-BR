@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "Detalhes da tabela do recurso de cluster do Azure Data Explorer",
+    "author": "Microsoft",
+    "isPreview": true,
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.kusto/clusters"
+        },
+        {
+            "type": "adxcluster-insights",
+            "resourceType": "microsoft.kusto/clusters",
+            "order": 100
+        }
+    ]
+}
