@@ -471,6 +471,7 @@
                                                     "size": 0,
                                                     "aggregation": 3,
                                                     "title": "Histórico de sessão",
+                                                    "showExportToExcel": true,
                                                     "queryType": 0,
                                                     "resourceType": "microsoft.operationalinsights/workspaces",
                                                     "crossComponentResources": [
@@ -482,7 +483,7 @@
                                                         "createOtherGroup": 0
                                                     }
                                                 },
-                                                "name": "query - 0",
+                                                "name": "SessionHistoryGraph",
                                                 "styleSettings": {
                                                     "padding": "2%"
                                                 }
@@ -495,6 +496,7 @@
                                                     "size": 0,
                                                     "aggregation": 3,
                                                     "title": "Sessões disponíveis",
+                                                    "showExportToExcel": true,
                                                     "queryType": 0,
                                                     "resourceType": "microsoft.operationalinsights/workspaces",
                                                     "crossComponentResources": [
@@ -506,7 +508,7 @@
                                                         "createOtherGroup": 0
                                                     }
                                                 },
-                                                "name": "Available Sessions",
+                                                "name": "AvailableSessionsGraph",
                                                 "styleSettings": {
                                                     "padding": "2%"
                                                 }
@@ -636,6 +638,7 @@
                                                     "size": 0,
                                                     "aggregation": 3,
                                                     "title": "Máximo de usuários por núcleo",
+                                                    "showExportToExcel": true,
                                                     "queryType": 0,
                                                     "resourceType": "microsoft.operationalinsights/workspaces",
                                                     "crossComponentResources": [
@@ -671,6 +674,7 @@
                                                     "size": 0,
                                                     "aggregation": 3,
                                                     "title": "Uso da CPU",
+                                                    "showExportToExcel": true,
                                                     "queryType": 0,
                                                     "resourceType": "microsoft.operationalinsights/workspaces",
                                                     "crossComponentResources": [
@@ -731,12 +735,13 @@
                                         "aggregation": 5,
                                         "title": "MAUs (usuários ativos mensais)",
                                         "noDataMessage": "No users detected",
+                                        "showExportToExcel": true,
                                         "queryType": 0,
                                         "resourceType": "microsoft.operationalinsights/workspaces",
                                         "crossComponentResources": [
                                             "{poolla}"
                                         ],
-                                        "visualization": "linechart",
+                                        "visualization": "barchart",
                                         "chartSettings": {
                                             "seriesLabelSettings": [
                                                 {
@@ -765,6 +770,7 @@
                                         "aggregation": 5,
                                         "title": "Conexões e reconexões diárias",
                                         "noDataMessage": "No sessions detected",
+                                        "showExportToExcel": true,
                                         "queryType": 0,
                                         "resourceType": "microsoft.operationalinsights/workspaces",
                                         "crossComponentResources": [
@@ -928,6 +934,7 @@
                                         "aggregation": 5,
                                         "title": "Horas conectadas diárias",
                                         "noDataMessage": "No users detected",
+                                        "showExportToExcel": true,
                                         "queryType": 0,
                                         "resourceType": "microsoft.operationalinsights/workspaces",
                                         "crossComponentResources": [
@@ -1075,6 +1082,7 @@
                                         "aggregation": 5,
                                         "title": "Tempo de conexão por usuário",
                                         "noDataMessage": "No connections found",
+                                        "showExportToExcel": true,
                                         "queryType": 0,
                                         "resourceType": "microsoft.operationalinsights/workspaces",
                                         "crossComponentResources": [
@@ -1205,6 +1213,7 @@
                                         "aggregation": 5,
                                         "title": "Tempo de conexão por host",
                                         "noDataMessage": "No connections found",
+                                        "showExportToExcel": true,
                                         "queryType": 0,
                                         "resourceType": "microsoft.operationalinsights/workspaces",
                                         "crossComponentResources": [
